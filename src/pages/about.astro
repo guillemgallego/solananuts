@@ -1,0 +1,108 @@
+---
+import Base   from '../layouts/Base.astro';
+import Nav    from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
+const timeline = [
+  { year:'1987', title:'The first trees', desc:'Our grandfather planted the first Solana almond trees on a sun-baked hillside in Spain. Twenty trees, one dream, and a lot of hard work.' },
+  { year:'1998', title:'Growing the family', desc:'Second generation joins the farm. We expand to Lauranne almonds — a new French-Spanish variety that was just beginning to win over European buyers.' },
+  { year:'2010', title:'Chandler walnuts', desc:'We add our first walnut orchard, choosing the Chandler variety for its exceptional kernel quality and growing demand from German and French buyers.' },
+  { year:'2018', title:'Direct to Europe', desc:'We launch our first direct export programme, shipping to buyers in Germany, France and Italy without intermediaries. The response is overwhelming.' },
+  { year:'2024', title:'Today', desc:'Three varieties, three generations, direct to 30+ countries. Same values as 1987 — just a much bigger family of customers who love what we grow.' },
+];
+---
+
+<Base
+  title="Our Family Almond Farm in Spain | Solana Nuts Story"
+  description="Meet the family behind Solana Nuts. We've grown Solana almonds, Lauranne almonds and Chandler walnuts on our Spanish finca since 1987 — three generations of passion."
+  canonical="/about"
+  lang="en"
+>
+  <Nav />
+  <main>
+
+    <!-- Hero -->
+    <div class="bg-soil relative overflow-hidden grain py-20">
+      <div class="absolute inset-0 bg-gradient-to-br from-soil via-bark/95 to-soil/90"></div>
+      <div class="absolute top-1/2 right-1/4 w-[400px] h-[400px] bg-almond/10 rounded-full blur-[80px]"></div>
+      <div class="container relative z-10 text-center">
+        <nav class="flex justify-center items-center gap-2 text-sm text-cream/50 mb-6">
+          <a href="/" class="hover:text-almond transition-colors">Home</a>
+          <span>›</span>
+          <span class="text-cream/70">Our Farm</span>
+        </nav>
+        <span class="badge badge-white">Family Farm · Spain · Est. 1987</span>
+        <h1 class="font-display text-5xl lg:text-6xl font-bold text-cream mt-4 mb-4">
+          Three generations.<br/><span class="text-grad">One finca.</span>
+        </h1>
+        <p class="text-cream/70 text-xl max-w-2xl mx-auto">
+          We don't buy and resell almonds. We grow them — on our own land, with our own hands, with the same care since 1987.
+        </p>
+      </div>
+    </div>
+
+    <!-- Story -->
+    <section class="section bg-cream">
+      <div class="container">
+        <div class="max-w-3xl mx-auto">
+          <div class="prose prose-lg max-w-none text-bark/80 leading-relaxed" data-reveal>
+            <p class="text-xl text-soil font-semibold leading-relaxed">
+              Solana Nuts is a family farm in Spain. We grow three varieties: <strong>Solana almonds</strong>, <strong>Lauranne almonds</strong> and <strong>Chandler walnuts</strong>. Everything on this website was grown on our land.
+            </p>
+            <p>
+              When our grandfather planted his first almond trees in 1987, Spain was not yet seen as a premium almond producer. California dominated. But Spanish almonds have something Californian almonds don't: a hard, non-porous shell that means no post-harvest fumigation, a higher oil content that translates to richer flavour, and single-origin traceability that fine-food buyers across Europe now actively demand.
+            </p>
+            <p>
+              Over the years, as European buyers discovered what made Spanish almonds different, demand for our varieties grew. We added Lauranne — a French-Spanish cross that is large, sweet, and holds its skin perfectly when baked, making it a favourite with patissiers and chocolatiers. Then Chandler walnuts, whose extra-light kernel colour and mild buttery flavour set the standard for premium retail across Germany, France and the UK.
+            </p>
+            <p>
+              Today we ship direct to deli owners, importers, bakeries, chocolatiers and health food retailers across more than 30 European countries. We still do it the same way our grandfather did: with attention to the soil, respect for the seasons, and a genuine pride in what we produce.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Timeline -->
+    <section class="section bg-sand">
+      <div class="container">
+        <div class="text-center mb-14" data-reveal>
+          <span class="badge">Our History</span>
+          <h2 class="font-display text-4xl font-bold text-soil">37 years of growing</h2>
+        </div>
+        <div class="max-w-3xl mx-auto relative">
+          <!-- Line -->
+          <div class="absolute left-[28px] sm:left-1/2 top-0 bottom-0 w-0.5 bg-almond/30"></div>
+          <div class="space-y-10">
+            {timeline.map((t, i) => (
+              <div class={`relative flex items-start gap-6 ${i % 2 === 0 ? 'sm:flex-row' : 'sm:flex-row-reverse'}`} data-reveal data-d={String((i%3)+1)}>
+                <!-- Dot -->
+                <div class="relative z-10 w-14 h-14 flex-shrink-0 bg-almond rounded-full flex items-center justify-center shadow-warm">
+                  <span class="font-display font-bold text-white text-xs text-center leading-tight">{t.year}</span>
+                </div>
+                <div class={`bg-white rounded-2xl p-6 shadow-card flex-1 ${i % 2 === 0 ? 'sm:mr-8' : 'sm:ml-8'}`}>
+                  <div class="text-almond font-bold text-sm mb-1">{t.year}</div>
+                  <h3 class="font-display text-xl font-bold text-soil mb-2">{t.title}</h3>
+                  <p class="text-bark/75 text-sm leading-relaxed">{t.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section bg-cream text-center">
+      <div class="container max-w-2xl" data-reveal>
+        <h2 class="font-display text-4xl font-bold text-soil mb-4">Want to taste the difference?</h2>
+        <p class="text-bark/75 text-lg mb-8">Request a free sample box and compare our Solana almonds, Lauranne almonds and Chandler walnuts side by side. No commitment — just honest nuts.</p>
+        <div class="flex flex-wrap gap-3 justify-center">
+          <a href="/contact" class="btn-almond">Request Free Sample →</a>
+          <a href="/varieties" class="btn-outline">See All Varieties</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Base>

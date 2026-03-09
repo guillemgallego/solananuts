@@ -1,0 +1,84 @@
+---
+const values = [
+  { icon:'🌱', title:'Grown by us, not a middleman', desc:'We own the land, plant the trees, harvest the crop and pack the boxes. Zero intermediaries means better price, better traceability.' },
+  { icon:'📍', title:'Single-origin traceability', desc:'Every bag of Solana Nuts comes with the GPS coordinates of the orchard it was grown in. Perfect for premium retail labelling.' },
+  { icon:'🌊', title:'Sustainable irrigation', desc:'Our finca uses a precision drip-irrigation system that reduces water use by 40% compared to traditional flood irrigation.' },
+  { icon:'🤝', title:'B2B & wholesale ready', desc:'From independent deli orders (5 kg) to full pallet wholesale for distributors — we handle all incoterms and EU customs paperwork.' },
+  { icon:'📦', title:'EU food safety certified', desc:'Fully compliant with EU Regulation 178/2002. All batches tested for mycotoxins, pesticide residues and allergens before dispatch.' },
+  { icon:'🚀', title:'Direct export, pan-European', desc:'We ship FCA Spain or DDP to DE, FR, IT, GB, NL, BE, AT, CH and beyond. Most destinations receive within 3–5 working days.' },
+];
+---
+
+<section class="section bg-soil relative overflow-hidden grain" id="about">
+
+  <!-- Decorative -->
+  <div class="absolute top-0 right-0 w-[600px] h-[600px] rounded-full bg-almond/8 blur-[120px] pointer-events-none"></div>
+
+  <div class="container relative z-10">
+    <div class="grid lg:grid-cols-2 gap-16 xl:gap-24 items-center">
+
+      <!-- Left: story -->
+      <div data-reveal>
+        <span class="badge badge-white">Our Story</span>
+        <h2 class="font-display text-4xl lg:text-5xl font-bold text-cream mb-6 mt-3">
+          Three generations.<br/>
+          <span class="text-grad">One finca.</span>
+        </h2>
+        <div class="space-y-5 text-cream/75 leading-relaxed text-[1.05rem]">
+          <p>
+            In 1987, our grandfather planted the first Solana almond trees on a sun-baked hillside in Spain. 
+            Today, three generations later, we still harvest those same trees — plus the Lauranne and Chandler 
+            varieties we've added as demand from European buyers has grown.
+          </p>
+          <p>
+            We're not a trading company. We don't buy and resell almonds from other growers. 
+            <strong class="text-cream">Everything on this website comes from our own land, picked by our own family</strong>, 
+            processed in our own facility and shipped directly to you.
+          </p>
+          <p>
+            That directness means you get the freshest product, honest pricing and a real person to talk to — 
+            not a call-centre. When you order from Solana Nuts, you can trace every almond back to the exact 
+            row of trees it came from.
+          </p>
+        </div>
+
+        <div class="flex flex-wrap gap-8 mt-10 pt-8 border-t border-white/12">
+          {[
+            { num:'1987', label:'Founded' },
+            { num:'3',    label:'Generations' },
+            { num:'3',    label:'Varieties grown' },
+            { num:'100%', label:'Own-farm produce' },
+          ].map(s => (
+            <div>
+              <div class="font-display font-bold text-3xl text-almond leading-none">{s.num}</div>
+              <div class="text-cream/55 text-sm mt-1">{s.label}</div>
+            </div>
+          ))}
+        </div>
+
+        <div class="flex flex-wrap gap-3 mt-8">
+          <a href="/about" class="btn-almond">Meet the Family →</a>
+          <a href="/contact" class="btn-outline !border-white/30 !text-cream hover:!bg-white/10 hover:!text-cream">Get in touch</a>
+        </div>
+      </div>
+
+      <!-- Right: values grid -->
+      <div class="grid sm:grid-cols-2 gap-4" data-reveal data-d="2">
+        {values.map(v => (
+          <div class="bg-white/6 border border-white/10 rounded-2xl p-5 hover:bg-white/10 transition-colors">
+            <span class="text-3xl block mb-3">{v.icon}</span>
+            <h3 class="text-cream font-semibold text-sm mb-2 leading-tight">{v.title}</h3>
+            <p class="text-cream/55 text-xs leading-relaxed">{v.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <!-- Wave bottom -->
+  <div class="absolute bottom-0 inset-x-0 leading-none z-10">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none" class="w-full h-12 lg:h-16" fill="#EAE0CE">
+      <path d="M0 60L120 48C240 36 480 12 720 10C960 8 1200 28 1320 38L1440 48V60H0Z"/>
+    </svg>
+  </div>
+</section>

@@ -1,0 +1,160 @@
+---
+export interface Props {
+  title:       string;
+  description: string;
+  canonical?:  string;
+  lang?:       string;
+  og?:         string;
+}
+const {
+  title,
+  description,
+  canonical,
+  lang = 'en',
+  og = 'https://solananuts.com/og.jpg',
+} = Astro.props;
+
+const url = canonical ?? 'https://solananuts.com' + Astro.url.pathname;
+---
+<!DOCTYPE html>
+<html lang={lang} class="scroll-smooth">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>{title}</title>
+  <meta name="description" content={description}/>
+  <meta name="robots" content="index,follow,max-image-preview:large"/>
+  <link rel="canonical" href={url}/>
+
+  <!-- hreflang for multilingual SEO -->
+  <link rel="alternate" hreflang="en"    href="https://solananuts.com{Astro.url.pathname}"/>
+  <link rel="alternate" hreflang="de"    href="https://solananuts.com/de{Astro.url.pathname}"/>
+  <link rel="alternate" hreflang="fr"    href="https://solananuts.com/fr{Astro.url.pathname}"/>
+  <link rel="alternate" hreflang="it"    href="https://solananuts.com/it{Astro.url.pathname}"/>
+  <link rel="alternate" hreflang="nl"    href="https://solananuts.com/nl{Astro.url.pathname}"/>
+  <link rel="alternate" hreflang="x-default" href="https://solananuts.com{Astro.url.pathname}"/>
+
+  <!-- Open Graph -->
+  <meta property="og:title"       content={title}/>
+  <meta property="og:description" content={description}/>
+  <meta property="og:url"         content={url}/>
+  <meta property="og:image"       content={og}/>
+  <meta property="og:type"        content="website"/>
+  <meta property="og:locale"      content={lang === 'en' ? 'en_GB' : lang + '_' + lang.toUpperCase()}/>
+  <meta property="og:site_name"   content="Solana Nuts"/>
+
+  <!-- Twitter -->
+  <meta name="twitter:card"        content="summary_large_image"/>
+  <meta name="twitter:title"       content={title}/>
+  <meta name="twitter:description" content={description}/>
+  <meta name="twitter:image"       content={og}/>
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Solana Nuts",
+    "url": "https://solananuts.com",
+    "logo": "https://solananuts.com/logo.png",
+    "description": "Family-owned Spanish almond and walnut farm. Solana & Lauranne almonds, Chandler walnuts. Direct from our finca to Europe.",
+    "address": { "@type": "PostalAddress", "addressCountry": "ES" },
+    "areaServed": ["DE","FR","IT","GB","NL","BE","AT","CH","ES"],
+    "sameAs": [
+      "https://instagram.com/solananuts",
+      "https://linkedin.com/company/solananuts"
+    ]
+  }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+</head>
+<body class="font-sans bg-cream text-soil antialiased">
+  <slot/>
+
+  <!-- Scroll reveal -->
+  <script>
+    const io = new IntersectionObserver(
+      entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('revealed'); io.unobserve(e.target); } }),
+      { threshold: 0.08, rootMargin: '0px 0px -32px 0px' }
+    );
+    document.querySelectorAll('[data-reveal]').forEach(el => io.observe(el));
+  </script>
+
+  <style is:global>
+    [data-reveal]          { opacity: 0; transform: translateY(20px); transition: opacity .7s ease, transform .7s ease; }
+    [data-reveal].revealed { opacity: 1; transform: none; }
+    [data-reveal][data-d="1"] { transition-delay: .1s }
+    [data-reveal][data-d="2"] { transition-delay: .2s }
+    [data-reveal][data-d="3"] { transition-delay: .3s }
+    [data-reveal][data-d="4"] { transition-delay: .4s }
+    [data-reveal][data-d="5"] { transition-delay: .5s }
+
+    .text-grad {
+      background: linear-gradient(135deg, #C8965A 0%, #8B6340 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .text-grad-green {
+      background: linear-gradient(135deg, #4A6741 0%, #6B8F62 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+
+    /* section spacing */
+    .section { padding: clamp(4rem,9vw,8rem) 0; }
+    .container { max-width: 1280px; margin: 0 auto; padding: 0 clamp(1.25rem,5vw,3rem); }
+
+    /* buttons */
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: #2C1A0E; color: #FBF6EE;
+      padding: .85rem 2rem; border-radius: 100px;
+      font-weight: 600; font-size: .95rem;
+      transition: background .25s, transform .25s, box-shadow .25s;
+    }
+    .btn-primary:hover { background: #5C3A1E; transform: translateY(-2px); box-shadow: 0 10px 28px rgba(44,26,14,.28); }
+
+    .btn-almond {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: #C8965A; color: #fff;
+      padding: .85rem 2rem; border-radius: 100px;
+      font-weight: 600; font-size: .95rem;
+      transition: background .25s, transform .25s, box-shadow .25s;
+    }
+    .btn-almond:hover { background: #A67C52; transform: translateY(-2px); box-shadow: 0 10px 28px rgba(200,150,90,.38); }
+
+    .btn-outline {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: transparent; color: #2C1A0E;
+      border: 1.5px solid #2C1A0E;
+      padding: .85rem 2rem; border-radius: 100px;
+      font-weight: 600; font-size: .95rem;
+      transition: all .25s;
+    }
+    .btn-outline:hover { background: #2C1A0E; color: #FBF6EE; transform: translateY(-2px); }
+
+    .badge {
+      display: inline-block;
+      background: #F0DEC0; color: #5C3A1E;
+      font-size: .72rem; font-weight: 700;
+      letter-spacing: .1em; text-transform: uppercase;
+      padding: .32rem .9rem; border-radius: 100px;
+      margin-bottom: 1rem;
+    }
+    .badge-leaf { background: #D4E8D0; color: #2D4A28; }
+    .badge-white { background: rgba(255,255,255,.2); color: #fff; }
+
+    /* grain texture overlay */
+    .grain::after {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none; z-index: 1;
+    }
+  </style>
+</body>
+</html>

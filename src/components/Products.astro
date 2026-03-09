@@ -1,0 +1,163 @@
+---
+const products = [
+  {
+    id: 'solana-almond',
+    name: 'Solana Almond',
+    latin: 'Prunus dulcis cv. Solana',
+    emoji: '🤍',
+    color: '#F5EDD8',
+    badge: 'Spanish Heritage',
+    badgeClass: 'badge',
+    tagline: 'The round, sweet almond of Spanish tradition',
+    description: 'The Solana variety is prized across Europe for its round, plump kernel and exceptionally sweet flavour with low bitterness. Naturally suited to the Mediterranean climate of our Spanish finca, Solana almonds are harvested with care each autumn and dispatched fresh to our European buyers.',
+    traits: [
+      { icon:'🫘', label:'Shape',    value:'Round, uniform' },
+      { icon:'🍯', label:'Flavour',  value:'Sweet, low bitterness' },
+      { icon:'🌰', label:'Shell',    value:'Hard shell, non-porous' },
+      { icon:'✨', label:'Skin',     value:'Light brown, smooth' },
+    ],
+    uses: ['Snacking · retail packs','Patisserie & nougat','Almond paste & marzipan','Blanched almond flour'],
+    formats: ['Raw whole','Blanched','Roasted','Ground / flour'],
+    seoKeywords: 'buy Solana almonds Europe, Spanish almonds wholesale, Solana variety almonds',
+    href: '/varieties/solana-almond',
+  },
+  {
+    id: 'lauranne-almond',
+    name: 'Lauranne Almond',
+    latin: 'Prunus dulcis cv. Lauranne',
+    emoji: '✨',
+    color: '#EAE8D8',
+    badge: 'Most Popular EU',
+    badgeClass: 'badge',
+    tagline: 'Large, sweet, self-fertile — Europe\'s favourite variety',
+    description: 'Lauranne is a Franco-Spanish cross prized throughout Europe for its large kernel size, sweet taste and intact skin after baking — which commands premium prices. One of the most widely planted varieties in irrigated Spanish orchards, Lauranne is ideal for retail snack packs, chocolate coating and nougat production.',
+    traits: [
+      { icon:'🫘', label:'Shape',    value:'Large, elongated' },
+      { icon:'🍯', label:'Flavour',  value:'Sweet, mild, versatile' },
+      { icon:'🌰', label:'Shell',    value:'Soft-semi shell' },
+      { icon:'✨', label:'Skin',     value:'Stays intact when baked' },
+    ],
+    uses: ['Premium retail snack packs','Chocolate coating','Nougat & turrón','Cosmetic almond oil'],
+    formats: ['Raw whole','In-shell','Blanched','Sliced / flaked'],
+    seoKeywords: 'Lauranne almonds wholesale Europe, buy Lauranne almonds Spain, premium Spanish almonds',
+    href: '/varieties/lauranne-almond',
+  },
+  {
+    id: 'chandler-walnut',
+    name: 'Chandler Walnut',
+    latin: 'Juglans regia cv. Chandler',
+    emoji: '🌰',
+    color: '#EDE0CC',
+    badge: 'Extra Light Colour',
+    badgeClass: 'badge',
+    tagline: 'Mild, buttery, light-coloured — the premium walnut benchmark',
+    description: 'Developed at UC Davis and now the world\'s most commercially planted walnut variety, the Chandler is celebrated for its thin shell, extra-light kernel colour and mild buttery flavour with no bitterness. Our Chandler walnuts are grown on our Spanish finca under optimal conditions, giving consistently large, light kernels that fetch top market prices across Germany, France and the UK.',
+    traits: [
+      { icon:'🫘', label:'Shell',   value:'Thin, cracks easily' },
+      { icon:'🌟', label:'Colour',  value:'Extra light (Grade A)' },
+      { icon:'🍯', label:'Flavour', value:'Mild, buttery, no bitterness' },
+      { icon:'💪', label:'Protein', value:'18% · Omega-3 rich' },
+    ],
+    uses: ['Premium retail (halves)','Bakery & patisserie','Walnut oil production','Health food & snacking'],
+    formats: ['In-shell','Shelled halves','Shelled pieces','Walnut halves vacuum-packed'],
+    seoKeywords: 'buy Chandler walnuts Europe, Spanish walnuts wholesale, Chandler walnut supplier',
+    href: '/varieties/chandler-walnut',
+  },
+];
+---
+
+<section class="section bg-cream" id="products">
+  <div class="container">
+
+    <!-- Header -->
+    <div class="text-center max-w-2xl mx-auto mb-16" data-reveal>
+      <span class="badge">Our Three Varieties</span>
+      <h2 class="font-display text-4xl lg:text-5xl font-bold text-soil mb-4">
+        Grown on our finca,<br/>
+        <span class="text-grad">shipped across Europe</span>
+      </h2>
+      <p class="text-bark/80 text-lg leading-relaxed">
+        Three varieties, one family. Each grown with the same attention to soil, water and harvest timing that has defined Solana Nuts since 1987.
+      </p>
+    </div>
+
+    <!-- Product cards -->
+    <div class="grid lg:grid-cols-3 gap-8">
+      {products.map((p, i) => (
+        <article
+          class="group bg-white rounded-3xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-500 hover:-translate-y-2 flex flex-col"
+          data-reveal data-d={String(i + 1)}
+        >
+          <!-- Card top -->
+          <div class="relative p-8 pb-6" style={`background: ${p.color};`}>
+            <span class={p.badgeClass}>{p.badge}</span>
+            <div class="text-7xl mb-4 group-hover:animate-float">{p.emoji}</div>
+            <div class="text-xs font-mono text-bark/60 tracking-wider mb-1">{p.latin}</div>
+            <h3 class="font-display text-2xl font-bold text-soil mb-2">{p.name}</h3>
+            <p class="text-bark text-sm font-medium italic">{p.tagline}</p>
+          </div>
+
+          <!-- Card body -->
+          <div class="p-8 flex-1 flex flex-col gap-6">
+
+            <p class="text-bark/80 text-sm leading-relaxed">{p.description}</p>
+
+            <!-- Traits grid -->
+            <div class="grid grid-cols-2 gap-2.5">
+              {p.traits.map(t => (
+                <div class="bg-cream rounded-xl p-3 border border-sand">
+                  <div class="flex items-center gap-1.5 mb-1">
+                    <span class="text-base">{t.icon}</span>
+                    <span class="text-[10px] font-bold uppercase tracking-[.1em] text-stone">{t.label}</span>
+                  </div>
+                  <div class="text-xs font-semibold text-soil">{t.value}</div>
+                </div>
+              ))}
+            </div>
+
+            <!-- Uses -->
+            <div>
+              <p class="text-[11px] font-bold uppercase tracking-[.1em] text-stone mb-2">Main Uses</p>
+              <div class="flex flex-wrap gap-1.5">
+                {p.uses.map(u => (
+                  <span class="text-xs bg-sand text-bark rounded-full px-3 py-1 font-medium">{u}</span>
+                ))}
+              </div>
+            </div>
+
+            <!-- Formats -->
+            <div>
+              <p class="text-[11px] font-bold uppercase tracking-[.1em] text-stone mb-2">Available Formats</p>
+              <div class="flex flex-wrap gap-1.5">
+                {p.formats.map(f => (
+                  <span class="text-xs bg-almond/15 text-bark border border-almond/30 rounded-full px-3 py-1 font-medium">{f}</span>
+                ))}
+              </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="mt-auto pt-4 flex gap-3">
+              <a href={p.href}
+                 class="flex-1 btn-outline text-center justify-center !text-sm !py-2.5">
+                Learn More
+              </a>
+              <a href={`/contact?variety=${p.id}`}
+                 class="flex-1 btn-almond text-center justify-center !text-sm !py-2.5">
+                Request Price
+              </a>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <!-- Bottom note -->
+    <div class="mt-12 text-center" data-reveal>
+      <p class="text-stone text-sm">
+        All varieties available as <strong class="text-soil">raw, roasted, blanched or processed</strong> ·
+        Minimum order 5 kg · <strong class="text-soil">Pallet quantities welcome</strong> ·
+        EU food safety certified
+      </p>
+    </div>
+  </div>
+</section>

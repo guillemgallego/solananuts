@@ -1,0 +1,153 @@
+---
+const navLinks = [
+  { href: '/#products',  label: 'Our Almonds & Walnuts' },
+  { href: '/about',      label: 'Our Farm' },
+  { href: '/varieties',  label: 'Varieties' },
+  { href: '/blog',       label: 'Journal' },
+  { href: '/contact',    label: 'Contact' },
+];
+---
+
+<header id="nav" class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
+
+  <!-- Top bar -->
+  <div id="topbar" class="bg-soil text-cream/70 text-xs py-2 transition-all duration-300 overflow-hidden">
+    <div class="container flex items-center justify-between flex-wrap gap-2">
+      <div class="flex items-center gap-4">
+        <span>🌿 Family farm in Spain since 1987</span>
+        <span class="hidden sm:inline">·</span>
+        <span class="hidden sm:inline">🚚 Shipping to all Europe</span>
+        <span class="hidden md:inline">·</span>
+        <span class="hidden md:inline">📦 Wholesale & retail available</span>
+      </div>
+      <!-- Language switcher -->
+      <nav class="flex items-center gap-2" aria-label="Language switcher">
+        <a href="/"      class="text-almond font-semibold hover:text-almond-light transition-colors">EN</a>
+        <span class="opacity-30">|</span>
+        <a href="/de"    class="hover:text-almond transition-colors">DE</a>
+        <span class="opacity-30">|</span>
+        <a href="/fr"    class="hover:text-almond transition-colors">FR</a>
+        <span class="opacity-30">|</span>
+        <a href="/it"    class="hover:text-almond transition-colors">IT</a>
+        <span class="opacity-30">|</span>
+        <a href="/nl"    class="hover:text-almond transition-colors">NL</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Main nav -->
+  <nav class="bg-cream/96 backdrop-blur-md border-b border-sand transition-shadow duration-300" id="mainnav">
+    <div class="container flex items-center justify-between h-16 lg:h-[68px]">
+
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-2.5 group" aria-label="Solana Nuts - Home">
+        <div class="w-9 h-9 rounded-full bg-soil flex items-center justify-center shadow-warm group-hover:scale-105 transition-transform">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="text-almond">
+            <!-- stylised almond/leaf icon -->
+            <path d="M12 3C12 3 5 8 5 14a7 7 0 0014 0C19 8 12 3 12 3z" fill="currentColor" opacity=".9"/>
+            <path d="M12 3C12 3 12 10 12 17" stroke="white" stroke-width="1.2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="leading-none">
+          <span class="font-display font-bold text-xl text-soil tracking-tight block">Solana Nuts</span>
+          <span class="text-[10px] font-semibold tracking-[.14em] uppercase text-almond block">Spain · Est. 1987</span>
+        </div>
+      </a>
+
+      <!-- Desktop links -->
+      <ul class="hidden lg:flex items-center gap-0.5">
+        {navLinks.map(l => (
+          <li>
+            <a href={l.href}
+               class="px-4 py-2 text-sm font-medium text-bark hover:text-soil hover:bg-sand rounded-lg transition-colors whitespace-nowrap">
+              {l.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+
+      <!-- CTA + Hamburger -->
+      <div class="flex items-center gap-3">
+        <a href="/contact#wholesale"
+           class="hidden sm:inline-flex items-center gap-1.5 text-sm font-semibold text-bark border border-sand hover:border-almond hover:text-almond px-4 py-2 rounded-lg transition-colors">
+          Wholesale Enquiry
+        </a>
+        <a href="/contact"
+           class="btn-almond hidden lg:inline-flex !py-2.5 !px-5 !text-sm">
+          Request Sample
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <!-- Hamburger -->
+        <button id="ham" class="lg:hidden flex flex-col gap-1.5 p-1.5 rounded-lg hover:bg-sand transition-colors" aria-label="Open menu" aria-expanded="false">
+          <span class="block w-5 h-0.5 bg-soil rounded transition-all duration-300 origin-center" id="h1"></span>
+          <span class="block w-5 h-0.5 bg-soil rounded transition-all duration-300" id="h2"></span>
+          <span class="block w-5 h-0.5 bg-soil rounded transition-all duration-300 origin-center" id="h3"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu"
+         class="lg:hidden max-h-0 overflow-hidden transition-all duration-500 border-t border-sand/0"
+         aria-hidden="true">
+      <div class="container py-4 flex flex-col gap-1">
+        {navLinks.map(l => (
+          <a href={l.href}
+             class="px-4 py-3 text-sm font-medium text-bark hover:text-soil hover:bg-sand rounded-xl transition-colors">
+            {l.label}
+          </a>
+        ))}
+        <div class="pt-3 mt-2 border-t border-sand flex flex-col gap-2">
+          <a href="/contact#wholesale" class="btn-outline text-center justify-center !text-sm !py-2.5">Wholesale Enquiry</a>
+          <a href="/contact" class="btn-almond text-center justify-center !text-sm !py-2.5">Request a Free Sample</a>
+        </div>
+        <div class="pt-4 flex items-center gap-3 justify-center">
+          <span class="text-xs text-stone font-medium uppercase tracking-widest">Language:</span>
+          {[['EN','/'],['DE','/de'],['FR','/fr'],['IT','/it'],['NL','/nl']].map(([l,h]) => (
+            <a href={h} class="text-xs font-bold text-bark hover:text-almond transition-colors">{l}</a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- Nav spacer -->
+<div class="h-[104px] lg:h-[108px]"></div>
+
+<script>
+  // Sticky shadow
+  const nav = document.getElementById('nav');
+  const mainnav = document.getElementById('mainnav');
+  const topbar = document.getElementById('topbar');
+  window.addEventListener('scroll', () => {
+    const scrolled = window.scrollY > 10;
+    mainnav?.classList.toggle('shadow-warm', scrolled);
+    if (scrolled) { topbar!.style.maxHeight = '0'; topbar!.style.paddingTop = '0'; topbar!.style.paddingBottom = '0'; }
+    else          { topbar!.style.maxHeight = ''; topbar!.style.paddingTop = ''; topbar!.style.paddingBottom = ''; }
+  });
+
+  // Hamburger
+  const ham = document.getElementById('ham');
+  const menu = document.getElementById('mobile-menu');
+  const [h1, h2, h3] = ['h1','h2','h3'].map(id => document.getElementById(id));
+  let open = false;
+  ham?.addEventListener('click', () => {
+    open = !open;
+    ham.setAttribute('aria-expanded', String(open));
+    menu?.setAttribute('aria-hidden', String(!open));
+    if (open) {
+      menu!.style.maxHeight = menu!.scrollHeight + 'px';
+      menu!.classList.add('border-sand');
+      h1!.style.transform = 'rotate(45deg) translate(3px, 3px)';
+      h2!.style.opacity = '0';
+      h3!.style.transform = 'rotate(-45deg) translate(3px, -3px)';
+    } else {
+      menu!.style.maxHeight = '0';
+      menu!.classList.remove('border-sand');
+      h1!.style.transform = '';
+      h2!.style.opacity = '';
+      h3!.style.transform = '';
+    }
+  });
+</script>
