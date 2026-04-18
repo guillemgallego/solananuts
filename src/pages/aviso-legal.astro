@@ -1,0 +1,89 @@
+---
+import Base   from '../layouts/Base.astro';
+import Nav    from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
+const title = 'Aviso legal | Solana Nuts';
+const description = 'Aviso legal de Solana Nuts. Información sobre el titular del sitio web, condiciones de uso, propiedad intelectual y legislación aplicable.';
+---
+<Base
+  title={title}
+  description={description}
+  canonical="https://solananuts.com/aviso-legal"
+  noindex={false}
+  breadcrumbs={[
+    { name: 'Inicio', url: '/' },
+    { name: 'Aviso legal', url: '/aviso-legal' }
+  ]}
+>
+  <Nav />
+  <main id="contenido">
+    <section class="bg-tierra text-crema py-12 lg:py-16 grano relative overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-br from-tierra via-corteza/95 to-tierra" aria-hidden="true"></div>
+      <div class="container relative max-w-3xl">
+        <nav class="text-xs text-crema/60 mb-4" aria-label="Breadcrumb">
+          <a href="/" class="hover:text-almendra-light">Inicio</a><span class="mx-2">›</span>
+          <span class="text-almendra-light">Aviso legal</span>
+        </nav>
+        <h1 class="font-display text-3xl md:text-4xl font-bold text-crema">Aviso legal</h1>
+        <p class="text-crema/70 mt-2 text-sm">Última actualización: 18 de abril de 2026</p>
+      </div>
+    </section>
+
+    <section class="section-sm bg-crema">
+      <div class="container max-w-3xl prose-tierra text-sm leading-relaxed text-corteza space-y-8">
+
+        <div>
+          <h2 class="font-display text-xl font-bold text-tierra mb-3">1. Datos del titular</h2>
+          <p>En cumplimiento del artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y Comercio Electrónico (LSSI-CE), se informa:</p>
+          <ul class="mt-3 space-y-1 list-none pl-0">
+            <li><strong>Denominación social:</strong> Solana Nuts (Explotación agrícola familiar)</li>
+            <li><strong>Domicilio:</strong> Fayón, Zaragoza (Bajo Aragón, España)</li>
+            <li><strong>NIF/CIF:</strong> [Número de identificación fiscal — rellenar]</li>
+            <li><strong>Correo electrónico:</strong> <a href="mailto:info@solananuts.com" class="text-almendra hover:underline">info@solananuts.com</a></li>
+            <li><strong>Sitio web:</strong> <a href="https://solananuts.com" class="text-almendra hover:underline">https://solananuts.com</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="font-display text-xl font-bold text-tierra mb-3">2. Objeto y ámbito de aplicación</h2>
+          <p>El presente Aviso Legal regula el acceso y uso del sitio web <strong>solananuts.com</strong> (en adelante "el Sitio"). El acceso al Sitio implica la aceptación plena y sin reservas de las presentes condiciones de uso.</p>
+        </div>
+
+        <div>
+          <h2 class="font-display text-xl font-bold text-tierra mb-3">3. Propiedad intelectual e industrial</h2>
+          <p>Todos los contenidos del Sitio — textos, imágenes, logotipos, marcas, gráficos, diseño, código fuente y demás elementos — son propiedad de Solana Nuts o de sus legítimos titulares, estando protegidos por las leyes españolas y europeas de propiedad intelectual e industrial.</p>
+          <p class="mt-2">Queda prohibida la reproducción, distribución, comunicación pública, transformación o cualquier otro uso no autorizado expresamente por escrito, salvo los usos permitidos por la Ley de Propiedad Intelectual.</p>
+        </div>
+
+        <div>
+          <h2 class="font-display text-xl font-bold text-tierra mb-3">4. Condiciones de uso</h2>
+          <p>El usuario se compromete a hacer un uso lícito del Sitio, respetando la legislación vigente y los derechos de terceros. Queda prohibido:</p>
+          <ul class="mt-2 space-y-1 list-disc pl-5">
+            <li>Utilizar el Sitio con fines fraudulentos o para difundir contenidos ilícitos.</li>
+            <li>Realizar cualquier acción que pudiera dañar, bloquear o sobrecargar el Sitio.</li>
+            <li>Reproducir el contenido sin autorización escrita.</li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="font-display text-xl font-bold text-tierra mb-3">5. Exclusión de responsabilidad</h2>
+          <p>Solana Nuts no garantiza la disponibilidad continua e ininterrumpida del Sitio. Los contenidos del Sitio se facilitan con carácter informativo. Solana Nuts no será responsable de los daños o perjuicios derivados del uso del Sitio o de la imposibilidad de acceso al mismo.</p>
+        </div>
+
+        <div>
+          <h2 class="font-display text-xl font-bold text-tierra mb-3">6. Enlaces a terceros</h2>
+          <p>El Sitio puede contener enlaces a sitios web de terceros. Solana Nuts no controla ni se hace responsable de los contenidos, políticas de privacidad o prácticas de dichos sitios.</p>
+        </div>
+
+        <div>
+          <h2 class="font-display text-xl font-bold text-tierra mb-3">7. Legislación aplicable y jurisdicción</h2>
+          <p>El presente Aviso Legal se rige por la legislación española. Para la resolución de cualquier controversia, las partes se someten, con renuncia a cualquier otro fuero, a los Juzgados y Tribunales de Zaragoza (España).</p>
+        </div>
+
+      </div>
+    </section>
+
+    <Footer />
+  </main>
+</Base>

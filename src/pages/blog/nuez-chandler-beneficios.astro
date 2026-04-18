@@ -1,0 +1,164 @@
+---
+import Base    from '../../layouts/Base.astro';
+import Nav     from '../../components/Nav.astro';
+import Footer  from '../../components/Footer.astro';
+import Contacto from '../../components/Contacto.astro';
+
+const title = 'Beneficios de la Nuez Chandler: qué dice la ciencia sobre comer un puñado al día';
+const description = 'Omega-3 ALA, magnesio, melatonina, polifenoles y colesterol bueno. Revisión de la evidencia científica sobre los beneficios de las nueces Chandler para el corazón, el cerebro y el sueño. Guía del productor del Bajo Aragón.';
+const keywords = 'beneficios nueces chandler, propiedades nuez chandler, nueces omega 3, nueces colesterol, nueces y sueño, nueces cerebro, puñado nueces al día';
+
+const publishedAt = '2026-02-10T08:00:00+01:00';
+const modifiedAt  = '2026-02-10T08:00:00+01:00';
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": title,
+  "description": description,
+  "datePublished": publishedAt,
+  "dateModified": modifiedAt,
+  "author": { "@type": "Organization", "name": "Solana Nuts" },
+  "publisher": { "@type": "Organization", "name": "Solana Nuts", "logo": { "@type": "ImageObject", "url": "https://solananuts.com/logo.png" } },
+  "mainEntityOfPage": "https://solananuts.com/blog/nuez-chandler-beneficios",
+  "image": "https://solananuts.com/og-default.jpg",
+  "inLanguage": "es-ES",
+  "articleSection": "Salud"
+};
+---
+<Base
+  title={title}
+  description={description}
+  keywords={keywords}
+  canonical="https://solananuts.com/blog/nuez-chandler-beneficios"
+  schema={articleSchema}
+  ogType="article"
+  publishedAt={publishedAt}
+  modifiedAt={modifiedAt}
+  breadcrumbs={[
+    { name: 'Inicio', url: '/' },
+    { name: 'Diario de la finca', url: '/blog' },
+    { name: 'Beneficios de la Nuez Chandler', url: '/blog/nuez-chandler-beneficios' }
+  ]}
+>
+  <Nav />
+  <main id="contenido">
+    <article>
+      <header class="bg-tierra text-crema py-16 lg:py-24 grano relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-nuez-dark via-corteza to-tierra" aria-hidden="true"></div>
+        <div class="container relative max-w-3xl">
+          <nav class="text-xs text-crema/60 mb-5" aria-label="Breadcrumb">
+            <a href="/" class="hover:text-almendra-light">Inicio</a><span class="mx-2">›</span>
+            <a href="/blog" class="hover:text-almendra-light">Diario</a><span class="mx-2">›</span>
+            <span class="text-almendra-light">Beneficios de la Nuez Chandler</span>
+          </nav>
+          <span class="badge badge-white">Salud · nutrición</span>
+          <h1 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-crema leading-[1.1] mt-3">
+            Beneficios de la Nuez Chandler:<br/>
+            <span class="italic text-almendra-light">qué dice la ciencia sobre comer un puñado al día</span>
+          </h1>
+          <div class="flex items-center gap-4 mt-6 text-sm text-crema/70">
+            <span>Por Solana Nuts</span><span>·</span>
+            <time datetime={publishedAt}>10 de febrero de 2026</time><span>·</span>
+            <span>6 min</span>
+          </div>
+        </div>
+      </header>
+
+      <section class="section-sm bg-crema">
+        <div class="container max-w-3xl prose-tierra">
+          <p class="text-lg leading-relaxed text-corteza">
+            La nuez es, probablemente, el fruto seco con más evidencia científica acumulada sobre sus
+            beneficios para la salud. Y dentro del universo de variedades de nuez, la <strong>Chandler</strong>
+            es la que domina el mercado mundial por calidad de gallo y sabor. Esto es lo que sabemos —
+            y lo que no sabemos aún.
+          </p>
+
+          <h2>Qué tiene un puñado (30 g) de nuez Chandler</h2>
+          <ul>
+            <li><strong>Omega-3 ALA:</strong> 2,5 g — cantidad superior a cualquier otro fruto seco.</li>
+            <li><strong>Proteína vegetal:</strong> 4,5 g de alta calidad aminoacídica.</li>
+            <li><strong>Fibra:</strong> 2 g (mezcla soluble e insoluble).</li>
+            <li><strong>Magnesio:</strong> 47 mg — un 11% de la IR diaria.</li>
+            <li><strong>Melatonina natural:</strong> la nuez es una de las pocas fuentes dietéticas.</li>
+            <li><strong>Polifenoles:</strong> especialmente ácido elágico y urolitinas — potentes antioxidantes.</li>
+          </ul>
+
+          <h2>1. Corazón: el clásico con evidencia sólida</h2>
+          <p>
+            El Ensayo PREDIMED (publicado en el New England Journal of Medicine) demostró que añadir
+            <strong>30 g al día de frutos secos — incluyendo nueces</strong> — al patrón mediterráneo
+            reduce <strong>un 30% el riesgo de evento cardiovascular grave</strong>.
+          </p>
+          <p>
+            El mecanismo es triple: ácidos grasos insaturados (-LDL colesterol), fibra (-absorción de
+            colesterol) y polifenoles (-inflamación vascular). El ALA Omega-3 juega su propio papel como
+            precursor de EPA y DHA.
+          </p>
+
+          <h2>2. Cerebro y memoria</h2>
+          <p>
+            Un estudio del <em>Journal of Alzheimer's Disease</em> (2023) siguió a 8.000 adultos mayores
+            durante 10 años y observó <strong>mejor rendimiento cognitivo</strong> en quienes consumían
+            ≥5 porciones de nuez por semana. El mecanismo propuesto: neuroprotección por polifenoles + ALA.
+          </p>
+
+          <h2>3. Sueño y melatonina</h2>
+          <p>
+            La nuez contiene melatonina en forma biodisponible. Un puñado 1–2 horas antes de dormir puede
+            ayudar a <strong>regular el ciclo circadiano</strong>, especialmente en adultos mayores con
+            sueño fragmentado. No es un somnífero — es un facilitador suave.
+          </p>
+
+          <h2>4. Microbiota intestinal</h2>
+          <p>
+            Las urolitinas (derivadas del ácido elágico por tu microbiota) tienen efecto prebiótico
+            y antiinflamatorio intestinal. Estudios recientes (2024) muestran que <strong>consumir
+            28 g de nuez al día durante 8 semanas altera positivamente la diversidad microbiana</strong>.
+          </p>
+
+          <h2>5. Control del peso (contraintuitivo)</h2>
+          <p>
+            Aunque son calóricas (654 kcal/100 g), los frutos secos <strong>no se asocian a ganancia de peso</strong>
+            cuando se consumen en porciones normales. La fibra, proteína y grasa saciante reducen el
+            apetito y parte de las calorías pasan sin absorberse (efecto "matriz de grasa").
+          </p>
+
+          <h2>¿Cuánta nuez al día?</h2>
+          <p>
+            Los estudios usan dosis de <strong>25–40 g por día</strong> (un puñado). Por encima, los beneficios se
+            estabilizan y las calorías totales pueden pesar más que la ventaja nutricional.
+          </p>
+
+          <h2>¿Qué nuez elegir? Chandler como referencia</h2>
+          <p>
+            La variedad <a href="/variedades/nuez-chandler">Chandler</a> es la más plantada del mundo por calidad
+            de gallo, pero lo que determina el perfil nutricional es <strong>la frescura y el tipo de secado</strong>.
+            Una nuez oxidada por secado industrial agresivo o por meses de almacenaje pierde ALA, vitamina E
+            y polifenoles rápidamente. Por eso elegir nuez <strong>de la cosecha del año, secada al aire y
+            con cáscara</strong> multiplica la densidad nutricional real.
+          </p>
+
+          <h2>Resumen</h2>
+          <p>
+            Un puñado de nuez Chandler al día es una de las mejores decisiones nutricionales que puedes
+            tomar: corazón, cerebro, sueño, microbiota y saciedad. Evidencia científica consistente, coste
+            modesto y sabor que además gusta.
+          </p>
+
+          <div class="mt-12 p-7 rounded-3xl bg-almendra-pale border border-arena">
+            <h3 class="font-display text-2xl font-bold text-tierra mb-3">Reserva la cosecha 2026 de Nuez Chandler</h3>
+            <p class="text-corteza/85 mb-5">
+              Nuestra Chandler se cosecha en octubre y se envía tras el secado natural. Reserva ahora y te
+              avisamos cuando esté lista.
+            </p>
+            <a href="/variedades/nuez-chandler" class="btn btn-primary">Ver la Nuez Chandler →</a>
+          </div>
+        </div>
+      </section>
+    </article>
+
+    <Contacto />
+    <Footer />
+  </main>
+</Base>

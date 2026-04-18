@@ -1,139 +1,131 @@
 ---
 ---
-<section class="relative min-h-[92vh] flex items-center overflow-hidden grain bg-soil">
+<section class="relative min-h-[94vh] flex items-center overflow-hidden grano bg-tierra" aria-label="Bienvenida">
 
-  <!-- Background gradient landscape -->
-  <div class="absolute inset-0 z-0">
-    <div class="absolute inset-0 bg-gradient-to-br from-soil via-bark/90 to-soil/95"></div>
-    <!-- Decorative orbs -->
-    <div class="absolute top-1/4 right-1/4 w-[600px] h-[600px] rounded-full bg-almond/10 blur-[100px]"></div>
-    <div class="absolute bottom-1/4 left-1/4 w-[400px] h-[400px] rounded-full bg-leaf/10 blur-[80px]"></div>
-    <!-- Subtle dot grid -->
-    <div class="absolute inset-0 opacity-[0.04]"
-         style="background-image: radial-gradient(circle, #C8965A 1px, transparent 1px); background-size: 32px 32px;"></div>
+  <div class="absolute inset-0 z-0" aria-hidden="true">
+    <div class="absolute inset-0 bg-gradient-to-br from-tierra via-corteza/95 to-tierra"></div>
+    <div class="absolute top-1/4 right-1/4 w-[620px] h-[620px] rounded-full bg-almendra/14 blur-[110px]"></div>
+    <div class="absolute bottom-1/4 left-1/4 w-[420px] h-[420px] rounded-full bg-hoja/15 blur-[90px]"></div>
+    <div class="absolute inset-0 opacity-[0.05]" style="background-image: radial-gradient(circle, #C9965B 1px, transparent 1px); background-size: 34px 34px;"></div>
   </div>
 
-  <!-- Content -->
   <div class="container relative z-10 py-24 lg:py-32">
-    <div class="grid lg:grid-cols-2 gap-16 items-center">
+    <div class="grid lg:grid-cols-[1.15fr_1fr] gap-14 items-center">
 
-      <!-- Left: copy -->
       <div>
         <div class="inline-flex items-center gap-2 badge badge-white mb-6 animate-fade-in">
-          <span>🌿</span> Family Farm · Spain · Est. 1987
+          <span aria-hidden="true">🌿</span>
+          Finca familiar · Bajo Aragón
         </div>
 
-        <h1 class="font-display text-cream font-bold mb-6 animate-fade-up" style="animation-delay:.1s">
-          <span class="block text-5xl lg:text-6xl xl:text-7xl leading-[1.05]">
-            Premium Spanish
+        <h1 class="font-display font-bold mb-6 animate-fade-up" style="animation-delay:.1s">
+          <span class="block text-cream text-[2.6rem] sm:text-5xl lg:text-[3.6rem] xl:text-[4.2rem] leading-[1.03] text-crema">
+            Tierra, sol y alma
           </span>
-          <span class="block text-5xl lg:text-6xl xl:text-7xl leading-[1.05] text-grad">
-            Almonds &amp; Walnuts
-          </span>
-          <span class="block text-5xl lg:text-6xl xl:text-7xl leading-[1.05]">
-            Direct to Europe
+          <span class="block text-[1.5rem] sm:text-2xl lg:text-[1.75rem] xl:text-[2rem] leading-[1.25] font-display italic font-medium text-almendra-light mt-3">
+            almendras &amp; nueces naturales<br class="hidden sm:inline"/>
+            directas del productor
           </span>
         </h1>
 
-        <p class="text-cream/75 text-lg lg:text-xl leading-relaxed max-w-[520px] mb-8 animate-fade-up" style="animation-delay:.22s">
-          From our family finca in Spain straight to your door. 
-          We grow <strong class="text-almond-light font-semibold">Solana</strong> &amp; 
-          <strong class="text-almond-light font-semibold">Lauranne</strong> almonds 
-          and <strong class="text-almond-light font-semibold">Chandler</strong> walnuts — 
-          no middlemen, maximum freshness, transparent origin.
+        <p class="text-crema/80 text-lg lg:text-xl leading-relaxed max-w-[560px] mb-8 animate-fade-up" style="animation-delay:.22s">
+          Cultivamos <strong class="text-almendra-light font-semibold">Almendra Soleta</strong>,
+          <strong class="text-almendra-light font-semibold">Almendra Lauranne</strong> y
+          <strong class="text-almendra-light font-semibold">Nuez Chandler</strong> en Fayón, Zaragoza.
+          Cosecha a mano, secado al aire y envase reutilizable. Del campo a tu mesa,
+          sin intermediarios.
         </p>
 
-        <!-- Trust signals -->
-        <div class="flex flex-wrap gap-4 mb-10 animate-fade-up" style="animation-delay:.32s">
+        <div class="flex flex-wrap gap-3 mb-8 animate-fade-up" style="animation-delay:.32s">
           {[
-            { icon:'🏡', text:'Our own finca' },
-            { icon:'🌍', text:'Ships to 30+ countries' },
-            { icon:'📦', text:'5kg – pallet orders' },
-            { icon:'🌱', text:'Sustainable farming' },
+            { icon:'🌱', text:'100% natural' },
+            { icon:'✋', text:'Cosecha a mano' },
+            { icon:'☀️', text:'Secado al aire' },
+            { icon:'📦', text:'Envase reutilizable' },
           ].map(t => (
-            <div class="flex items-center gap-2 bg-white/8 backdrop-blur-sm border border-white/12 rounded-full px-4 py-2 text-cream/85 text-sm font-medium">
-              <span>{t.icon}</span> {t.text}
+            <div class="flex items-center gap-2 bg-white/8 backdrop-blur-sm border border-white/15 rounded-full px-4 py-2 text-crema/90 text-sm font-medium">
+              <span aria-hidden="true">{t.icon}</span> {t.text}
             </div>
           ))}
         </div>
 
         <div class="flex flex-wrap gap-3 animate-fade-up" style="animation-delay:.42s">
-          <a href="/contact" class="btn-almond text-base">
-            Request a Free Sample
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <a href="/productos" class="btn btn-almendra text-base">
+            Ver productos
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
-          <a href="/#products" class="btn-outline !border-white/30 !text-cream hover:!bg-white/10 hover:!text-cream text-base">
-            See Our Varieties
+          <a href="/la-finca" class="btn btn-outline !border-white/30 !text-crema hover:!bg-white/10 hover:!text-crema text-base">
+            Conocer la finca
           </a>
         </div>
       </div>
 
-      <!-- Right: floating product card visual -->
       <div class="hidden lg:flex justify-center items-center relative animate-fade-up" style="animation-delay:.3s">
         <div class="relative">
-          <!-- Main card -->
-          <div class="bg-cream/10 backdrop-blur-xl border border-white/15 rounded-3xl p-8 w-[340px] shadow-warm-lg animate-float">
-            <div class="text-center mb-6">
-              <div class="text-8xl mb-3">🌰</div>
-              <div class="text-cream font-display text-2xl font-bold">This Season's Harvest</div>
-              <div class="text-almond text-sm font-semibold mt-1">2024 · Spain</div>
+          <div class="bg-crema/10 backdrop-blur-xl border border-white/15 rounded-[28px] p-7 w-[360px] shadow-warm-lg animate-float">
+            <div class="text-center mb-5">
+              <div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-almendra/20 mb-3">
+                <svg width="44" height="44" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                  <ellipse cx="24" cy="27" rx="13" ry="17" fill="#DDB17A"/>
+                  <ellipse cx="21" cy="22" rx="4" ry="7" fill="#F1DFC2" opacity=".55"/>
+                  <path d="M24 10C24 10 24 18 24 38" stroke="#8B6340" stroke-width="1.2" stroke-linecap="round" opacity=".7"/>
+                </svg>
+              </div>
+              <div class="text-crema font-display text-2xl font-bold">Cosecha 2026</div>
+              <div class="text-almendra-light text-sm font-semibold mt-1">Recién llegada · Bajo Aragón</div>
             </div>
-            <div class="space-y-3">
+            <div class="space-y-2.5">
               {[
-                { name:'Solana Almond',   var:'100% Spanish origin',     flag:'🇪🇸', avail:true  },
-                { name:'Lauranne Almond', var:'Sweet · Large kernel',     flag:'✨', avail:true  },
-                { name:'Chandler Walnut', var:'Extra light colour · Mild',flag:'🌟', avail:true  },
+                { name:'Almendra Soleta',   sub:'Dulce · Con cáscara',    tag:'Estrella' },
+                { name:'Almendra Lauranne', sub:'Cuerpo marrón claro',    tag:'Dulce'    },
+                { name:'Nuez Chandler',     sub:'Color claro · Sabor suave', tag:'Nueva' },
               ].map(p => (
-                <div class="flex items-center gap-3 bg-white/8 rounded-xl p-3.5">
-                  <span class="text-2xl">{p.flag}</span>
-                  <div class="flex-1 min-w-0">
-                    <div class="text-cream font-semibold text-sm truncate">{p.name}</div>
-                    <div class="text-cream/55 text-xs">{p.var}</div>
+                <div class="flex items-center gap-3 bg-white/8 rounded-xl p-3">
+                  <div class="w-9 h-9 rounded-full bg-almendra/30 flex items-center justify-center flex-shrink-0" aria-hidden="true">
+                    <div class="w-5 h-6 rounded-full bg-almendra-light"></div>
                   </div>
-                  <span class="flex-shrink-0 text-xs font-bold px-2 py-1 rounded-full bg-leaf/30 text-leaf-light">In stock</span>
+                  <div class="flex-1 min-w-0">
+                    <div class="text-crema font-semibold text-sm truncate">{p.name}</div>
+                    <div class="text-crema/60 text-xs">{p.sub}</div>
+                  </div>
+                  <span class="flex-shrink-0 text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded-full bg-hoja/30 text-hoja-light">{p.tag}</span>
                 </div>
               ))}
             </div>
-            <a href="/contact" class="mt-5 w-full btn-almond text-center justify-center !text-sm">
-              Order / Enquire →
+            <a href="/productos" class="mt-5 w-full btn btn-almendra text-center justify-center !text-sm !py-2.5">
+              Ver catálogo →
             </a>
           </div>
 
-          <!-- Floating badges -->
-          <div class="absolute -top-4 -left-8 bg-cream rounded-2xl px-4 py-3 shadow-warm-lg text-center">
-            <div class="font-display font-bold text-soil text-2xl leading-none">37+</div>
-            <div class="text-xs text-stone font-medium mt-0.5">years growing</div>
+          <div class="absolute -top-5 -left-8 bg-crema rounded-2xl px-4 py-3 shadow-warm-lg text-center rotate-[-6deg]">
+            <div class="font-display font-bold text-tierra text-2xl leading-none">100%</div>
+            <div class="text-xs text-piedra font-medium mt-0.5 tracking-wide">natural</div>
           </div>
-          <div class="absolute -bottom-4 -right-6 bg-leaf text-white rounded-2xl px-4 py-3 shadow-warm-lg text-center">
-            <div class="font-bold text-lg leading-none">EU certified</div>
-            <div class="text-xs opacity-80 mt-0.5">food safety</div>
+          <div class="absolute -bottom-4 -right-6 bg-hoja text-white rounded-2xl px-4 py-3 shadow-warm-lg text-center rotate-[4deg]">
+            <div class="font-bold text-sm leading-tight uppercase tracking-wide">Sin<br/>plásticos</div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Bottom stats bar -->
-    <div class="mt-16 lg:mt-20 pt-10 border-t border-white/10 grid grid-cols-2 md:grid-cols-4 gap-6 animate-fade-up" style="animation-delay:.55s">
+    <div class="mt-16 lg:mt-20 pt-8 border-t border-white/10 grid grid-cols-2 md:grid-cols-4 gap-6 animate-fade-up" style="animation-delay:.55s">
       {[
-        { num:'3',        unit:'varieties',     label:'Solana · Lauranne · Chandler' },
-        { num:'100%',     unit:'Spain origin',  label:'Grown on our own finca'       },
-        { num:'5kg–',     unit:'pallet',        label:'Any order size welcome'       },
-        { num:'30+',      unit:'countries',     label:'Shipped across Europe'        },
+        { num:'3',    label:'variedades',  sub:'Soleta · Lauranne · Chandler' },
+        { num:'100%', label:'origen España', sub:'Fayón, Bajo Aragón' },
+        { num:'0',    label:'intermediarios', sub:'Directo del productor' },
+        { num:'4.9',  label:'★ clientes',   sub:'sobre 5 — reseñas reales' },
       ].map(s => (
         <div class="text-center lg:text-left">
-          <div class="font-display text-cream font-bold text-3xl lg:text-4xl leading-none">
-            {s.num}<span class="text-almond">{s.unit !== 'varieties' && s.unit !== '100%' ? '' : ''}</span>
-          </div>
-          <div class="text-almond font-semibold text-sm mt-1">{s.unit}</div>
-          <div class="text-cream/45 text-xs mt-0.5">{s.label}</div>
+          <div class="font-display text-crema font-bold text-3xl lg:text-4xl leading-none">{s.num}</div>
+          <div class="text-almendra-light font-semibold text-sm mt-1.5">{s.label}</div>
+          <div class="text-crema/50 text-xs mt-0.5">{s.sub}</div>
         </div>
       ))}
     </div>
   </div>
 
-  <!-- Wave divider -->
-  <div class="absolute bottom-0 inset-x-0 z-10 leading-none">
-    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" class="w-full h-16 lg:h-20" fill="#FBF6EE">
+  <div class="absolute bottom-0 inset-x-0 z-10 leading-none" aria-hidden="true">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" class="w-full h-14 lg:h-20" fill="#FBF6EE">
       <path d="M0 80L80 66C160 52 320 24 480 18C640 12 800 28 960 36C1120 44 1280 42 1360 40L1440 38V80H0Z"/>
     </svg>
   </div>

@@ -1,0 +1,112 @@
+---
+import Base   from '../../layouts/Base.astro';
+import Nav    from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+
+const title = 'Diario de la finca · Blog de Solana Nuts | Almendras y nueces naturales';
+const description = 'Diario de la finca: guías de variedades de almendra, beneficios de la nuez Chandler, cómo conservar frutos secos, recetas tradicionales aragonesas y mucho más. Lectura obligada para amantes del fruto seco natural.';
+const keywords = 'blog almendras, blog frutos secos españa, recetas almendra, beneficios nueces, diferencia almendra soleta lauranne, consejos conservación frutos secos';
+
+const posts = [
+  {
+    slug: '/blog/almendra-espanola-vs-californiana',
+    titulo: 'Almendra española vs. californiana: 7 diferencias que notas al probarlas',
+    extracto: 'Sabor, aceites, cáscara, fumigación, trazabilidad, huella de CO₂ y precio. La guía definitiva para saber qué estás comprando realmente.',
+    fecha: '2026-03-15',
+    categoria: 'Guías',
+    leer: '9 min',
+    color: 'from-almendra to-nuez',
+  },
+  {
+    slug: '/blog/almendra-soleta-vs-lauranne',
+    titulo: 'Almendra Soleta vs Lauranne: ¿cuál compro y para qué?',
+    extracto: 'Las dos son españolas, las dos autofértiles, las dos dulces. Pero son muy distintas en sabor, forma y uso. Aquí va la comparativa honesta.',
+    fecha: '2026-02-28',
+    categoria: 'Variedades',
+    leer: '7 min',
+    color: 'from-sol to-almendra',
+  },
+  {
+    slug: '/blog/nuez-chandler-beneficios',
+    titulo: 'Beneficios de la Nuez Chandler: por qué es el fruto seco estrella',
+    extracto: 'Omega-3, magnesio, melatonina, polifenoles y colesterol bueno. Qué dice la ciencia sobre comer un puñado de nueces al día.',
+    fecha: '2026-02-10',
+    categoria: 'Salud',
+    leer: '6 min',
+    color: 'from-nuez-dark to-corteza',
+  },
+  {
+    slug: '/blog/almendras-bajo-aragon-terruno',
+    titulo: 'El Bajo Aragón, terruño de almendra: por qué aquí saben distinto',
+    extracto: 'Sol, cierzo, noches frescas, suelos calizos. La agronomía que explica por qué la almendra aragonesa es única.',
+    fecha: '2026-01-22',
+    categoria: 'Terruño',
+    leer: '5 min',
+    color: 'from-corteza to-tierra',
+  },
+  {
+    slug: '/blog/como-conservar-frutos-secos',
+    titulo: 'Cómo conservar almendras y nueces para que duren un año',
+    extracto: 'Con cáscara, peladas, en congelador, al vacío. Todo lo que tienes que saber para que tus frutos secos no pierdan frescura.',
+    fecha: '2026-01-08',
+    categoria: 'Consejos',
+    leer: '4 min',
+    color: 'from-oliva to-hoja',
+  },
+];
+---
+<Base
+  title={title}
+  description={description}
+  keywords={keywords}
+  breadcrumbs={[
+    { name: 'Inicio', url: '/' },
+    { name: 'Diario de la finca', url: '/blog' }
+  ]}
+>
+  <Nav />
+  <main id="contenido">
+    <section class="bg-tierra text-crema py-16 lg:py-24 grano relative overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-br from-tierra via-corteza/95 to-tierra" aria-hidden="true"></div>
+      <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-almendra/15 rounded-full blur-3xl" aria-hidden="true"></div>
+      <div class="container relative">
+        <nav class="text-xs text-crema/60 mb-4" aria-label="Breadcrumb">
+          <a href="/" class="hover:text-almendra-light">Inicio</a><span class="mx-2">›</span>
+          <span class="text-almendra-light">Diario de la finca</span>
+        </nav>
+        <span class="badge badge-white">Blog · actualizado cada mes</span>
+        <h1 class="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-crema leading-[1.05] max-w-3xl mt-3">
+          Diario de <span class="italic text-almendra-light">la finca</span>
+        </h1>
+        <p class="text-crema/80 text-lg max-w-2xl mt-5">
+          Guías, variedades, ciencia de la nutrición, terruño y recetas. Escrito en la finca por
+          quien cosecha las almendras — no por agencias de contenidos.
+        </p>
+      </div>
+    </section>
+
+    <section class="section bg-crema">
+      <div class="container">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {posts.map((p, i) => (
+            <a href={p.slug} class="group bg-arena-light rounded-3xl overflow-hidden border border-arena hover:border-almendra hover:shadow-warm transition-all duration-400 hover:-translate-y-1 flex flex-col" data-reveal data-d={String(Math.min(i+1, 6))}>
+              <div class={`aspect-[16/10] bg-gradient-to-br ${p.color} grano relative`}>
+                <span class="absolute top-4 left-4 bg-crema text-tierra text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full">{p.categoria}</span>
+              </div>
+              <div class="p-6 flex-1 flex flex-col">
+                <h2 class="font-display text-lg md:text-xl font-bold text-tierra leading-snug mb-3 group-hover:text-almendra transition-colors">{p.titulo}</h2>
+                <p class="text-sm text-corteza/80 leading-relaxed flex-1">{p.extracto}</p>
+                <div class="flex items-center justify-between pt-4 mt-4 border-t border-arena text-xs text-piedra">
+                  <time datetime={p.fecha}>{new Date(p.fecha).toLocaleDateString('es-ES', { day:'numeric', month:'long', year:'numeric' })}</time>
+                  <span>{p.leer}</span>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <Footer />
+  </main>
+</Base>

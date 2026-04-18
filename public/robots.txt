@@ -1,4 +1,23 @@
+# robots.txt · solananuts.com
+# Finca familiar de almendras y nueces · Fayón, Bajo Aragón
+
 User-agent: *
 Allow: /
 
+# Bloquear páginas sin valor SEO
+Disallow: /api/
+Disallow: /_astro/
+
+# Crawl-delay para bots agresivos
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+User-agent: DotBot
+Crawl-delay: 10
+
+# Sitemaps
 Sitemap: https://solananuts.com/sitemap-index.xml
+Sitemap: https://solananuts.com/sitemap-0.xml

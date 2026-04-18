@@ -1,0 +1,215 @@
+---
+import Base    from '../../layouts/Base.astro';
+import Nav     from '../../components/Nav.astro';
+import Footer  from '../../components/Footer.astro';
+import Contacto from '../../components/Contacto.astro';
+
+const title = 'Cómo conservar almendras y nueces para que duren un año sin perder sabor';
+const description = 'Guía definitiva de conservación de frutos secos: con cáscara, pelados, en congelador, al vacío. Temperatura, humedad y recipientes ideales para que almendras y nueces mantengan el sabor, el aceite y los nutrientes durante 12 meses.';
+const keywords = 'como conservar almendras, como conservar nueces, conservar frutos secos, almendras peladas conservacion, nueces congelador, conservar almendras con cascara, frutos secos duran cuanto tiempo';
+
+const publishedAt = '2026-01-08T08:00:00+01:00';
+const modifiedAt  = '2026-01-08T08:00:00+01:00';
+
+const faqItems = [
+  { q: '¿Cuánto tiempo duran las almendras con cáscara?', a: 'En un lugar fresco, seco y oscuro, las almendras con cáscara conservan su sabor y aceites durante 12–18 meses. La cáscara actúa como barrera natural contra la oxidación.' },
+  { q: '¿Se pueden congelar las nueces?', a: 'Sí, perfectamente. El gallo de nuez en bolsa hermética aguanta 12 meses en el congelador sin cambiar de sabor ni textura. No hace falta descongelar: a temperatura ambiente recuperan la textura en 15 minutos.' },
+  { q: '¿Por qué mis almendras peladas saben a rancio?', a: 'El aceite de la almendra (principalmente ácido oleico) se oxida al contacto con el oxígeno y la luz. La causa más frecuente es guardarlas en recipiente abierto o al sol. Solución: tarro hermético, oscuro y fresco.' },
+  { q: '¿Se pueden guardar almendras y nueces juntas?', a: 'Mejor por separado. Las nueces tienen más ALA Omega-3 y se oxidan más rápido; pueden transmitir aromas a las almendras si se guardan juntas en recipiente abierto.' },
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": title,
+  "description": description,
+  "datePublished": publishedAt,
+  "dateModified": modifiedAt,
+  "author": { "@type": "Organization", "name": "Solana Nuts", "url": "https://solananuts.com" },
+  "publisher": { "@type": "Organization", "name": "Solana Nuts", "logo": { "@type": "ImageObject", "url": "https://solananuts.com/logo.png" } },
+  "mainEntityOfPage": "https://solananuts.com/blog/como-conservar-frutos-secos",
+  "image": "https://solananuts.com/og-default.jpg",
+  "inLanguage": "es-ES",
+  "articleSection": "Consejos",
+  "keywords": keywords,
+  "wordCount": 900
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqItems.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a }
+  }))
+};
+---
+<Base
+  title={title}
+  description={description}
+  keywords={keywords}
+  canonical="https://solananuts.com/blog/como-conservar-frutos-secos"
+  schema={[articleSchema, faqSchema]}
+  ogType="article"
+  publishedAt={publishedAt}
+  modifiedAt={modifiedAt}
+  breadcrumbs={[
+    { name: 'Inicio', url: '/' },
+    { name: 'Diario de la finca', url: '/blog' },
+    { name: 'Cómo conservar frutos secos', url: '/blog/como-conservar-frutos-secos' }
+  ]}
+>
+  <Nav />
+  <main id="contenido">
+    <article>
+      <header class="bg-tierra text-crema py-16 lg:py-24 grano relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-oliva via-hoja/80 to-tierra" aria-hidden="true"></div>
+        <div class="container relative max-w-3xl">
+          <nav class="text-xs text-crema/60 mb-5" aria-label="Breadcrumb">
+            <a href="/" class="hover:text-almendra-light">Inicio</a><span class="mx-2">›</span>
+            <a href="/blog" class="hover:text-almendra-light">Diario</a><span class="mx-2">›</span>
+            <span class="text-almendra-light">Conservar frutos secos</span>
+          </nav>
+          <span class="badge badge-white">Consejos · conservación</span>
+          <h1 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-crema leading-[1.1] mt-3">
+            Cómo conservar almendras y nueces<br/>
+            <span class="italic text-almendra-light">para que duren un año sin perder sabor</span>
+          </h1>
+          <div class="flex items-center gap-4 mt-6 text-sm text-crema/70">
+            <span>Por Solana Nuts</span><span aria-hidden="true">·</span>
+            <time datetime={publishedAt}>8 de enero de 2026</time><span aria-hidden="true">·</span>
+            <span>4 min de lectura</span>
+          </div>
+        </div>
+      </header>
+
+      <section class="section-sm bg-crema">
+        <div class="container max-w-3xl prose-tierra">
+
+          <p class="text-lg leading-relaxed text-corteza">
+            Una buena almendra o una nuez recién cosechada puede arruinarse en semanas si se guarda mal.
+            El enemigo es siempre el mismo: <strong>oxígeno + calor + luz</strong>. Esta guía te da las
+            reglas exactas para que tus frutos secos estén igual de buenos el primer día que el último.
+          </p>
+
+          <h2>La regla de oro: oscuridad, frío y sin oxígeno</h2>
+          <p>
+            El aceite de los frutos secos (oleico en la almendra, ALA Omega-3 en la nuez) se oxida por
+            la acción del oxígeno, el calor y la luz UV. La oxidación genera compuestos aldehídos que
+            huelen a "rancio" y destruyen vitamina E y polifenoles. Para evitarlo:
+          </p>
+          <ul>
+            <li><strong>Temperatura:</strong> por debajo de 15–18 ºC es lo ideal. Por debajo de 5 ºC aún mejor.</li>
+            <li><strong>Humedad relativa:</strong> máximo 60–65%. Por encima, riesgo de hongos.</li>
+            <li><strong>Luz:</strong> cero exposición solar directa. Los tarros de vidrio transparente en la encimera son el peor escenario.</li>
+            <li><strong>Oxígeno:</strong> recipiente hermético siempre. El zip reutilizable está bien; el vacío, mejor.</li>
+          </ul>
+
+          <h2>Almendras con cáscara: lo más fácil</h2>
+          <p>
+            La cáscara es la mejor envoltura natural que existe. Una almendra Soleta con cáscara dura
+            bien cerrada actúa como cápsula hermética. Sólo necesitas:
+          </p>
+          <ul>
+            <li>Una bolsa de tela natural (como la nuestra) o una caja de cartón.</li>
+            <li>Un lugar fresco, seco y oscuro: despensa, bodega, garaje.</li>
+            <li><strong>Duración: 12–18 meses</strong> sin pérdida perceptible de sabor.</li>
+          </ul>
+          <p>
+            No hace falta nevera. No hace falta vacío. La cáscara hace el trabajo.
+          </p>
+
+          <h2>Almendras peladas</h2>
+          <p>
+            Una vez pelada, la almendra está expuesta al ambiente. Las opciones, de peor a mejor:
+          </p>
+          <ol>
+            <li><strong>Bolsa zip en despensa:</strong> 2–3 meses a temperatura ambiente (20–22 ºC).</li>
+            <li><strong>Tarro de vidrio hermético en nevera:</strong> 4–6 meses. El frío de la nevera (2–4 ºC) ralentiza la oxidación del aceite.</li>
+            <li><strong>Bolsa zip en congelador (–18 ºC):</strong> 12 meses. La almendra pelada congelada sale perfecta — no hay que descongelarla para tomar en snack.</li>
+          </ol>
+
+          <h2>Gallo de nuez (nuez pelada)</h2>
+          <p>
+            La nuez tiene un 9 g de ALA Omega-3 por 100 g — el ácido graso más oxidable de todos los
+            frutos secos. Su vida útil es más corta que la almendra:
+          </p>
+          <ul>
+            <li><strong>Temperatura ambiente:</strong> 4–6 semanas. Más tiempo, empieza a amargar.</li>
+            <li><strong>Nevera en tarro hermético:</strong> 2–3 meses. La opción más práctica si consumes regularmente.</li>
+            <li><strong>Congelador:</strong> 12 meses. El congelador es el mejor amigo del gallo de nuez. Descongela en 10–15 minutos.</li>
+          </ul>
+          <blockquote>
+            Consejo de finca: compramos el gallo en otoño, dividimos en bolsas de 200 g y al congelador.
+            Sacamos una bolsa cada 3–4 semanas. Siempre fresco.
+          </blockquote>
+
+          <h2>Nuez con cáscara</h2>
+          <p>
+            Similar a la almendra: la cáscara protege. La nuez Chandler con cáscara dura bien
+            6–9 meses en lugar fresco y oscuro. Después empieza a perder la humedad natural de la
+            pepita y el sabor se aplana.
+          </p>
+
+          <h2>¿Cómo saber si un fruto seco se ha puesto rancio?</h2>
+          <p>
+            La prueba es sensorial y tarda 5 segundos:
+          </p>
+          <ol>
+            <li><strong>Huele:</strong> el aceite rancio huele a cera, a plastilina o a pintura. Si la hueles antes de verla, ya sabes.</li>
+            <li><strong>Muerde:</strong> sabor amargo persistente, no el amargo suave de los polifenoles sino un amargo ácido que queda en la garganta.</li>
+            <li><strong>Mira:</strong> manchas grisáceas o textura viscosa son señal de humedad y posible moho — tírala sin dudarlo.</li>
+          </ol>
+
+          <h2>Tabla resumen</h2>
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm border-collapse">
+              <thead>
+                <tr class="bg-tierra text-crema">
+                  <th class="text-left px-4 py-3 font-semibold">Producto</th>
+                  <th class="px-4 py-3 font-semibold">Despensa</th>
+                  <th class="px-4 py-3 font-semibold">Nevera</th>
+                  <th class="px-4 py-3 font-semibold">Congelador</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="bg-arena-light"><td class="px-4 py-3 font-semibold">Almendra con cáscara</td><td class="px-4 py-3 text-center">12–18 meses</td><td class="px-4 py-3 text-center">—</td><td class="px-4 py-3 text-center">—</td></tr>
+                <tr class="bg-arena"><td class="px-4 py-3 font-semibold">Almendra pelada</td><td class="px-4 py-3 text-center">2–3 meses</td><td class="px-4 py-3 text-center">4–6 meses</td><td class="px-4 py-3 text-center">12 meses</td></tr>
+                <tr class="bg-arena-light"><td class="px-4 py-3 font-semibold">Nuez con cáscara</td><td class="px-4 py-3 text-center">6–9 meses</td><td class="px-4 py-3 text-center">—</td><td class="px-4 py-3 text-center">—</td></tr>
+                <tr class="bg-arena"><td class="px-4 py-3 font-semibold">Gallo de nuez</td><td class="px-4 py-3 text-center">4–6 semanas</td><td class="px-4 py-3 text-center">2–3 meses</td><td class="px-4 py-3 text-center">12 meses</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2>Preguntas frecuentes sobre conservación</h2>
+          <div class="space-y-6 mt-4">
+            {faqItems.map(f => (
+              <div>
+                <h3 class="font-semibold text-tierra text-base mb-2">{f.q}</h3>
+                <p class="text-corteza/85 text-sm leading-relaxed">{f.a}</p>
+              </div>
+            ))}
+          </div>
+
+          <div class="mt-12 p-7 rounded-3xl bg-almendra-pale border border-arena">
+            <div class="text-xs font-bold uppercase tracking-wider text-almendra mb-2">Cosecha 2026</div>
+            <h3 class="font-display text-2xl font-bold text-tierra mb-3">Compra con cáscara, conserva sin esfuerzo</h3>
+            <p class="text-corteza/85 mb-5">
+              Nuestras almendras y nueces se envían con cáscara por defecto — la mejor protección natural.
+              Si quieres el gallo, te lo enviamos en bolsa hermética sellada al vacío.
+            </p>
+            <div class="flex flex-wrap gap-3">
+              <a href="/productos" class="btn btn-primary">Ver todos los productos →</a>
+              <a href="/preguntas-frecuentes" class="btn btn-outline">Más preguntas frecuentes</a>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </article>
+
+    <Contacto />
+    <Footer />
+  </main>
+</Base>

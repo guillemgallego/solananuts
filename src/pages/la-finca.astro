@@ -1,0 +1,137 @@
+---
+import Base    from '../layouts/Base.astro';
+import Nav     from '../components/Nav.astro';
+import Marquee from '../components/Marquee.astro';
+import Testimonios from '../components/Testimonios.astro';
+import Footer  from '../components/Footer.astro';
+
+const title = 'La finca · Fayón, Bajo Aragón | Solana Nuts';
+const description = 'Conoce Solana Nuts — finca familiar de almendras y nueces en Fayón (Bajo Aragón). Cultivo en secano, cosecha a mano, secado al aire. La historia detrás de cada fruto, del campo a tu mesa.';
+const keywords = 'solana nuts finca, almendras fayón, finca almendras bajo aragón, agricultura familiar zaragoza, productor almendras españa, historia solana nuts, cultivo almendras secano aragón';
+
+const hitos = [
+  { year: '1987', title: 'Plantación del primer almendro', text: 'La familia compra la finca en Fayón y planta los primeros árboles en secano tradicional.' },
+  { year: '1998', title: 'Ampliación de nogales', text: 'Se incorporan los primeros nogales Chandler, pioneros en el Bajo Aragón.' },
+  { year: '2015', title: 'Variedades Soleta y Lauranne', text: 'Renovación con variedades seleccionadas por el CITA Zaragoza y el INRA francés.' },
+  { year: '2022', title: 'Envase reutilizable', text: 'Eliminamos el plástico. Todo el envasado pasa a algodón y kraft — reutilizable.' },
+  { year: '2026', title: 'Solana Nuts al consumidor final', text: 'Lanzamos la marca y la tienda online: del campo a tu mesa, sin intermediarios.' },
+];
+---
+<Base
+  title={title}
+  description={description}
+  keywords={keywords}
+  breadcrumbs={[
+    { name: 'Inicio', url: '/' },
+    { name: 'La finca', url: '/la-finca' }
+  ]}
+>
+  <Nav />
+  <main id="contenido">
+
+    <section class="bg-tierra text-crema py-20 lg:py-28 grano relative overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-br from-tierra via-corteza/95 to-tierra" aria-hidden="true"></div>
+      <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-almendra/15 rounded-full blur-3xl" aria-hidden="true"></div>
+      <div class="container relative">
+        <nav class="text-xs text-crema/60 mb-5" aria-label="Breadcrumb">
+          <a href="/" class="hover:text-almendra-light">Inicio</a><span class="mx-2">›</span>
+          <span class="text-almendra-light">La finca</span>
+        </nav>
+        <span class="badge badge-white">Fayón · Bajo Aragón</span>
+        <h1 class="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-crema leading-[1.05] max-w-4xl mt-3">
+          La finca que nos enseñó a <span class="italic text-almendra-light">mirar el sol</span>
+        </h1>
+        <p class="text-crema/80 text-lg max-w-2xl mt-5">
+          Somos una finca familiar en el corazón del Bajo Aragón. Aquí crecen nuestros almendros y
+          nogales — y también crecimos nosotros. Esta es nuestra historia.
+        </p>
+      </div>
+    </section>
+
+    <Marquee />
+
+    <!-- Historia -->
+    <section class="section bg-crema">
+      <div class="container">
+        <div class="grid lg:grid-cols-[1fr_1.15fr] gap-14 items-center">
+          <div class="grid grid-cols-2 gap-4" data-reveal>
+            <div class="space-y-4">
+              <div class="aspect-[3/4] rounded-3xl bg-gradient-to-br from-almendra via-sol to-nuez shadow-warm grano"></div>
+              <div class="aspect-square rounded-3xl bg-gradient-to-br from-hoja-dark via-hoja to-oliva shadow-warm grano"></div>
+            </div>
+            <div class="space-y-4 pt-8">
+              <div class="aspect-square rounded-3xl bg-gradient-to-br from-corteza via-tierra to-nuez-dark shadow-warm grano"></div>
+              <div class="aspect-[3/4] rounded-3xl bg-gradient-to-br from-sol via-almendra-light to-almendra shadow-warm grano"></div>
+            </div>
+          </div>
+
+          <div data-reveal data-d="2">
+            <span class="kicker">Nuestra historia</span>
+            <h2 class="font-display text-3xl md:text-4xl font-bold text-tierra leading-tight">
+              Tres décadas cuidando la misma <span class="text-grad">tierra</span>
+            </h2>
+            <p class="text-corteza/85 text-lg leading-relaxed mt-5">
+              En 1987 la familia plantó los primeros almendros en Fayón — un pueblo a orillas del Ebro, en
+              el corazón del Bajo Aragón. Entonces lo normal era vender todo al mayorista y desaparecer.
+            </p>
+            <p class="text-corteza/85 leading-relaxed mt-4">
+              Nosotros quisimos hacer lo contrario: conservar cada etapa, no crecer más de lo que podamos
+              cosechar a mano, y hablar directamente con quien va a comer nuestra almendra. Eso es Solana
+              Nuts. No una marca, una finca con una familia detrás.
+            </p>
+            <blockquote class="mt-6 pl-5 border-l-4 border-almendra italic font-display text-xl text-corteza">
+              "El mejor envase es el que se reutiliza. El mejor fruto, el que nace sin prisa."
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Línea de tiempo -->
+    <section class="section bg-arena-light">
+      <div class="container max-w-4xl">
+        <div class="text-center mb-14" data-reveal>
+          <span class="kicker">Línea de tiempo</span>
+          <h2 class="font-display text-3xl md:text-4xl font-bold text-tierra leading-tight">
+            Los momentos que nos <span class="text-grad">hicieron Solana</span>
+          </h2>
+        </div>
+        <ol class="space-y-6">
+          {hitos.map((h, i) => (
+            <li class="grid grid-cols-[auto_1fr] gap-6 items-start" data-reveal data-d={String(Math.min(i+1, 6))}>
+              <div class="flex flex-col items-center flex-shrink-0">
+                <div class="w-16 h-16 rounded-full bg-tierra text-crema font-display font-bold text-lg flex items-center justify-center shadow-warm">{h.year}</div>
+                {i < hitos.length - 1 && <div class="w-0.5 h-14 bg-arena mt-2"></div>}
+              </div>
+              <div class="pt-3">
+                <h3 class="font-display text-xl md:text-2xl font-bold text-tierra">{h.title}</h3>
+                <p class="text-corteza/80 mt-2 leading-relaxed">{h.text}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
+
+    <!-- Valores -->
+    <section class="section bg-crema">
+      <div class="container">
+        <div class="grid md:grid-cols-3 gap-6">
+          {[
+            { t: 'Una sola finca', d: 'Todo lo que vendemos crece aquí. Sin mezclas, sin orígenes inciertos, sin trampa.' },
+            { t: 'Cosecha a mano', d: 'Árbol por árbol. Sin máquinas que golpean la madera ni mermas en la calidad.' },
+            { t: 'Secado al aire', d: 'Al sol y al viento del cierzo. Como se hacía antes. Sin secadoras industriales.' },
+          ].map((v, i) => (
+            <div class="bg-arena-light rounded-3xl p-7 border border-arena" data-reveal data-d={String(i+1)}>
+              <h3 class="font-display text-xl font-bold text-tierra mb-3">{v.t}</h3>
+              <p class="text-corteza/80 leading-relaxed">{v.d}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <Testimonios />
+    <Footer />
+  </main>
+</Base>

@@ -1,0 +1,107 @@
+---
+const productos = [
+  {
+    nombre: 'Almendra Soleta con cáscara · 1 kg',
+    slug: '/variedades/almendra-soleta',
+    precio: '5,90 €',
+    etiqueta: 'Más vendido',
+    variedad: 'Soleta',
+    descripcion: 'Variedad aragonesa (CITA Zaragoza), floración tardía y pepita elíptica de sabor dulce. La estrella de nuestra finca.',
+    tags: ['Dulce', 'Con cáscara', 'Cosecha 2026'],
+    gradient: 'from-almendra via-almendra-light to-sol-light',
+  },
+  {
+    nombre: 'Almendra Soleta con cáscara · 5 kg',
+    slug: '/variedades/almendra-soleta',
+    precio: '24,90 €',
+    etiqueta: 'Mejor precio',
+    variedad: 'Soleta',
+    descripcion: 'Formato familiar o para pequeña repostería. Envase reutilizable de algodón y kraft, sin plásticos añadidos.',
+    tags: ['Formato 5 kg', 'Sin plásticos', 'Ahorro 15%'],
+    gradient: 'from-sol via-almendra to-nuez',
+  },
+  {
+    nombre: 'Almendra Lauranne con cáscara',
+    slug: '/variedades/almendra-lauranne',
+    precio: 'Próximamente',
+    etiqueta: 'Cosecha limitada',
+    variedad: 'Lauranne',
+    descripcion: 'Pepita alargada, corazón marrón claro y sabor 100% dulce. Su piel permanece intacta al hornear — favorita de panaderos.',
+    tags: ['Alargada', 'Dulce', 'Repostería'],
+    gradient: 'from-almendra-light via-almendra to-corteza',
+  },
+  {
+    nombre: 'Nuez Chandler con cáscara',
+    slug: '/variedades/nuez-chandler',
+    precio: 'Próximamente',
+    etiqueta: 'Color extra claro',
+    variedad: 'Chandler',
+    descripcion: 'La nuez #1 del mundo: cáscara fina, gallo extra claro y sabor suave sin amargor. Rendimiento 45–50%.',
+    tags: ['Color claro', 'Suave', 'Rendimiento 50%'],
+    gradient: 'from-nuez-dark via-corteza to-nuez',
+  },
+];
+---
+<section id="productos" class="section bg-arena-light grano relative" aria-labelledby="productos-heading">
+  <div class="container relative">
+    <div class="text-center max-w-2xl mx-auto mb-14" data-reveal>
+      <span class="kicker">Nuestros frutos</span>
+      <h2 id="productos-heading" class="font-display text-4xl md:text-5xl font-bold text-tierra mb-5 leading-[1.1]">
+        Variedades de <span class="text-grad">almendra y nuez</span> cultivadas en Fayón
+      </h2>
+      <p class="text-corteza/80 text-lg">
+        Tres variedades, una sola promesa: <strong class="text-tierra">100% natural, del productor a tu mesa</strong>. Cosecha limitada cada año, envío a toda España y Europa.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-5 lg:gap-6">
+      {productos.map((p, i) => (
+        <article class="group bg-crema rounded-3xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-400 hover:-translate-y-1 border border-arena flex flex-col" data-reveal data-d={String(Math.min(i+1, 4))}>
+          <div class={`relative aspect-[5/4] bg-gradient-to-br ${p.gradient} overflow-hidden grano`}>
+            <div class="absolute inset-0 flex items-center justify-center" aria-hidden="true">
+              {p.variedad === 'Chandler' ? (
+                <svg width="130" height="130" viewBox="0 0 140 140" fill="none">
+                  <circle cx="70" cy="70" r="52" fill="#F1DFC2" opacity=".9"/>
+                  <path d="M70 30C55 38 45 50 45 70c0 18 9 32 25 38 16-6 25-20 25-38 0-20-10-32-25-40z" fill="#8B6340"/>
+                  <path d="M70 30v78M50 45c8 5 12 15 12 25s-4 18-10 25M90 45c-8 5-12 15-12 25s4 18 10 25" stroke="#5C3A1E" stroke-width="1.6" fill="none" opacity=".75"/>
+                </svg>
+              ) : (
+                <svg width="120" height="140" viewBox="0 0 120 140" fill="none">
+                  <ellipse cx="60" cy="75" rx="34" ry="48" fill="#F1DFC2"/>
+                  <ellipse cx="50" cy="60" rx="10" ry="18" fill="#FBF6EE" opacity=".5"/>
+                  <path d="M60 28C60 28 60 58 60 120" stroke="#8B6340" stroke-width="1.6" opacity=".55"/>
+                </svg>
+              )}
+            </div>
+            <div class="absolute top-3 left-3 bg-crema text-tierra text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full shadow-sm">
+              {p.etiqueta}
+            </div>
+            <div class="absolute bottom-3 right-3 bg-tierra/85 backdrop-blur text-crema text-xs font-semibold px-3 py-1.5 rounded-full">
+              {p.precio}
+            </div>
+          </div>
+          <div class="p-5 lg:p-6 flex-1 flex flex-col">
+            <div class="text-[11px] font-bold uppercase tracking-[.16em] text-almendra mb-2">Variedad {p.variedad}</div>
+            <h3 class="font-display text-lg lg:text-xl font-bold text-tierra mb-3 leading-snug">{p.nombre}</h3>
+            <p class="text-sm text-corteza/80 leading-relaxed mb-4 flex-1">{p.descripcion}</p>
+            <div class="flex flex-wrap gap-1.5 mb-5">
+              {p.tags.map(tag => (
+                <span class="text-[10px] font-semibold uppercase tracking-wide px-2 py-1 rounded-full bg-arena text-corteza">{tag}</span>
+              ))}
+            </div>
+            <a href={p.slug} class="btn btn-outline !py-2.5 !px-5 !text-sm justify-center">
+              Ver detalle
+            </a>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <div class="mt-12 text-center" data-reveal>
+      <a href="/productos" class="btn btn-almendra">
+        Ver todo el catálogo
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </div>
+</section>

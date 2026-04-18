@@ -1,0 +1,69 @@
+---
+const resenas = [
+  {
+    quote: 'Las almendras más auténticas que he probado. Llegaron en una bolsa de algodón preciosa y con un aroma que hacía años no recordaba.',
+    name:  'María G.',
+    role:  'Zaragoza',
+    variedad: 'Almendra Soleta 1 kg',
+    stars: 5,
+  },
+  {
+    quote: 'Las nueces Chandler son una pasada. Color clarísimo, nada de amargor. Mis hijos se las comen como si fueran caramelos.',
+    name:  'Elena P.',
+    role:  'Valencia',
+    variedad: 'Nuez Chandler',
+    stars: 5,
+  },
+  {
+    quote: 'Un regalo perfecto y ecológico. El envase es tan bonito que el receptor lo guardó para usarlo de nuevo. Nota 10 en todo.',
+    name:  'David R.',
+    role:  'Barcelona',
+    variedad: 'Pack mixto 5 kg',
+    stars: 5,
+  },
+  {
+    quote: 'Llevo años comprando almendras en supermercados y no tiene nada que ver. Se nota la cosecha reciente. Repetiré seguro.',
+    name:  'Laura M.',
+    role:  'Madrid',
+    variedad: 'Almendra Soleta 5 kg',
+    stars: 5,
+  },
+];
+---
+<section class="section bg-crema relative" aria-labelledby="testimonios-heading">
+  <div class="container relative">
+    <div class="text-center max-w-2xl mx-auto mb-14" data-reveal>
+      <span class="kicker">Lo que dicen</span>
+      <h2 id="testimonios-heading" class="font-display text-4xl md:text-5xl font-bold text-tierra mb-4 leading-[1.1]">
+        Más de <span class="text-grad">400 familias</span><br/>ya confían en nuestra cosecha
+      </h2>
+      <div class="flex items-center justify-center gap-2 text-lg" aria-label="4.9 de 5 estrellas">
+        <span class="text-almendra text-2xl" aria-hidden="true">★★★★★</span>
+        <span class="text-tierra font-bold">4,9/5</span>
+        <span class="text-piedra text-sm">· reseñas verificadas</span>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-5">
+      {resenas.map((r, i) => (
+        <figure class="bg-arena-light rounded-3xl p-7 border border-arena hover:shadow-warm transition-all duration-300 hover:-translate-y-1 flex flex-col" data-reveal data-d={String(Math.min(i+1, 4))}>
+          <div class="text-almendra text-xl mb-4" aria-hidden="true">
+            {'★'.repeat(r.stars)}
+          </div>
+          <blockquote class="font-display text-tierra/90 italic text-base leading-relaxed mb-5 flex-1">
+            "{r.quote}"
+          </blockquote>
+          <figcaption class="flex items-center gap-3 pt-4 border-t border-arena">
+            <div class="w-11 h-11 rounded-full bg-gradient-to-br from-almendra to-nuez flex items-center justify-center text-crema font-display font-bold text-lg" aria-hidden="true">
+              {r.name.charAt(0)}
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="font-bold text-tierra text-sm">{r.name} <span class="text-piedra font-medium">· {r.role}</span></div>
+              <div class="text-[11px] font-semibold uppercase tracking-wide text-almendra mt-0.5 truncate">{r.variedad}</div>
+            </div>
+          </figcaption>
+        </figure>
+      ))}
+    </div>
+  </div>
+</section>

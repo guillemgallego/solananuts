@@ -1,0 +1,183 @@
+---
+import Base     from '../layouts/Base.astro';
+import Nav      from '../components/Nav.astro';
+import Marquee  from '../components/Marquee.astro';
+import FAQ      from '../components/FAQ.astro';
+import Footer   from '../components/Footer.astro';
+
+const title       = 'Productos · Almendras y nueces naturales | Solana Nuts';
+const description = 'Catálogo completo: Almendra Soleta 1 kg y 5 kg, Almendra Lauranne y Nuez Chandler. Frutos secos naturales del Bajo Aragón, directo del productor. Envase reutilizable, envío a toda España y Europa.';
+const keywords    = 'comprar almendras online, almendra soleta 1kg, almendra soleta 5kg, almendra lauranne comprar, nuez chandler comprar, almendras con cáscara, nueces del productor, almendras bajo aragón, frutos secos naturales españa';
+
+const productos = [
+  {
+    slug: '/variedades/almendra-soleta',
+    titulo: 'Almendra Soleta con cáscara · 1 kg',
+    variedad: 'Soleta',
+    precio: '5,90 €',
+    etiqueta: 'Más vendido',
+    sabor: 'Dulce, aromática',
+    uso: 'A granel, snack, repostería',
+    origen: 'Fayón, Bajo Aragón',
+    cosecha: 'Septiembre–octubre 2026',
+    gradient: 'from-almendra via-almendra-light to-sol-light',
+    tags: ['100% natural', 'Cosecha a mano', 'Secado al aire'],
+  },
+  {
+    slug: '/variedades/almendra-soleta',
+    titulo: 'Almendra Soleta con cáscara · 5 kg',
+    variedad: 'Soleta',
+    precio: '24,90 €',
+    etiqueta: 'Ahorra 15%',
+    sabor: 'Dulce, aromática',
+    uso: 'Familiar, pequeña pastelería',
+    origen: 'Fayón, Bajo Aragón',
+    cosecha: 'Septiembre–octubre 2026',
+    gradient: 'from-sol via-almendra to-nuez',
+    tags: ['Envase algodón', 'Sin plásticos', 'Formato ahorro'],
+  },
+  {
+    slug: '/variedades/almendra-lauranne',
+    titulo: 'Almendra Lauranne con cáscara',
+    variedad: 'Lauranne',
+    precio: 'Próximamente',
+    etiqueta: 'Cosecha limitada',
+    sabor: '100% dulce, suave',
+    uso: 'Panadería, repostería fina',
+    origen: 'Fayón, Bajo Aragón',
+    cosecha: 'Octubre 2026',
+    gradient: 'from-almendra-light via-almendra to-corteza',
+    tags: ['Piel intacta al hornear', 'Corazón claro', 'Elegante'],
+  },
+  {
+    slug: '/variedades/nuez-chandler',
+    titulo: 'Nuez Chandler con cáscara',
+    variedad: 'Chandler',
+    precio: 'Próximamente',
+    etiqueta: 'Color extra claro',
+    sabor: 'Suave, mantecoso',
+    uso: 'Mesa, repostería, chocolates',
+    origen: 'Fayón, Bajo Aragón',
+    cosecha: 'Octubre–noviembre 2026',
+    gradient: 'from-nuez-dark via-corteza to-nuez',
+    tags: ['Gallo extra claro', 'Sin amargor', 'Rendimiento 50%'],
+  },
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Catálogo Solana Nuts",
+  "description": description,
+  "url": "https://solananuts.com/productos",
+  "mainEntity": {
+    "@type": "ItemList",
+    "numberOfItems": productos.length,
+    "itemListElement": productos.map((p, i) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "url": "https://solananuts.com" + p.slug,
+      "name": p.titulo
+    }))
+  }
+};
+---
+<Base
+  title={title}
+  description={description}
+  keywords={keywords}
+  breadcrumbs={[
+    { name: 'Inicio', url: '/' },
+    { name: 'Productos', url: '/productos' }
+  ]}
+  schema={schema}
+>
+  <Nav />
+  <main id="contenido">
+
+    <!-- Page header -->
+    <section class="relative bg-tierra text-crema overflow-hidden grano py-20 lg:py-28">
+      <div class="absolute inset-0 bg-gradient-to-br from-tierra via-corteza/95 to-tierra" aria-hidden="true"></div>
+      <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-almendra/15 rounded-full blur-3xl" aria-hidden="true"></div>
+      <div class="container relative">
+        <nav class="text-xs text-crema/60 mb-5" aria-label="Breadcrumb">
+          <a href="/" class="hover:text-almendra-light">Inicio</a>
+          <span class="mx-2" aria-hidden="true">›</span>
+          <span class="text-almendra-light">Productos</span>
+        </nav>
+        <span class="badge badge-white">Catálogo 2026</span>
+        <h1 class="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-crema leading-[1.05] max-w-3xl mt-2">
+          Almendras y nueces <span class="italic text-almendra-light">naturales</span>,<br class="hidden md:inline"/>
+          directas del productor
+        </h1>
+        <p class="text-crema/80 text-lg max-w-2xl mt-5">
+          Cuatro referencias, tres variedades, una sola finca familiar en Fayón (Bajo Aragón). Cosecha 2026 en preventa.
+        </p>
+      </div>
+    </section>
+
+    <Marquee />
+
+    <!-- Grid -->
+    <section class="section bg-crema">
+      <div class="container">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {productos.map((p, i) => (
+            <article class="group bg-arena-light rounded-3xl overflow-hidden border border-arena hover:border-almendra hover:shadow-warm transition-all duration-400 hover:-translate-y-1 flex flex-col" data-reveal data-d={String(Math.min(i+1, 4))}>
+              <div class={`relative aspect-[5/4] bg-gradient-to-br ${p.gradient} grano overflow-hidden`}>
+                <div class="absolute inset-0 flex items-center justify-center" aria-hidden="true">
+                  {p.variedad === 'Chandler' ? (
+                    <svg width="130" height="130" viewBox="0 0 140 140" fill="none">
+                      <circle cx="70" cy="70" r="52" fill="#F1DFC2" opacity=".9"/>
+                      <path d="M70 30C55 38 45 50 45 70c0 18 9 32 25 38 16-6 25-20 25-38 0-20-10-32-25-40z" fill="#8B6340"/>
+                      <path d="M70 30v78M50 45c8 5 12 15 12 25s-4 18-10 25M90 45c-8 5-12 15-12 25s4 18 10 25" stroke="#5C3A1E" stroke-width="1.6" fill="none" opacity=".75"/>
+                    </svg>
+                  ) : (
+                    <svg width="120" height="140" viewBox="0 0 120 140" fill="none">
+                      <ellipse cx="60" cy="75" rx="34" ry="48" fill="#F1DFC2"/>
+                      <ellipse cx="50" cy="60" rx="10" ry="18" fill="#FBF6EE" opacity=".5"/>
+                      <path d="M60 28C60 28 60 58 60 120" stroke="#8B6340" stroke-width="1.6" opacity=".55"/>
+                    </svg>
+                  )}
+                </div>
+                <span class="absolute top-3 left-3 bg-crema text-tierra text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full shadow-sm">{p.etiqueta}</span>
+                <span class="absolute bottom-3 right-3 bg-tierra/85 backdrop-blur text-crema text-sm font-bold px-3 py-1.5 rounded-full">{p.precio}</span>
+              </div>
+              <div class="p-6 flex-1 flex flex-col">
+                <div class="text-[11px] font-bold uppercase tracking-[.16em] text-almendra mb-1.5">Variedad {p.variedad}</div>
+                <h2 class="font-display text-xl font-bold text-tierra mb-3 leading-snug">{p.titulo}</h2>
+                <dl class="text-xs text-corteza/80 space-y-1 mb-4">
+                  <div><dt class="inline font-semibold text-tierra">Sabor:</dt> <dd class="inline">{p.sabor}</dd></div>
+                  <div><dt class="inline font-semibold text-tierra">Uso:</dt> <dd class="inline">{p.uso}</dd></div>
+                  <div><dt class="inline font-semibold text-tierra">Origen:</dt> <dd class="inline">{p.origen}</dd></div>
+                  <div><dt class="inline font-semibold text-tierra">Cosecha:</dt> <dd class="inline">{p.cosecha}</dd></div>
+                </dl>
+                <div class="flex flex-wrap gap-1.5 mb-5">
+                  {p.tags.map(t => (<span class="text-[10px] font-semibold uppercase tracking-wide px-2 py-0.5 rounded-full bg-crema text-corteza border border-arena">{t}</span>))}
+                </div>
+                <a href={p.slug} class="btn btn-primary justify-center !py-2.5 !text-sm mt-auto">Ver detalle</a>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <!-- Info strip -->
+        <div class="mt-14 grid sm:grid-cols-3 gap-4" data-reveal>
+          {[
+            { t:'Envío gratis', s:'en Península desde 45 €' },
+            { t:'Pago seguro',  s:'tarjeta · Bizum · transferencia' },
+            { t:'Cambios fáciles', s:'14 días de garantía' },
+          ].map(x => (
+            <div class="bg-arena-light rounded-2xl p-5 border border-arena text-center">
+              <div class="font-display text-tierra font-bold text-lg">{x.t}</div>
+              <div class="text-corteza/75 text-sm mt-1">{x.s}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <FAQ titulo="Dudas antes de comprar" />
+    <Footer />
+  </main>
+</Base>

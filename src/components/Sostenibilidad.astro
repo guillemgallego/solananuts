@@ -1,0 +1,68 @@
+---
+const pilares = [
+  {
+    icon: 'package',
+    titulo: 'Envase reutilizable',
+    texto: 'Algodón y kraft sin plásticos. Reutiliza la bolsa en tu despensa o devuélvela en tu próximo pedido.',
+  },
+  {
+    icon: 'field',
+    titulo: 'Del campo a tu mesa',
+    texto: 'Venta directa del productor. Cero intermediarios, máxima frescura y precio justo para quien cultiva.',
+  },
+  {
+    icon: 'sun',
+    titulo: 'Cosecha natural',
+    texto: 'Secado al sol y al viento del Bajo Aragón. Sin fumigación post-cosecha ni aditivos.',
+  },
+  {
+    icon: 'family',
+    titulo: 'Agricultura familiar',
+    texto: 'Una finca, una familia, un compromiso con la tierra que nos vio crecer y con quien viene detrás.',
+  },
+];
+
+function icon(name: string) {
+  switch (name) {
+    case 'package': return `<svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M14 3L4 8v12l10 5 10-5V8l-10-5z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M4 8l10 5 10-5M14 13v12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>`;
+    case 'field':   return `<svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M3 22h22M6 22V12M12 22V8M18 22V14M22 22V10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="14" cy="5" r="2.2" stroke="currentColor" stroke-width="1.6"/></svg>`;
+    case 'sun':     return `<svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="5" stroke="currentColor" stroke-width="1.6"/><path d="M14 2v3M14 23v3M26 14h-3M5 14H2M22.5 5.5l-2 2M7.5 20.5l-2 2M22.5 22.5l-2-2M7.5 7.5l-2-2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>`;
+    case 'family':  return `<svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="9" cy="9" r="3.2" stroke="currentColor" stroke-width="1.6"/><circle cx="19" cy="9" r="3.2" stroke="currentColor" stroke-width="1.6"/><path d="M3 24c0-3.3 2.7-6 6-6s6 2.7 6 6M13 24c0-3.3 2.7-6 6-6s6 2.7 6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>`;
+    default:        return '';
+  }
+}
+---
+<section class="section bg-hoja-dark text-crema relative overflow-hidden grano" aria-labelledby="sostenibilidad-heading">
+  <div class="absolute inset-0 bg-gradient-to-br from-hoja-dark via-hoja-dark to-tierra opacity-90" aria-hidden="true"></div>
+  <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-almendra/12 rounded-full blur-3xl" aria-hidden="true"></div>
+
+  <div class="container relative">
+    <div class="text-center max-w-2xl mx-auto mb-14" data-reveal>
+      <span class="badge badge-white">Sostenibilidad</span>
+      <h2 id="sostenibilidad-heading" class="font-display text-4xl md:text-5xl font-bold text-crema mb-5 leading-[1.1]">
+        Cuidamos la tierra<br/><span class="italic text-almendra-light">que nos da el fruto</span>
+      </h2>
+      <p class="text-crema/80 text-lg leading-relaxed">
+        Cada decisión en Solana Nuts pasa por un filtro simple: ¿cuidaría la generación que viene detrás?
+        Por eso apostamos por envase reutilizable, cero plásticos y agricultura familiar sostenible.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      {pilares.map((p, i) => (
+        <div class="bg-white/6 backdrop-blur border border-white/12 rounded-3xl p-7 hover:bg-white/10 hover:border-white/20 transition-all duration-300 hover:-translate-y-1" data-reveal data-d={String(i+1)}>
+          <div class="w-14 h-14 rounded-2xl bg-almendra/25 text-almendra-light flex items-center justify-center mb-5" set:html={icon(p.icon)}></div>
+          <h3 class="font-display text-xl font-bold text-crema mb-2">{p.titulo}</h3>
+          <p class="text-crema/70 text-sm leading-relaxed">{p.texto}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-14 text-center" data-reveal>
+      <a href="/sostenibilidad" class="btn btn-almendra">
+        Nuestro compromiso completo
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </div>
+</section>

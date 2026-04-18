@@ -1,0 +1,164 @@
+---
+import Base    from '../../layouts/Base.astro';
+import Nav     from '../../components/Nav.astro';
+import Footer  from '../../components/Footer.astro';
+import Contacto from '../../components/Contacto.astro';
+
+const title = 'Almendra Soleta vs Lauranne: ¿cuál compro y para qué?';
+const description = 'Comparativa honesta entre las dos variedades estrella de la almendra española moderna: Soleta (CITA Zaragoza) y Lauranne (INRA). Sabor, pepita, cosecha, usos en repostería y precio. Escrito por productores del Bajo Aragón.';
+const keywords = 'almendra soleta vs lauranne, diferencia soleta lauranne, cuál almendra elegir, variedad almendra repostería, almendra cita zaragoza, almendra inra, comparativa variedades almendra';
+
+const publishedAt = '2026-02-28T08:00:00+01:00';
+const modifiedAt  = '2026-02-28T08:00:00+01:00';
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": title,
+  "description": description,
+  "datePublished": publishedAt,
+  "dateModified": modifiedAt,
+  "author": { "@type": "Organization", "name": "Solana Nuts" },
+  "publisher": { "@type": "Organization", "name": "Solana Nuts", "logo": { "@type": "ImageObject", "url": "https://solananuts.com/logo.png" } },
+  "mainEntityOfPage": "https://solananuts.com/blog/almendra-soleta-vs-lauranne",
+  "image": "https://solananuts.com/og-default.jpg",
+  "inLanguage": "es-ES",
+  "articleSection": "Variedades"
+};
+---
+<Base
+  title={title}
+  description={description}
+  keywords={keywords}
+  canonical="https://solananuts.com/blog/almendra-soleta-vs-lauranne"
+  schema={articleSchema}
+  ogType="article"
+  publishedAt={publishedAt}
+  modifiedAt={modifiedAt}
+  breadcrumbs={[
+    { name: 'Inicio', url: '/' },
+    { name: 'Diario de la finca', url: '/blog' },
+    { name: 'Soleta vs Lauranne', url: '/blog/almendra-soleta-vs-lauranne' }
+  ]}
+>
+  <Nav />
+  <main id="contenido">
+    <article>
+      <header class="bg-tierra text-crema py-16 lg:py-24 grano relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-tierra via-corteza/95 to-tierra" aria-hidden="true"></div>
+        <div class="container relative max-w-3xl">
+          <nav class="text-xs text-crema/60 mb-5" aria-label="Breadcrumb">
+            <a href="/" class="hover:text-almendra-light">Inicio</a><span class="mx-2">›</span>
+            <a href="/blog" class="hover:text-almendra-light">Diario</a><span class="mx-2">›</span>
+            <span class="text-almendra-light">Soleta vs Lauranne</span>
+          </nav>
+          <span class="badge badge-white">Variedades · comparativa</span>
+          <h1 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-crema leading-[1.1] mt-3">
+            Almendra Soleta vs Lauranne:<br/>
+            <span class="italic text-almendra-light">¿cuál compro y para qué?</span>
+          </h1>
+          <div class="flex items-center gap-4 mt-6 text-sm text-crema/70">
+            <span>Por Solana Nuts</span><span>·</span>
+            <time datetime={publishedAt}>28 de febrero de 2026</time><span>·</span>
+            <span>7 min</span>
+          </div>
+        </div>
+      </header>
+
+      <section class="section-sm bg-crema">
+        <div class="container max-w-3xl prose-tierra">
+          <p class="text-lg leading-relaxed text-corteza">
+            Son las dos variedades estrella de la almendra española moderna y las dos que
+            cultivamos en <a href="/la-finca">Solana Nuts</a>. Se parecen mucho — y, aun así,
+            son muy distintas. Aquí va la comparativa honesta para que elijas la que mejor
+            encaja con lo que buscas.
+          </p>
+
+          <h2>Origen: española vs. francesa</h2>
+          <p>
+            La <strong>Soleta</strong> nació en el <strong>CITA Zaragoza</strong> a finales de los 90,
+            fruto del cruce entre Blanquerna × Belle d'Aurons. Es una variedad <strong>aragonesa de pleno derecho</strong>.
+          </p>
+          <p>
+            La <strong>Lauranne</strong> es francesa. Se desarrolló en el <strong>INRA de Montpellier</strong>
+            en los 80 como respuesta a la necesidad de tener variedades autofértiles de floración tardía.
+            Hoy está ampliamente plantada en España, sobre todo en Aragón y Cataluña.
+          </p>
+
+          <h2>Pepita: elíptica vs. alargada</h2>
+          <p>
+            La pepita de Soleta es <strong>elíptica y robusta</strong>, con un peso de 1,0–1,2 g.
+            Rellena bien la cáscara, lo que facilita el repelado industrial.
+          </p>
+          <p>
+            La Lauranne es más <strong>alargada y fina</strong>, con un peso ligeramente superior
+            (1,1–1,4 g). Estéticamente es más elegante — por eso es la que más se usa en almendra fileteada.
+          </p>
+
+          <h2>Sabor: intenso y aromático vs. dulce puro</h2>
+          <p>
+            La Soleta tiene un sabor <strong>aromático e intenso</strong>, con buen equilibrio entre
+            dulce y ese toque "a almendra de verdad" que a veces se pierde en variedades industriales.
+          </p>
+          <p>
+            La Lauranne es <strong>100% dulce, limpia, sin amargor</strong>. No tiene matices "agrestes";
+            es la almendra que todo el mundo reconoce como "agradable" sin tener que explicarla.
+          </p>
+
+          <h2>Piel: repelado fácil vs. permanencia al horno</h2>
+          <p>
+            El tegumento (piel) de la Soleta es <strong>fácil de repelar</strong>: tras 30 segundos
+            en agua caliente, sale limpio. Es la variedad preferida para almendra blanca industrial.
+          </p>
+          <p>
+            La Lauranne tiene una piel fina pero que <strong>se mantiene perfectamente al hornear</strong>.
+            Por eso croissants, pain aux amandes, palmeras y tartas con almendra laminada se hacen
+            casi siempre con Lauranne — no se despega, no se oxida, no se quema de manera irregular.
+          </p>
+
+          <h2>Tabla rápida</h2>
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm border-collapse">
+              <thead>
+                <tr class="bg-tierra text-crema">
+                  <th class="text-left px-4 py-3 font-semibold">Característica</th>
+                  <th class="px-4 py-3 font-semibold">Soleta</th>
+                  <th class="px-4 py-3 font-semibold">Lauranne</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="bg-arena-light"><td class="px-4 py-3 font-semibold">Origen</td><td class="px-4 py-3 text-center">CITA Zaragoza</td><td class="px-4 py-3 text-center">INRA Francia</td></tr>
+                <tr class="bg-arena"><td class="px-4 py-3 font-semibold">Forma</td><td class="px-4 py-3 text-center">Elíptica</td><td class="px-4 py-3 text-center">Alargada</td></tr>
+                <tr class="bg-arena-light"><td class="px-4 py-3 font-semibold">Peso pepita</td><td class="px-4 py-3 text-center">1,0–1,2 g</td><td class="px-4 py-3 text-center">1,1–1,4 g</td></tr>
+                <tr class="bg-arena"><td class="px-4 py-3 font-semibold">Sabor</td><td class="px-4 py-3 text-center">Intenso, aromático</td><td class="px-4 py-3 text-center">Dulce puro</td></tr>
+                <tr class="bg-arena-light"><td class="px-4 py-3 font-semibold">Piel al hornear</td><td class="px-4 py-3 text-center">Se despega</td><td class="px-4 py-3 text-center">Se mantiene</td></tr>
+                <tr class="bg-arena"><td class="px-4 py-3 font-semibold">Uso estrella</td><td class="px-4 py-3 text-center">Turrón, mazapán, granel</td><td class="px-4 py-3 text-center">Panadería, repostería</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2>Entonces, ¿cuál elijo?</h2>
+          <ul>
+            <li><strong>Si es para comer a granel o regalar</strong>: Soleta gana. Más sabor y mejor precio.</li>
+            <li><strong>Si es para turrón casero o mazapán</strong>: Soleta, sin dudarlo. Su sabor intenso aguanta el calor.</li>
+            <li><strong>Si es para croissant, brioche, almendra laminada</strong>: Lauranne, porque la piel aguanta el horno.</li>
+            <li><strong>Si es la primera vez que compras almendra de productor</strong>: prueba las dos. En nuestro <a href="/productos">catálogo</a> puedes pedir ambas.</li>
+          </ul>
+
+          <div class="mt-12 p-7 rounded-3xl bg-almendra-pale border border-arena">
+            <div class="text-xs font-bold uppercase tracking-wider text-almendra mb-2">Siguiente paso</div>
+            <h3 class="font-display text-2xl font-bold text-tierra mb-3">Ficha técnica completa de cada variedad</h3>
+            <p class="text-corteza/85 mb-5">Profundiza en la Soleta y la Lauranne con sus fichas agronómicas, valores nutricionales y usos culinarios.</p>
+            <div class="flex flex-wrap gap-3">
+              <a href="/variedades/almendra-soleta" class="btn btn-primary">Ver Soleta →</a>
+              <a href="/variedades/almendra-lauranne" class="btn btn-outline">Ver Lauranne →</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </article>
+
+    <Contacto />
+    <Footer />
+  </main>
+</Base>

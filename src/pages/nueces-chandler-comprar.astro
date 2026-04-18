@@ -1,0 +1,300 @@
+---
+import Base    from '../layouts/Base.astro';
+import Nav     from '../components/Nav.astro';
+import Footer  from '../components/Footer.astro';
+import Contacto from '../components/Contacto.astro';
+
+const title = 'Comprar Nueces Chandler online del productor | Cosecha 2026 · Bajo Aragón · Solana Nuts';
+const description = 'Compra nueces Chandler online directamente del productor en Fayón, Bajo Aragón. Gallo extra claro, cáscara fina, rendimiento 45–50%. Envío a España y Europa. Cosecha octubre 2026 — reserva ahora.';
+const keywords = 'comprar nueces chandler online, nueces chandler productor, nueces chandler españa, nueces naturales bajo aragon, comprar nuez chandler cosecha, nueces omega 3 comprar, nueces frescas envio españa';
+
+const faqItems = [
+  {
+    q: '¿Cuándo está disponible la cosecha de nuez Chandler 2026?',
+    a: 'La cosecha de nuez es en octubre 2026. Enviamos en noviembre–diciembre, tras el secado natural al aire (2–3 semanas). Reserva ahora y te avisamos cuando estén listas.'
+  },
+  {
+    q: '¿Qué es el "gallo" de la nuez?',
+    a: 'El gallo es la pepita ya sin cáscara. En la nuez Chandler, el gallo es extra claro (casi blanco-crema), sin el amargor de variedades oscuras. Rendimiento del 45–50% sobre el peso con cáscara.'
+  },
+  {
+    q: '¿Cuánta nuez debo tomar al día?',
+    a: 'Los estudios nutricionales usan 25–40 g/día (un puñado). A esa dosis obtienes 2,5 g de Omega-3 ALA, 47 mg de magnesio y la melatonina natural para el sueño sin superar las calorías.'
+  },
+  {
+    q: '¿Las nueces Chandler están tratadas con pesticidas?',
+    a: 'No. Nuestro cultivo es natural: sin fumigación post-cosecha, sin pesticidas sistémicos, sin aditivos. La cáscara dura de la Chandler actúa como barrera natural.'
+  },
+  {
+    q: '¿Cómo se conservan las nueces Chandler?',
+    a: 'Con cáscara: hasta 9 meses en lugar fresco y oscuro. Gallo sin cáscara: 4–6 semanas en temperatura ambiente, 2–3 meses en nevera o 12 meses en congelador (sale perfecta al descongelar).'
+  },
+  {
+    q: '¿Hacéis envíos a Francia, Alemania y otros países europeos?',
+    a: 'Sí. Enviamos a toda la UE y Reino Unido. El coste de envío se calcula en el checkout según destino y peso. Para pedidos grandes a Europa, escríbenos para condiciones especiales.'
+  },
+];
+
+const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Nuez Chandler del Bajo Aragón · Cosecha 2026",
+  "description": description,
+  "brand": { "@type": "Brand", "name": "Solana Nuts" },
+  "url": "https://solananuts.com/nueces-chandler-comprar",
+  "image": "https://solananuts.com/og-default.jpg",
+  "category": "Frutos secos",
+  "countryOfOrigin": "España",
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/PreOrder",
+    "priceCurrency": "EUR",
+    "priceValidUntil": "2026-12-31",
+    "url": "https://solananuts.com/variedades/nuez-chandler",
+    "seller": { "@type": "Organization", "name": "Solana Nuts" }
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "89",
+    "bestRating": "5",
+    "worstRating": "1"
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqItems.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a }
+  }))
+};
+
+const beneficios = [
+  { valor: '2,5 g', label: 'Omega-3 ALA por puñado', icon: '🧠' },
+  { valor: '9 g', label: 'Omega-3 ALA por 100 g', icon: '💪' },
+  { valor: '45–50%', label: 'Rendimiento de gallo', icon: '🌰' },
+  { valor: '654 kcal', label: 'Por 100 g (energía densa)', icon: '⚡' },
+];
+---
+<Base
+  title={title}
+  description={description}
+  keywords={keywords}
+  canonical="https://solananuts.com/nueces-chandler-comprar"
+  schema={[productSchema, faqSchema]}
+  breadcrumbs={[
+    { name: 'Inicio', url: '/' },
+    { name: 'Comprar Nueces Chandler', url: '/nueces-chandler-comprar' }
+  ]}
+>
+  <Nav />
+  <main id="contenido">
+
+    <!-- HERO -->
+    <section class="bg-tierra text-crema py-16 lg:py-28 grano relative overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-br from-nuez-dark via-tierra to-corteza" aria-hidden="true"></div>
+      <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-nuez/15 rounded-full blur-3xl" aria-hidden="true"></div>
+      <div class="container relative max-w-5xl">
+        <nav class="text-xs text-crema/60 mb-4" aria-label="Breadcrumb">
+          <a href="/" class="hover:text-almendra-light">Inicio</a><span class="mx-2">›</span>
+          <span class="text-almendra-light">Comprar Nueces Chandler</span>
+        </nav>
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <span class="badge badge-white mb-4">Cosecha octubre 2026 · Reserva abierta</span>
+            <h1 class="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-crema leading-[1.05] mb-6">
+              Nueces Chandler<br/>
+              <span class="italic text-almendra-light">directas del productor</span>
+            </h1>
+            <p class="text-crema/80 text-lg leading-relaxed mb-8">
+              La variedad de nuez más plantada del mundo. Gallo extra claro, cáscara fina, cero amargor.
+              Cultivada en <strong class="text-crema">Fayón, Bajo Aragón</strong> con 2.700 horas de sol
+              al año y secado natural. Sin intermediarios, sin tratamientos.
+            </p>
+            <div class="flex flex-wrap gap-4">
+              <a href="/variedades/nuez-chandler" class="btn btn-almendra">Reservar cosecha 2026</a>
+              <a href="/blog/nuez-chandler-beneficios" class="btn btn-ghost">Leer beneficios →</a>
+            </div>
+            <div class="flex flex-wrap gap-4 mt-6 text-sm text-crema/70">
+              <span>✓ Envío gratis desde 45 €</span>
+              <span>✓ Pago 100% seguro</span>
+              <span>✓ Devolución 14 días</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            {beneficios.map(b => (
+              <div class="bg-white/8 rounded-2xl p-5 text-center backdrop-blur-sm border border-white/10">
+                <div class="text-2xl mb-2" aria-hidden="true">{b.icon}</div>
+                <div class="font-display text-2xl font-bold text-almendra-light mb-1">{b.valor}</div>
+                <div class="text-[11px] text-crema/65 leading-snug">{b.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- POR QUÉ CHANDLER -->
+    <section class="section bg-crema" aria-labelledby="h-porque">
+      <div class="container max-w-5xl">
+        <div class="text-center mb-12">
+          <span class="kicker">La variedad número 1 del mundo</span>
+          <h2 id="h-porque" class="font-display text-3xl md:text-4xl font-bold text-tierra mt-2">
+            Por qué la Chandler es diferente
+          </h2>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {[
+            {
+              titulo: 'Gallo extra claro',
+              texto: 'El pellejo interior de la Chandler es casi blanco-crema, no el marrón oscuro de variedades antiguas. Menos amargor, más dulzor y una presentación que gusta a todo el mundo.',
+              icon: '✨'
+            },
+            {
+              titulo: 'Cáscara fina y rendimiento 45–50%',
+              texto: 'La mitad (o más) del peso con cáscara es gallo. Las variedades antiguas europeas rendían 25–30%. Con Chandler pagas la pepita, no la cáscara.',
+              icon: '⚖️'
+            },
+            {
+              titulo: 'Omega-3 ALA: 9 g por 100 g',
+              texto: 'La nuez es el único fruto seco con niveles significativos de ALA. Precursor de EPA y DHA, el ensayo PREDIMED demostró reducción del 30% en riesgo cardiovascular.',
+              icon: '❤️'
+            },
+            {
+              titulo: 'Melatonina natural',
+              texto: 'La nuez es una de las pocas fuentes dietéticas de melatonina biodisponible. Un puñado 1–2 horas antes de dormir puede mejorar el ciclo circadiano.',
+              icon: '🌙'
+            },
+            {
+              titulo: 'Origen único: Fayón, Aragón',
+              texto: 'No compramos de cooperativas. Toda la nuez Chandler que vendemos viene de nuestra finca en Fayón. Sabes exactamente de qué árbol, de qué cosecha.',
+              icon: '📍'
+            },
+            {
+              titulo: 'Secado natural sin calor industrial',
+              texto: 'El calor forzado de las cámaras industriales oxida el ALA Omega-3 y destruye vitamina E. Nuestro secado al aire y sol tarda más — y conserva todo.',
+              icon: '🌬️'
+            },
+          ].map((c, i) => (
+            <div class="bg-arena-light rounded-3xl p-6 border border-arena" data-reveal data-d={String(Math.min(i+1,6))}>
+              <div class="text-3xl mb-4" aria-hidden="true">{c.icon}</div>
+              <h3 class="font-display text-lg font-bold text-tierra mb-3">{c.titulo}</h3>
+              <p class="text-sm text-corteza/80 leading-relaxed">{c.texto}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- FICHA NUTRICIONAL RESUMIDA -->
+    <section class="section bg-tierra text-crema grano relative overflow-hidden" aria-labelledby="h-nutri">
+      <div class="absolute inset-0 bg-gradient-to-br from-nuez-dark/80 via-tierra to-tierra" aria-hidden="true"></div>
+      <div class="container relative max-w-4xl">
+        <div class="text-center mb-10">
+          <span class="kicker text-almendra-light">Por 100 g de nuez Chandler</span>
+          <h2 id="h-nutri" class="font-display text-3xl md:text-4xl font-bold text-crema mt-2">
+            Perfil nutricional
+          </h2>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-5">
+          {[
+            { n: '654 kcal', d: 'Energía' },
+            { n: '15 g', d: 'Proteína' },
+            { n: '65 g', d: 'Grasas totales' },
+            { n: '9 g', d: 'Omega-3 ALA' },
+            { n: '7 g', d: 'Fibra total' },
+            { n: '158 mg', d: 'Magnesio' },
+            { n: '441 mg', d: 'Potasio' },
+            { n: '2,9 mg', d: 'Vitamina E' },
+          ].map(n => (
+            <div class="bg-white/8 rounded-2xl p-4 text-center border border-white/10">
+              <div class="font-display text-xl font-bold text-almendra-light mb-1">{n.n}</div>
+              <div class="text-xs text-crema/65 uppercase tracking-wider">{n.d}</div>
+            </div>
+          ))}
+        </div>
+        <p class="text-center text-crema/55 text-xs mt-6">
+          Fuente: USDA FoodData Central. Valores medios para nuez inglesa (<em>Juglans regia</em>).
+        </p>
+        <div class="text-center mt-8">
+          <a href="/blog/nuez-chandler-beneficios" class="btn btn-almendra">
+            Leer el artículo completo: qué dice la ciencia →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIOS RÁPIDOS -->
+    <section class="section bg-crema" aria-labelledby="h-testimonios">
+      <div class="container max-w-4xl">
+        <h2 id="h-testimonios" class="font-display text-3xl font-bold text-tierra mb-8 text-center">
+          Qué dicen quienes ya las han probado
+        </h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          {[
+            { texto: '"La nuez más fresca que he probado. Gallo clarísimo, sin el amargor ambiental que tienen las del súper. Repito cada cosecha."', nombre: 'Ana R.', ciudad: 'Madrid' },
+            { texto: '"Compro para toda la familia desde 2022. El Omega-3 que le doy a mis padres para el corazón. Frescura incomparable."', nombre: 'Carlos M.', ciudad: 'Barcelona' },
+            { texto: '"Soy pastelera y las uso para tartas de nuez. El gallo claro da una presentación perfecta y el sabor es suave y profundo a la vez."', nombre: 'Laia P.', ciudad: 'Girona' },
+          ].map((t, i) => (
+            <figure class="bg-arena-light rounded-3xl p-6 border border-arena" data-reveal data-d={String(i+1)}>
+              <blockquote class="text-sm text-corteza/85 leading-relaxed mb-4">{t.texto}</blockquote>
+              <figcaption class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-full bg-nuez/20 flex items-center justify-center text-nuez font-bold text-sm" aria-hidden="true">{t.nombre[0]}</div>
+                <div>
+                  <div class="text-sm font-semibold text-tierra">{t.nombre}</div>
+                  <div class="text-xs text-piedra">{t.ciudad}</div>
+                </div>
+                <div class="ml-auto text-almendra text-sm" aria-label="5 de 5 estrellas">★★★★★</div>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section bg-arena-light" aria-labelledby="h-faq">
+      <div class="container max-w-3xl">
+        <h2 id="h-faq" class="font-display text-3xl font-bold text-tierra mb-8 text-center">
+          Preguntas frecuentes sobre las nueces Chandler
+        </h2>
+        <div class="space-y-3">
+          {faqItems.map(f => (
+            <details class="group bg-crema rounded-2xl overflow-hidden border border-arena">
+              <summary class="flex items-center justify-between px-6 py-5 cursor-pointer text-sm font-semibold text-tierra list-none hover:bg-arena-light transition-colors">
+                <span class="pr-3">{f.q}</span>
+                <span class="text-almendra text-xl font-bold transition-transform group-open:rotate-45 flex-shrink-0" aria-hidden="true">+</span>
+              </summary>
+              <div class="px-6 pb-6 text-sm text-corteza/85 leading-relaxed border-t border-arena pt-4">
+                {f.a}
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="section-sm bg-almendra-pale border-t border-arena">
+      <div class="container max-w-2xl text-center">
+        <h2 class="font-display text-3xl md:text-4xl font-bold text-tierra mb-4">
+          Reserva tu cosecha 2026 de Nuez Chandler
+        </h2>
+        <p class="text-corteza/75 mb-8 text-lg">
+          Cosecha en octubre. Envío en noviembre. Gallo extra claro recién secado — el que se acaba
+          primero cada año.
+        </p>
+        <div class="flex flex-wrap gap-4 justify-center">
+          <a href="/variedades/nuez-chandler" class="btn btn-primary">Reservar ahora →</a>
+          <a href="/contacto" class="btn btn-outline">Pedir muestra gratuita</a>
+        </div>
+      </div>
+    </section>
+
+    <Contacto />
+    <Footer />
+  </main>
+</Base>

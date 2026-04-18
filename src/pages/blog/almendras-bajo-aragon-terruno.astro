@@ -1,0 +1,198 @@
+---
+import Base    from '../../layouts/Base.astro';
+import Nav     from '../../components/Nav.astro';
+import Footer  from '../../components/Footer.astro';
+import Contacto from '../../components/Contacto.astro';
+
+const title = 'El Bajo Aragón, terruño de almendra: por qué aquí saben distinto';
+const description = 'Sol, cierzo, noches frescas y suelos calizos. La agronomía que explica por qué la almendra aragonesa del Bajo Aragón tiene un sabor y un perfil de aceite únicos. Escrito desde la finca en Fayón.';
+const keywords = 'almendra bajo aragon, terruno almendra aragon, almendra fayon zaragoza, almendra secano aragon, por que almendra aragon sabe diferente, almendra matarraña, almendra caspe';
+
+const publishedAt = '2026-01-22T08:00:00+01:00';
+const modifiedAt  = '2026-01-22T08:00:00+01:00';
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": title,
+  "description": description,
+  "datePublished": publishedAt,
+  "dateModified": modifiedAt,
+  "author": { "@type": "Organization", "name": "Solana Nuts", "url": "https://solananuts.com" },
+  "publisher": { "@type": "Organization", "name": "Solana Nuts", "logo": { "@type": "ImageObject", "url": "https://solananuts.com/logo.png" } },
+  "mainEntityOfPage": "https://solananuts.com/blog/almendras-bajo-aragon-terruno",
+  "image": "https://solananuts.com/og-default.jpg",
+  "inLanguage": "es-ES",
+  "articleSection": "Terruño",
+  "keywords": keywords,
+  "wordCount": 1100
+};
+---
+<Base
+  title={title}
+  description={description}
+  keywords={keywords}
+  canonical="https://solananuts.com/blog/almendras-bajo-aragon-terruno"
+  schema={articleSchema}
+  ogType="article"
+  publishedAt={publishedAt}
+  modifiedAt={modifiedAt}
+  breadcrumbs={[
+    { name: 'Inicio', url: '/' },
+    { name: 'Diario de la finca', url: '/blog' },
+    { name: 'El Bajo Aragón, terruño de almendra', url: '/blog/almendras-bajo-aragon-terruno' }
+  ]}
+>
+  <Nav />
+  <main id="contenido">
+    <article>
+      <header class="bg-tierra text-crema py-16 lg:py-24 grano relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-corteza via-tierra to-nuez-dark" aria-hidden="true"></div>
+        <div class="container relative max-w-3xl">
+          <nav class="text-xs text-crema/60 mb-5" aria-label="Breadcrumb">
+            <a href="/" class="hover:text-almendra-light">Inicio</a><span class="mx-2">›</span>
+            <a href="/blog" class="hover:text-almendra-light">Diario</a><span class="mx-2">›</span>
+            <span class="text-almendra-light">Terruño aragonés</span>
+          </nav>
+          <span class="badge badge-white">Terruño · agronomía</span>
+          <h1 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-crema leading-[1.1] mt-3">
+            El Bajo Aragón, terruño de almendra:<br/>
+            <span class="italic text-almendra-light">por qué aquí saben distinto</span>
+          </h1>
+          <div class="flex items-center gap-4 mt-6 text-sm text-crema/70">
+            <span>Por Solana Nuts</span><span aria-hidden="true">·</span>
+            <time datetime={publishedAt}>22 de enero de 2026</time><span aria-hidden="true">·</span>
+            <span>5 min de lectura</span>
+          </div>
+        </div>
+      </header>
+
+      <section class="section-sm bg-crema">
+        <div class="container max-w-3xl prose-tierra">
+
+          <p class="text-lg leading-relaxed text-corteza">
+            Cada vez que alguien prueba una almendra Soleta o Marcona del Bajo Aragón por primera vez,
+            la pregunta que surge es invariablemente la misma: <em>"¿por qué esta almendra tiene más sabor
+            que las del supermercado?"</em> La respuesta no está en el marketing — está en la geografía,
+            el clima y la geología de esta franja de Aragón que bordea el Ebro entre Zaragoza y Tarragona.
+          </p>
+
+          <h2>El Bajo Aragón: una denominación que importa</h2>
+          <p>
+            El Bajo Aragón es la comarca que agrupa municipios como Caspe, Maella, Fayón, Mazaleón,
+            La Puebla de Híjar y parte de la Matarraña. Históricamente ha sido <strong>zona almendrera
+            por vocación</strong>: el almendro lleva aquí siglos, mucho antes de que existieran las
+            variedades modernas como Soleta o Lauranne.
+          </p>
+          <p>
+            Nuestra finca está en <a href="/la-finca"><strong>Fayón</strong></a>, en el extremo sureste
+            de Zaragoza, donde el río Ebro forma el embalse de Mequinenza. Una posición geográfica que
+            determina todo lo que sigue.
+          </p>
+
+          <h2>1. Sol: 2.700–2.900 horas anuales</h2>
+          <p>
+            La comarca tiene una de las <strong>insolaciones más altas de la España interior</strong>,
+            con 2.700–2.900 horas de sol al año. Más sol significa más fotosíntesis, más azúcares en la
+            pepita y un aceite más rico en tocoferoles (vitamina E natural). Es la razón por la que la
+            almendra aragonesa tiene ese tono dorado y ese sabor que se desarrolla.
+          </p>
+
+          <h2>2. El cierzo: estrés hídrico controlado y pepita concentrada</h2>
+          <p>
+            El cierzo es el viento noroeste que corre por el Valle del Ebro a velocidades de 60–100 km/h.
+            Para los foráneos es incómodo. Para el almendro, es <strong>el mejor regalo que puede recibir</strong>.
+          </p>
+          <p>
+            El cierzo cumple tres funciones clave:
+          </p>
+          <ul>
+            <li><strong>Deseca el ambiente</strong> en momentos de humedad, reduciendo hongos y enfermedades fúngicas.</li>
+            <li><strong>Genera estrés hídrico moderado</strong> que concentra azúcares y aceites en la pepita.</li>
+            <li><strong>Rompe la floración escalonada</strong>, mejorando la polinización cruzada entre variedades.</li>
+          </ul>
+          <p>
+            Las almendras de zonas sin viento crecen más y pesan más, pero tienen un perfil sensorial
+            más plano. Las de aquí pesan menos — y concentran mucho más.
+          </p>
+
+          <h2>3. Noches frescas en agosto: donde se forma el aceite</h2>
+          <p>
+            Agosto es el mes crítico del almendro: es cuando la pepita completa su formación y acumula
+            aceites. En el Bajo Aragón, los días son calurosos (35–42 ºC en verano) pero las noches
+            bajan a 16–20 ºC. Esta <strong>oscilación térmica diaria de 18–22 ºC</strong> es la firma
+            del terruño mediterráneo-continental.
+          </p>
+          <p>
+            Las temperaturas nocturnas frenan la respiración de la planta, que en lugar de consumir los
+            compuestos aromáticos los <strong>retiene y concentra en la pepita</strong>. El resultado es
+            una almendra con más intensidad de sabor que cualquier cultivo de regadío intensivo en clima
+            templado uniforme.
+          </p>
+
+          <h2>4. Suelos calizos y pobres: menos es más</h2>
+          <p>
+            Los suelos del Bajo Aragón son <strong>calizos, pedregosos y con escasa materia orgánica</strong>.
+            Para muchos cultivos, eso es un problema. Para el almendro, no: el árbol ha evolucionado en
+            el Mediterráneo en exactamente este tipo de suelo.
+          </p>
+          <p>
+            Un suelo pobre obliga al árbol a profundizar las raíces 3–5 metros buscando agua y minerales.
+            Esa exploración radicular profunda <strong>accede a mineralogía diferente</strong> a la de un
+            suelo fértil enmendado con fertilizantes. Los catadores detectan este perfil como "a tierra",
+            "mineral" o "a almendra de verdad".
+          </p>
+
+          <h2>5. Secano: cero riego, máxima concentración</h2>
+          <p>
+            Nuestra finca es de <strong>secano puro</strong>: el almendro vive sólo del agua que cae del
+            cielo (media: 320 mm/año) y la que retiene el subsuelo calizo. Producimos menos kilos por
+            hectárea que el regadío intensivo californiano (800–1.200 kg/ha frente a 3.500–5.000 kg/ha).
+          </p>
+          <p>
+            Pero lo que producimos <strong>concentra más aceite, más proteína y más polifenoles</strong>
+            por gramo de almendra. Es la lógica del terruño: la escasez produce calidad.
+          </p>
+
+          <h2>Lo que el terroir aragonés no puede darte California</h2>
+          <p>
+            La almendra californiana (Nonpareil, Carmel) viene de suelos arcillosos del Valle Central,
+            con riego por goteo de precisión, fertilización de alta disponibilidad y 12.000 m³/hectárea
+            de agua al año. Produce mucho más por hectárea y es más barata por kilogramo — pero tiene
+            un sabor más neutro, más contenido en agua y menos aceite.
+          </p>
+          <p>
+            El Bajo Aragón no puede competir en volumen. Y no lo intenta. Compite en lo que tiene:
+            <strong>sol, cierzo, noches frías y suelos que obligan al árbol a trabajar</strong>. Y esa
+            competición, la gana.
+          </p>
+
+          <h2>Resumen</h2>
+          <p>
+            El sabor diferencial de la almendra del Bajo Aragón no es accidente — es la suma de cinco
+            factores geográficos: insolación extrema, cierzo seco, oscilación térmica nocturna, suelos
+            calizos pobres y secano. En Solana Nuts cultivamos en Fayón precisamente porque estas
+            condiciones son difíciles de imitar en otro lugar.
+          </p>
+
+          <div class="mt-12 p-7 rounded-3xl bg-almendra-pale border border-arena">
+            <div class="text-xs font-bold uppercase tracking-wider text-almendra mb-2">Directamente de Fayón</div>
+            <h3 class="font-display text-2xl font-bold text-tierra mb-3">Prueba la almendra del Bajo Aragón</h3>
+            <p class="text-corteza/85 mb-5">
+              Cultivamos Almendra Soleta y Lauranne en secano, con cosecha manual y secado natural al aire.
+              Del árbol a tu mesa sin intermediarios.
+            </p>
+            <div class="flex flex-wrap gap-3">
+              <a href="/variedades/almendra-soleta" class="btn btn-primary">Ver Almendra Soleta →</a>
+              <a href="/la-finca" class="btn btn-outline">Conocer la finca →</a>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </article>
+
+    <Contacto />
+    <Footer />
+  </main>
+</Base>

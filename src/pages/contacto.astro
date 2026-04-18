@@ -1,0 +1,94 @@
+---
+import Base    from '../layouts/Base.astro';
+import Nav     from '../components/Nav.astro';
+import Contacto from '../components/Contacto.astro';
+import Footer  from '../components/Footer.astro';
+
+const title = 'Contacto · Pedidos, muestras y distribución | Solana Nuts';
+const description = 'Contacta con Solana Nuts — particulares, tiendas, restaurantes, pastelerías y distribuidores. Pide muestra, pedido al por mayor o resuelve tu duda sobre nuestras almendras y nueces. Respondemos en 24 h.';
+const keywords = 'contacto solana nuts, comprar almendras directo productor, mayorista almendras, distribuidor frutos secos, muestra gratuita almendras, pedidos almendras hostelería';
+---
+<Base
+  title={title}
+  description={description}
+  keywords={keywords}
+  breadcrumbs={[
+    { name: 'Inicio', url: '/' },
+    { name: 'Contacto', url: '/contacto' }
+  ]}
+>
+  <Nav />
+  <main id="contenido">
+    <section class="bg-tierra text-crema py-16 lg:py-20 grano relative overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-br from-tierra via-corteza/95 to-tierra" aria-hidden="true"></div>
+      <div class="container relative">
+        <nav class="text-xs text-crema/60 mb-4" aria-label="Breadcrumb">
+          <a href="/" class="hover:text-almendra-light">Inicio</a><span class="mx-2">›</span>
+          <span class="text-almendra-light">Contacto</span>
+        </nav>
+        <h1 class="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-crema leading-[1.05] max-w-3xl">
+          Escríbenos — <span class="italic text-almendra-light">respondemos en 24 h</span>
+        </h1>
+        <p class="text-crema/75 text-lg max-w-2xl mt-4">
+          Particular, tienda gourmet, pastelería, restaurante, mayorista o medio: cuéntanos
+          qué buscas y te preparamos muestra o presupuesto.
+        </p>
+      </div>
+    </section>
+
+    <Contacto />
+
+    <!-- Mapa + ubicación -->
+    <section class="section bg-crema">
+      <div class="container">
+        <div class="grid lg:grid-cols-2 gap-10 items-center">
+          <div data-reveal>
+            <span class="kicker">Dónde estamos</span>
+            <h2 class="font-display text-3xl md:text-4xl font-bold text-tierra leading-tight">
+              Fayón, Bajo Aragón
+            </h2>
+            <p class="text-corteza/85 leading-relaxed mt-4">
+              Fayón es un pueblo del sureste de la provincia de Zaragoza, pegado al río Ebro y a la
+              frontera con Cataluña. La finca está a 4 km del pueblo, en una ladera orientada al sur.
+            </p>
+            <div class="mt-6 space-y-3">
+              <div class="flex items-start gap-3">
+                <div class="w-10 h-10 rounded-full bg-almendra-pale text-almendra flex items-center justify-center flex-shrink-0" aria-hidden="true">📍</div>
+                <div>
+                  <div class="text-xs font-bold uppercase tracking-wider text-almendra">Ubicación</div>
+                  <div class="text-tierra font-semibold">Finca Solana · Fayón · 50793 Zaragoza</div>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="w-10 h-10 rounded-full bg-almendra-pale text-almendra flex items-center justify-center flex-shrink-0" aria-hidden="true">🗺️</div>
+                <div>
+                  <div class="text-xs font-bold uppercase tracking-wider text-almendra">Coordenadas</div>
+                  <div class="text-tierra font-semibold">41.2486°N · 0.3478°E</div>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="w-10 h-10 rounded-full bg-almendra-pale text-almendra flex items-center justify-center flex-shrink-0" aria-hidden="true">🕐</div>
+                <div>
+                  <div class="text-xs font-bold uppercase tracking-wider text-almendra">Visitas</div>
+                  <div class="text-tierra font-semibold">Con cita previa · L–V de 10 a 18 h</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="aspect-[4/3] rounded-3xl overflow-hidden shadow-warm border border-arena" data-reveal data-d="2">
+            <iframe
+              src="https://www.openstreetmap.org/export/embed.html?bbox=0.28%2C41.20%2C0.42%2C41.30&layer=mapnik&marker=41.2486%2C0.3478"
+              class="w-full h-full"
+              style="border:0"
+              loading="lazy"
+              title="Mapa de la finca Solana Nuts en Fayón, Zaragoza"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <Footer />
+  </main>
+</Base>

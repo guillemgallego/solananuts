@@ -1,0 +1,181 @@
+---
+import Base    from '../../layouts/Base.astro';
+import Nav     from '../../components/Nav.astro';
+import Footer  from '../../components/Footer.astro';
+import Contacto from '../../components/Contacto.astro';
+
+const title = 'Almendra española vs. californiana: 7 diferencias que notas al probarlas';
+const description = 'Sabor, aceite, cáscara, fumigación, trazabilidad, huella de CO₂ y precio. Comparativa honesta entre la almendra española (Soleta, Lauranne, Marcona) y la californiana. Guía del productor del Bajo Aragón.';
+const keywords = 'almendra española vs californiana, diferencia almendra españa california, almendra marcona soleta, almendra blanca intensiva, fumigación almendra california, almendra ecológica españa';
+
+const publishedAt = '2026-03-15T08:00:00+01:00';
+const modifiedAt  = '2026-03-15T08:00:00+01:00';
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": title,
+  "description": description,
+  "datePublished": publishedAt,
+  "dateModified": modifiedAt,
+  "author": { "@type": "Organization", "name": "Solana Nuts", "url": "https://solananuts.com" },
+  "publisher": { "@type": "Organization", "name": "Solana Nuts", "logo": { "@type": "ImageObject", "url": "https://solananuts.com/logo.png" } },
+  "mainEntityOfPage": "https://solananuts.com/blog/almendra-espanola-vs-californiana",
+  "image": "https://solananuts.com/og-default.jpg",
+  "inLanguage": "es-ES",
+  "keywords": keywords,
+  "articleSection": "Guías",
+  "wordCount": 1600
+};
+---
+<Base
+  title={title}
+  description={description}
+  keywords={keywords}
+  canonical="https://solananuts.com/blog/almendra-espanola-vs-californiana"
+  schema={articleSchema}
+  ogType="article"
+  publishedAt={publishedAt}
+  modifiedAt={modifiedAt}
+  breadcrumbs={[
+    { name: 'Inicio', url: '/' },
+    { name: 'Diario de la finca', url: '/blog' },
+    { name: 'Almendra española vs. californiana', url: '/blog/almendra-espanola-vs-californiana' }
+  ]}
+>
+  <Nav />
+  <main id="contenido">
+    <article>
+      <header class="bg-tierra text-crema py-16 lg:py-24 grano relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-tierra via-corteza/95 to-tierra" aria-hidden="true"></div>
+        <div class="container relative max-w-3xl">
+          <nav class="text-xs text-crema/60 mb-5" aria-label="Breadcrumb">
+            <a href="/" class="hover:text-almendra-light">Inicio</a><span class="mx-2">›</span>
+            <a href="/blog" class="hover:text-almendra-light">Diario</a><span class="mx-2">›</span>
+            <span class="text-almendra-light">Almendra española vs. californiana</span>
+          </nav>
+          <span class="badge badge-white">Guía · variedades</span>
+          <h1 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-crema leading-[1.1] mt-3">
+            Almendra española vs. californiana:<br/>
+            <span class="italic text-almendra-light">7 diferencias que notas al probarlas</span>
+          </h1>
+          <div class="flex items-center gap-4 mt-6 text-sm text-crema/70">
+            <span>Por Solana Nuts</span>
+            <span aria-hidden="true">·</span>
+            <time datetime={publishedAt}>15 de marzo de 2026</time>
+            <span aria-hidden="true">·</span>
+            <span>9 min de lectura</span>
+          </div>
+        </div>
+      </header>
+
+      <section class="section-sm bg-crema">
+        <div class="container max-w-3xl prose-tierra">
+          <p class="text-lg leading-relaxed text-corteza">
+            Cuando alguien prueba por primera vez una almendra Soleta o Marcona cultivada en el Bajo
+            Aragón, la reacción casi siempre es la misma: <em>"¿esto es la misma almendra que compro
+            en el súper?"</em>. La respuesta corta es <strong>no</strong>. La respuesta larga ocupa siete
+            diferencias — y las contamos aquí, sin marketing.
+          </p>
+
+          <h2>1. La cáscara: dura vs. blanda</h2>
+          <p>
+            La diferencia empieza por fuera. Las variedades españolas (Soleta, Lauranne, Marcona, Largueta, Comuna)
+            tienen <strong>cáscara dura y no porosa</strong>. Las californianas (Nonpareil, Carmel, Monterey)
+            son de cáscara blanda — pensadas para mecanización y volumen.
+          </p>
+          <p>
+            La cáscara dura es una barrera natural contra plagas e insectos. Por eso la almendra española
+            <strong>no necesita fumigación post-cosecha</strong>. La californiana, sí.
+          </p>
+
+          <h2>2. Fumigación post-cosecha: una práctica poco conocida</h2>
+          <p>
+            Entre la cosecha y el consumo, la almendra californiana convencional pasa por una fumigación
+            con bromuro de metilo o fosfina para cumplir los protocolos sanitarios de exportación. No es un
+            secreto — es el estándar de la industria USDA.
+          </p>
+          <p>
+            La almendra española con cáscara no lo necesita. Por eso en nuestra finca, Solana Nuts, la almendra
+            <strong>pasa directamente del árbol al secado al aire y del secado al envasado</strong>. Cero químicos.
+          </p>
+
+          <h2>3. Contenido en aceite: donde vive el sabor</h2>
+          <p>
+            La almendra española tiene entre un <strong>52% y 57% de aceites</strong> en la pepita.
+            La californiana se mueve en el 48–52%. Más aceite significa más sabor, más cremosidad y una textura
+            que los pasteleros reconocen al instante.
+          </p>
+          <blockquote>
+            "La Marcona tiene tanto aceite que cuando la muerdes se deshace en la boca como mantequilla."
+            — Sergio Fernández, pastelero, Madrid.
+          </blockquote>
+
+          <h2>4. Trazabilidad: finca única vs. pool mundial</h2>
+          <p>
+            Cuando compras una bolsa de almendra californiana en el supermercado, lo más probable es
+            que provenga de un <strong>pool de decenas de productores</strong> agregados por grandes
+            cooperativas (Blue Diamond, Wonderful) y puede venir de distintas cosechas.
+          </p>
+          <p>
+            La almendra española de productor —como la nuestra en <a href="/la-finca">Fayón</a>— tiene
+            <strong>origen único</strong>. Puedes saber de qué árbol, de qué año y quién la recogió.
+          </p>
+
+          <h2>5. Huella de carbono: 8.000 km de diferencia</h2>
+          <p>
+            Del Central Valley de California al puerto de Barcelona hay 14 días de barco y
+            unos <strong>8.000 km</strong>. De nuestra finca a tu casa en España, una media de 800 km por furgoneta.
+          </p>
+          <ul>
+            <li>Almendra californiana → Europa: ~1,8 kg CO₂e por kg de producto</li>
+            <li>Almendra española → consumidor ES: ~0,3 kg CO₂e por kg de producto</li>
+          </ul>
+
+          <h2>6. Uso del agua</h2>
+          <p>
+            California es el principal productor mundial pero riega con una <strong>media de 12.000 m³ por hectárea y año</strong>.
+            El secano aragonés tradicional, como el nuestro, bebe sólo <strong>lluvia y lo que retiene el suelo calizo</strong>.
+          </p>
+          <p>
+            Nuestros árboles producen menos por hectárea — pero lo que producen, concentra mucho más sabor.
+            Es la esencia del cultivo en secano: menos cantidad, mucha más densidad.
+          </p>
+
+          <h2>7. Precio</h2>
+          <p>
+            La almendra española de finca suele ser <strong>un 15–25% más cara</strong> que la almendra
+            californiana en grandes superficies. La diferencia no es capricho: es cosecha a mano, finca única,
+            secado natural y envase reutilizable. Lo que pagas es lo que comes.
+          </p>
+
+          <h2>Entonces, ¿qué almendra elegir?</h2>
+          <p>
+            Para horno industrial y granel a precio: almendra californiana tiene sentido por volumen. Para
+            comer como snack, regalar, repostería fina y tener trazabilidad real: <strong>almendra española,
+            y preferiblemente del productor</strong>.
+          </p>
+          <p>
+            En <a href="/">Solana Nuts</a> cultivamos tres variedades españolas —
+            <a href="/variedades/almendra-soleta">Soleta</a> y
+            <a href="/variedades/almendra-lauranne">Lauranne</a>— y la mejor variedad mundial de nuez,
+            la <a href="/variedades/nuez-chandler">Chandler</a>. Del árbol a tu mesa sin intermediarios.
+          </p>
+
+          <div class="mt-12 p-7 rounded-3xl bg-almendra-pale border border-arena">
+            <div class="text-xs font-bold uppercase tracking-wider text-almendra mb-2">En Solana Nuts</div>
+            <h3 class="font-display text-2xl font-bold text-tierra mb-3">Prueba la diferencia con una caja de muestras</h3>
+            <p class="text-corteza/85 mb-5">
+              Te enviamos 300 g de Almendra Soleta (con cáscara) para que la pruebes.
+              Cuéntanos tu opinión y nosotros te cubrimos el envío si eres tienda, restaurante o pastelería.
+            </p>
+            <a href="/contacto" class="btn btn-primary">Pedir muestra gratuita →</a>
+          </div>
+        </div>
+      </section>
+    </article>
+
+    <Contacto />
+    <Footer />
+  </main>
+</Base>

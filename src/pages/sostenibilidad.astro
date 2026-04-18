@@ -1,0 +1,97 @@
+---
+import Base    from '../layouts/Base.astro';
+import Nav     from '../components/Nav.astro';
+import Marquee from '../components/Marquee.astro';
+import Footer  from '../components/Footer.astro';
+
+const title = 'Sostenibilidad · Envase reutilizable y cero plásticos | Solana Nuts';
+const description = 'Compromiso real con la tierra: envase reutilizable de algodón y kraft, agricultura en secano, cero fumigación post-cosecha, proximidad al consumidor. Sostenibilidad honesta en Solana Nuts.';
+const keywords = 'almendras sostenibles, almendras sin plástico, frutos secos ecológicos, almendras envase reutilizable, agricultura regenerativa aragón, frutos secos km0, huella carbono almendras';
+
+const pillars = [
+  { n: '01', t: 'Cero plásticos en el envase', d: 'Todo nuestro packaging es algodón orgánico + papel kraft reciclado. Reutiliza la bolsa en tu despensa, como macetero o devuélvela en tu próximo pedido.' },
+  { n: '02', t: 'Cultivo en secano tradicional', d: 'No regamos en verano. Nuestros almendros beben lo que cae del cielo y lo que guardan los suelos calizos — con un 90% menos de agua que la agricultura intensiva.' },
+  { n: '03', t: 'Sin fumigación post-cosecha', d: 'La cáscara dura de nuestras variedades españolas es barrera natural. No aplicamos bromuro ni fosfina — prácticas habituales en nuez californiana.' },
+  { n: '04', t: 'Cosecha a mano', d: 'Árbol por árbol. Respetamos la madera y reducimos la merma. Más tiempo, más empleo local, más calidad en la pepita.' },
+  { n: '05', t: 'Del productor al consumidor', d: 'Cero intermediarios. La almendra que recolectamos en octubre llega a tu casa en noviembre — no tras un año en almacén refrigerado.' },
+  { n: '06', t: 'Biodiversidad en la finca', d: 'Convivimos con olivos centenarios, cubierta vegetal espontánea, colmenas y muros de piedra seca. La finca es paisaje, no monocultivo.' },
+];
+---
+<Base
+  title={title}
+  description={description}
+  keywords={keywords}
+  breadcrumbs={[
+    { name: 'Inicio', url: '/' },
+    { name: 'Sostenibilidad', url: '/sostenibilidad' }
+  ]}
+>
+  <Nav />
+  <main id="contenido">
+    <section class="bg-hoja-dark text-crema py-20 lg:py-28 grano relative overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-br from-hoja-dark via-tierra to-hoja-dark" aria-hidden="true"></div>
+      <div class="absolute top-0 left-0 w-[500px] h-[500px] bg-almendra/12 rounded-full blur-3xl" aria-hidden="true"></div>
+      <div class="container relative">
+        <nav class="text-xs text-crema/60 mb-5" aria-label="Breadcrumb">
+          <a href="/" class="hover:text-almendra-light">Inicio</a><span class="mx-2">›</span>
+          <span class="text-almendra-light">Sostenibilidad</span>
+        </nav>
+        <span class="badge badge-white">Compromiso real, no postureo</span>
+        <h1 class="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-crema leading-[1.05] max-w-4xl mt-3">
+          Cuidamos la tierra<br/><span class="italic text-almendra-light">que nos da el fruto</span>
+        </h1>
+        <p class="text-crema/80 text-lg max-w-2xl mt-5">
+          Seis decisiones concretas que toman forma en nuestra finca cada día. Sin greenwashing,
+          sin sellos comprados. Sólo lo que de verdad hacemos.
+        </p>
+      </div>
+    </section>
+
+    <Marquee />
+
+    <section class="section bg-crema">
+      <div class="container">
+        <div class="grid md:grid-cols-2 gap-5">
+          {pillars.map((p, i) => (
+            <article class="group bg-arena-light border border-arena rounded-3xl p-7 hover:border-hoja hover:shadow-warm transition-all duration-400" data-reveal data-d={String(Math.min(i+1, 6))}>
+              <div class="flex items-start gap-4">
+                <div class="font-display text-5xl text-hoja/40 font-bold leading-none flex-shrink-0 group-hover:text-hoja transition-colors">{p.n}</div>
+                <div>
+                  <h2 class="font-display text-xl font-bold text-tierra mb-2">{p.t}</h2>
+                  <p class="text-corteza/80 leading-relaxed text-sm">{p.d}</p>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Métricas -->
+    <section class="section-sm bg-arena">
+      <div class="container">
+        <div class="max-w-4xl mx-auto text-center">
+          <span class="kicker">Lo que medimos</span>
+          <h2 class="font-display text-3xl md:text-4xl font-bold text-tierra leading-tight mb-10">
+            Números reales de la <span class="text-grad">cosecha 2025</span>
+          </h2>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              { n:'0 kg', l:'Plástico en envases' },
+              { n:'-90%', l:'Agua vs. almendra intensiva' },
+              { n:'800 m', l:'Km medio entre finca y cliente ES' },
+              { n:'100%', l:'Cosecha a mano' },
+            ].map(x => (
+              <div class="bg-crema rounded-3xl p-6 border border-arena">
+                <div class="font-display text-3xl md:text-4xl font-bold text-tierra">{x.n}</div>
+                <div class="text-xs font-semibold uppercase tracking-wide text-almendra mt-2">{x.l}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <Footer />
+  </main>
+</Base>

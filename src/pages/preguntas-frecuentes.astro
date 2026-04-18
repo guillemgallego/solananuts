@@ -1,0 +1,142 @@
+---
+import Base   from '../layouts/Base.astro';
+import Nav    from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
+const title = 'Preguntas frecuentes · Envío, conservación, variedades | Solana Nuts';
+const description = 'Resolvemos todas tus dudas sobre envíos, pagos, variedades, conservación, ecológico, pedido al por mayor, muestras gratuitas y devoluciones. Guía completa de compra en Solana Nuts.';
+const keywords = 'faq solana nuts, conservar almendras, envío frutos secos españa, comprar nueces online dudas, devolución almendras, muestra gratuita almendras, pedido por mayor frutos secos';
+
+const categorias = [
+  {
+    titulo: 'Envíos y entrega',
+    icon: '🚚',
+    items: [
+      { q: '¿Cuánto cuesta el envío?',
+        a: 'Envío gratis a España peninsular desde 45 €. Por debajo, tarifa plana de 4,90 € (SEUR 24-48 h). Baleares: 9,90 €. Fuera de España calculamos coste según destino y peso en el checkout.' },
+      { q: '¿En cuánto tiempo recibo mi pedido?',
+        a: 'España peninsular: 2–4 días laborables. Baleares: 3–5 días. UE: 4–7 días. Te enviamos número de seguimiento en cuanto sale de la finca.' },
+      { q: '¿A qué países enviáis?',
+        a: 'Todos los países de la UE (Francia, Alemania, Italia, Portugal, Bélgica, Países Bajos, Austria, Suiza, Dinamarca, Irlanda…) y Reino Unido. Para otros destinos, escríbenos.' },
+      { q: '¿Qué pasa si mi pedido llega dañado?',
+        a: 'Cubrimos incidencias de transporte al 100%. Envía foto a info@solananuts.com en las 48 h siguientes a la recepción y te reponemos el producto sin coste.' },
+    ]
+  },
+  {
+    titulo: 'Producto y conservación',
+    icon: '🌰',
+    items: [
+      { q: '¿Cómo conservo las almendras y nueces con cáscara?',
+        a: 'En un lugar fresco, seco y oscuro — preferiblemente en la bolsa original de algodón. Con cáscara aguantan más de 12 meses sin perder sabor.' },
+      { q: '¿Y una vez peladas?',
+        a: 'En recipiente hermético, protegidas de la luz. Almendras peladas: hasta 6 meses. Gallo de nuez: 1–2 meses a temperatura ambiente o 6 meses en congelador.' },
+      { q: '¿Son ecológicas?',
+        a: 'Nuestro cultivo es 100% natural (sin fumigación post-cosecha, sin aditivos, sin pesticidas sistémicos). La certificación ecológica oficial está en trámite desde 2024.' },
+      { q: '¿Qué diferencia hay entre Soleta y Lauranne?',
+        a: 'Soleta es aragonesa (CITA Zaragoza), pepita elíptica y sabor dulce intenso — ideal a granel y turrón. Lauranne es francesa (INRA), pepita alargada y piel que se mantiene al hornear — ideal en panadería.' },
+      { q: '¿Y la Chandler qué tiene de especial?',
+        a: 'Es la variedad de nuez más plantada del mundo. Cáscara fina, gallo extra claro y sabor suave sin amargor. Rendimiento 45–50%.' },
+    ]
+  },
+  {
+    titulo: 'Pedidos y pagos',
+    icon: '💳',
+    items: [
+      { q: '¿Qué métodos de pago aceptáis?',
+        a: 'Tarjeta (Visa, Mastercard, Amex), Bizum, PayPal, Apple Pay, Google Pay y transferencia bancaria. Para empresas: también facturación a 30 días con IVA.' },
+      { q: '¿Puedo pedir una muestra antes?',
+        a: 'Sí. Ofrecemos caja de muestras gratuita (hasta 300 g por variedad) a tiendas, restaurantes y distribuidores. Rellena el formulario en /contacto y selecciona "Muestra gratuita".' },
+      { q: '¿Hacéis factura con IVA?',
+        a: 'Sí. Indica tu NIF/CIF en el checkout o en observaciones. Aplicamos IVA al 4% (alimentación) y 10% para algún formato de pack regalo.' },
+      { q: '¿Puedo cambiar o cancelar mi pedido?',
+        a: 'Mientras no haya salido de la finca. Si ya lo hemos enviado, puedes devolverlo en los 14 días posteriores a la recepción. La ley de protección al consumidor cubre alimentos sin abrir.' },
+    ]
+  },
+  {
+    titulo: 'Hostelería y mayorista',
+    icon: '🏪',
+    items: [
+      { q: '¿Tenéis precio especial para profesionales?',
+        a: 'Sí. Desde 25 kg aplicamos tarifa de mayorista (−15% aprox.). Desde pallet completo (800–1000 kg), condiciones personalizadas. Escribe a info@solananuts.com con tus datos.' },
+      { q: '¿Suministráis a panaderías, pastelerías y restaurantes?',
+        a: 'Trabajamos con más de 30 obradores en España y Francia. Podemos suministrar con periodicidad semanal, quincenal o mensual. Factura a 30 días para empresas.' },
+      { q: '¿Tenéis formatos específicos para HORECA?',
+        a: 'Sí. Sacos de 10 kg, 25 kg, big-bag y pallet. Para pastelería: almendra repelada, laminada, en grano, harina de almendra y nuez partida.' },
+      { q: '¿Puedo poner marca blanca con vuestras almendras?',
+        a: 'Sólo en pedidos de 500 kg en adelante. Hacemos etiquetado personalizado para tiendas gourmet, marca blanca y ediciones limitadas.' },
+    ]
+  },
+];
+
+const allFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": categorias.flatMap(c => c.items.map(i => ({
+    "@type": "Question",
+    "name": i.q,
+    "acceptedAnswer": { "@type": "Answer", "text": i.a }
+  })))
+};
+---
+<Base
+  title={title}
+  description={description}
+  keywords={keywords}
+  schema={allFaqSchema}
+  breadcrumbs={[
+    { name: 'Inicio', url: '/' },
+    { name: 'Preguntas frecuentes', url: '/preguntas-frecuentes' }
+  ]}
+>
+  <Nav />
+  <main id="contenido">
+    <section class="bg-tierra text-crema py-16 lg:py-20 grano relative overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-br from-tierra via-corteza/95 to-tierra" aria-hidden="true"></div>
+      <div class="container relative">
+        <nav class="text-xs text-crema/60 mb-4" aria-label="Breadcrumb">
+          <a href="/" class="hover:text-almendra-light">Inicio</a><span class="mx-2">›</span>
+          <span class="text-almendra-light">Preguntas frecuentes</span>
+        </nav>
+        <h1 class="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-crema leading-[1.05] max-w-3xl">
+          Todo lo que necesitas saber<br/><span class="italic text-almendra-light">antes y después de comprar</span>
+        </h1>
+      </div>
+    </section>
+
+    <section class="section bg-crema">
+      <div class="container max-w-4xl">
+        {categorias.map((cat, idx) => (
+          <div class="mb-12 last:mb-0" data-reveal>
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-14 h-14 rounded-2xl bg-almendra-pale flex items-center justify-center text-2xl" aria-hidden="true">{cat.icon}</div>
+              <h2 class="font-display text-2xl md:text-3xl font-bold text-tierra">{cat.titulo}</h2>
+            </div>
+            <div class="space-y-3">
+              {cat.items.map(faq => (
+                <details class="group bg-arena-light rounded-2xl overflow-hidden border border-arena">
+                  <summary class="flex items-center justify-between px-6 py-5 cursor-pointer text-sm md:text-base font-semibold text-tierra list-none hover:bg-arena transition-colors">
+                    <span class="pr-3">{faq.q}</span>
+                    <span class="text-almendra text-xl font-bold transition-transform group-open:rotate-45 flex-shrink-0" aria-hidden="true">+</span>
+                  </summary>
+                  <div class="px-6 pb-6 text-sm text-corteza/85 leading-relaxed border-t border-arena pt-4">
+                    {faq.a}
+                  </div>
+                </details>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="section-sm bg-tierra text-crema">
+      <div class="container text-center max-w-2xl">
+        <h2 class="font-display text-3xl md:text-4xl font-bold text-crema leading-tight mb-4">¿No has encontrado tu respuesta?</h2>
+        <p class="text-crema/75 mb-6">Escríbenos y te contestamos personalmente en menos de 24 horas laborables.</p>
+        <a href="/contacto" class="btn btn-almendra">Ir al formulario de contacto →</a>
+      </div>
+    </section>
+
+    <Footer />
+  </main>
+</Base>

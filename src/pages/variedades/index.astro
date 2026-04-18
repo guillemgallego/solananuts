@@ -1,0 +1,72 @@
+---
+import Base   from '../../layouts/Base.astro';
+import Nav    from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+
+const title       = 'Variedades · Almendra Soleta, Lauranne y Nuez Chandler | Solana Nuts';
+const description = 'Guía completa de las tres variedades que cultivamos en Fayón (Bajo Aragón): Almendra Soleta, Almendra Lauranne y Nuez Chandler. Características, sabor, usos y cosecha.';
+const keywords    = 'almendra soleta, almendra lauranne, nuez chandler, variedades de almendra españolas, variedades de nuez, características almendra soleta';
+
+const variedades = [
+  { slug:'/variedades/almendra-soleta',   nombre:'Almendra Soleta',   sub:'La variedad aragonesa', desc:'Cruce Blanquerna × Belle d\'Aurons obtenido en el CITA Zaragoza. Pepita elíptica, sabor dulce y autofértil.', g:'from-almendra via-almendra-light to-sol-light' },
+  { slug:'/variedades/almendra-lauranne', nombre:'Almendra Lauranne', sub:'La favorita de panaderos', desc:'Pepita alargada con corazón marrón claro. Su piel permanece intacta al hornear — ideal en repostería fina.', g:'from-almendra-light via-almendra to-corteza' },
+  { slug:'/variedades/nuez-chandler',     nombre:'Nuez Chandler',     sub:'La nuez #1 del mundo', desc:'Desarrollada en UC-Davis. Cáscara fina, gallo extra claro y sabor suave sin amargor. Rendimiento 45–50 %.', g:'from-nuez-dark via-corteza to-nuez' },
+];
+---
+<Base
+  title={title}
+  description={description}
+  keywords={keywords}
+  breadcrumbs={[
+    { name: 'Inicio', url: '/' },
+    { name: 'Variedades', url: '/variedades' }
+  ]}
+>
+  <Nav />
+  <main id="contenido">
+    <section class="bg-tierra text-crema py-20 lg:py-28 grano relative overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-br from-tierra via-corteza/95 to-tierra" aria-hidden="true"></div>
+      <div class="absolute top-0 right-1/4 w-[500px] h-[500px] bg-almendra/15 rounded-full blur-3xl" aria-hidden="true"></div>
+      <div class="container relative">
+        <nav class="text-xs text-crema/60 mb-5" aria-label="Breadcrumb">
+          <a href="/" class="hover:text-almendra-light">Inicio</a>
+          <span class="mx-2">›</span>
+          <span class="text-almendra-light">Variedades</span>
+        </nav>
+        <span class="badge badge-white">Las tres joyas de la finca</span>
+        <h1 class="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-crema leading-[1.05] max-w-4xl mt-2">
+          Tres variedades, <span class="italic text-almendra-light">una misma tierra</span>
+        </h1>
+        <p class="text-crema/80 text-lg max-w-2xl mt-5">
+          En Solana Nuts cultivamos sólo lo que sabemos hacer muy bien. Dos variedades de almendra
+          y la mejor variedad de nuez del mundo — todas pensadas para el clima continental del Bajo Aragón.
+        </p>
+      </div>
+    </section>
+
+    <section class="section bg-crema">
+      <div class="container grid md:grid-cols-3 gap-6">
+        {variedades.map((v, i) => (
+          <a href={v.slug} class="group bg-arena-light rounded-3xl overflow-hidden border border-arena hover:border-almendra hover:shadow-warm transition-all duration-400 hover:-translate-y-1 flex flex-col" data-reveal data-d={String(i+1)}>
+            <div class={`relative aspect-[4/3] bg-gradient-to-br ${v.g} grano`}>
+              <div class="absolute inset-0 flex items-center justify-center" aria-hidden="true">
+                <svg width="140" height="160" viewBox="0 0 120 140" fill="none">
+                  <ellipse cx="60" cy="75" rx="34" ry="48" fill="#F1DFC2"/>
+                  <ellipse cx="50" cy="60" rx="10" ry="18" fill="#FBF6EE" opacity=".5"/>
+                </svg>
+              </div>
+            </div>
+            <div class="p-7 flex-1 flex flex-col">
+              <div class="text-[11px] font-bold uppercase tracking-[.18em] text-almendra mb-1">{v.sub}</div>
+              <h2 class="font-display text-2xl font-bold text-tierra mb-3">{v.nombre}</h2>
+              <p class="text-corteza/80 text-sm leading-relaxed mb-5 flex-1">{v.desc}</p>
+              <span class="text-almendra font-semibold text-sm group-hover:translate-x-1 transition-transform">Ver ficha completa →</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <Footer />
+  </main>
+</Base>

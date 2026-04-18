@@ -1,23 +1,23 @@
 ---
 const items = [
-  '🌿 Family Farm · Spain',
-  '🤍 Solana Almonds',
-  '✨ Lauranne Almonds',
-  '🌰 Chandler Walnuts',
-  '📦 Ships to Germany · France · Italy · UK · Netherlands',
-  '🏅 EU Food Safety Certified',
-  '🌱 Sustainable Irrigation',
-  '🚚 5 kg to Full Pallet',
-  '📍 Single-Origin Traceability',
-  '🇪🇸 Grown in Spain since 1987',
+  'Tierra · Sol · Alma',
+  'Cosecha a mano',
+  'Bajo Aragón · Fayón',
+  'Secado natural al aire',
+  'Envase reutilizable',
+  'Sin plásticos',
+  'Agricultura familiar',
+  'Del campo a tu mesa',
+  'Sin intermediarios',
+  '100% natural',
 ];
 ---
-
-<div class="bg-sand border-y border-almond/20 py-3.5 overflow-hidden">
-  <div class="flex gap-8 whitespace-nowrap animate-marquee">
-    {[...items, ...items].map((item, i) => (
-      <span class="text-sm font-semibold text-bark/80 flex-shrink-0">
-        {item}
+<div class="bg-almendra-pale text-tierra border-y border-arena/80 overflow-hidden" aria-hidden="true">
+  <div class="flex animate-marquee whitespace-nowrap py-3 gap-8">
+    {[...items, ...items, ...items].map(t => (
+      <span class="text-xs md:text-sm font-semibold tracking-[.2em] uppercase flex items-center gap-8 flex-shrink-0">
+        {t}
+        <span class="text-almendra text-base" aria-hidden="true">✦</span>
       </span>
     ))}
   </div>

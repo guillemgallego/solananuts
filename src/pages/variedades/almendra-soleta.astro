@@ -1,0 +1,217 @@
+---
+import Base    from '../../layouts/Base.astro';
+import Nav     from '../../components/Nav.astro';
+import Marquee from '../../components/Marquee.astro';
+import FAQ     from '../../components/FAQ.astro';
+import Contacto from '../../components/Contacto.astro';
+import Footer  from '../../components/Footer.astro';
+
+const title = 'Almendra Soleta · Variedad aragonesa del CITA | Solana Nuts';
+const description = 'Almendra Soleta cultivada en Fayón (Bajo Aragón). Variedad aragonesa autofértil del CITA Zaragoza. Pepita elíptica, sabor dulce, ideal para turrón y repostería. Cosecha 2026, envío a toda España y Europa.';
+const keywords = 'almendra soleta, almendra soleta comprar, almendra soleta 1kg, almendra soleta 5kg, variedad soleta características, almendra aragonesa, comprar almendras cita zaragoza, almendra soleta precio';
+
+const productJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Almendra Soleta con cáscara",
+  "description": "Almendra Soleta (variedad aragonesa obtenida en el CITA Zaragoza). Pepita elíptica de 1–1,2 g, tegumento marrón, sabor dulce. Cultivada y secada de forma natural en Fayón.",
+  "image": ["https://solananuts.com/og-default.jpg"],
+  "brand": { "@type": "Brand", "name": "Solana Nuts" },
+  "category": "Frutos secos > Almendras > Almendra Soleta",
+  "countryOfOrigin": "ES",
+  "sku": "SLN-SOLETA-1KG",
+  "offers": [
+    { "@type": "Offer", "name": "1 kg", "price": "5.90", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "priceValidUntil": "2026-12-31", "url": "https://solananuts.com/variedades/almendra-soleta" },
+    { "@type": "Offer", "name": "5 kg", "price": "24.90", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "priceValidUntil": "2026-12-31", "url": "https://solananuts.com/variedades/almendra-soleta" }
+  ],
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "127", "bestRating": "5" },
+  "review": [
+    { "@type": "Review", "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }, "author": { "@type": "Person", "name": "María G." }, "reviewBody": "Las almendras más auténticas que he probado. Aroma y dulzor increíbles." }
+  ]
+};
+
+const faqItems = [
+  { q: '¿Qué es la variedad Soleta?',
+    a: 'La almendra Soleta es una variedad aragonesa obtenida por cruzamiento entre Blanquerna y Belle d\'Aurons en el CITA (Centro de Investigación y Tecnología Agroalimentaria) de Zaragoza. Es una variedad autofértil, de floración tardía, muy apreciada en España por su sabor y su rendimiento.' },
+  { q: '¿Qué sabor tiene la almendra Soleta?',
+    a: 'Sabor dulce, aromático y con alto contenido en aceites naturales. Es una de las variedades más recomendadas para turrón, mazapán y repostería en general, porque aporta cuerpo y dulzor natural sin necesidad de añadir azúcar.' },
+  { q: '¿Cuánto pesa una pepita de Soleta?',
+    a: 'La pepita pesa entre 1 y 1,2 gramos. Tiene forma elíptica, rellena bien la cavidad de la cáscara y su tegumento (piel) es de color marrón de grosor medio — fácil de repelar para obtener una almendra blanca muy limpia.' },
+  { q: '¿Cuándo se recolecta?',
+    a: 'La cosecha de Soleta se hace entre finales de agosto y principios de octubre. Después del varejón manual, la almendra se seca al aire libre durante varias semanas antes de ir al envasado.' },
+  { q: '¿Es la Soleta igual que la Marcona?',
+    a: 'No. La Marcona es redonda, más cara y la favorita de la industria turronera premium. La Soleta es elíptica, con sabor también dulce pero más suave, y con mejor rendimiento agronómico. Las dos son españolas y excelentes.' },
+];
+---
+<Base
+  title={title}
+  description={description}
+  keywords={keywords}
+  schema={productJsonLd}
+  breadcrumbs={[
+    { name: 'Inicio', url: '/' },
+    { name: 'Variedades', url: '/variedades' },
+    { name: 'Almendra Soleta', url: '/variedades/almendra-soleta' }
+  ]}
+>
+  <Nav />
+  <main id="contenido">
+
+    <section class="bg-tierra text-crema pt-14 pb-10 lg:pt-16 lg:pb-14 grano relative overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-br from-tierra via-corteza/95 to-tierra" aria-hidden="true"></div>
+      <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-almendra/15 rounded-full blur-3xl" aria-hidden="true"></div>
+      <div class="container relative">
+        <nav class="text-xs text-crema/60 mb-5" aria-label="Breadcrumb">
+          <a href="/" class="hover:text-almendra-light">Inicio</a>
+          <span class="mx-2">›</span>
+          <a href="/variedades" class="hover:text-almendra-light">Variedades</a>
+          <span class="mx-2">›</span>
+          <span class="text-almendra-light">Almendra Soleta</span>
+        </nav>
+      </div>
+    </section>
+
+    <section class="bg-tierra text-crema pb-20 lg:pb-28 grano relative overflow-hidden -mt-2">
+      <div class="absolute inset-0 bg-gradient-to-br from-tierra via-corteza/95 to-tierra" aria-hidden="true"></div>
+      <div class="container relative">
+        <div class="grid lg:grid-cols-[1.1fr_1fr] gap-12 items-center">
+          <div>
+            <span class="badge badge-white">Variedad estrella de la finca</span>
+            <h1 class="font-display text-4xl md:text-5xl lg:text-[3.6rem] font-bold text-crema leading-[1.05] mt-3">
+              Almendra <span class="text-grad-sol italic">Soleta</span>
+            </h1>
+            <p class="text-almendra-light font-display text-xl italic mt-3">La variedad aragonesa del CITA</p>
+            <p class="text-crema/80 text-lg leading-relaxed mt-5 max-w-xl">
+              Pepita elíptica, sabor dulce y con carácter. Tres décadas después de nacer en los
+              laboratorios del CITA Zaragoza, la Soleta se ha convertido en la variedad que
+              mejor representa el carácter del Bajo Aragón.
+            </p>
+
+            <div class="grid grid-cols-2 gap-3 mt-8 max-w-md">
+              <div class="bg-white/8 rounded-2xl p-4 border border-white/10">
+                <div class="text-[10px] font-bold uppercase tracking-[.15em] text-almendra-light">Formato 1 kg</div>
+                <div class="font-display text-3xl font-bold text-crema mt-1">5,90 €</div>
+                <div class="text-crema/60 text-xs mt-1">Con cáscara · cosecha 2026</div>
+              </div>
+              <div class="bg-white/8 rounded-2xl p-4 border border-white/10">
+                <div class="text-[10px] font-bold uppercase tracking-[.15em] text-almendra-light">Formato 5 kg</div>
+                <div class="font-display text-3xl font-bold text-crema mt-1">24,90 €</div>
+                <div class="text-crema/60 text-xs mt-1">Ahorra 15% · envase algodón</div>
+              </div>
+            </div>
+
+            <div class="flex flex-wrap gap-3 mt-7">
+              <a href="/contacto#pedido" class="btn btn-almendra">Comprar ahora</a>
+              <a href="/contacto" class="btn btn-outline !border-white/30 !text-crema hover:!bg-white/10 hover:!text-crema">Pedir muestra</a>
+            </div>
+          </div>
+
+          <div class="relative">
+            <div class="aspect-[4/5] rounded-[32px] bg-gradient-to-br from-sol via-almendra to-nuez shadow-warm-lg grano overflow-hidden relative">
+              <div class="absolute inset-0 flex items-center justify-center" aria-hidden="true">
+                <svg width="220" height="260" viewBox="0 0 120 140" fill="none">
+                  <ellipse cx="60" cy="75" rx="38" ry="54" fill="#F1DFC2"/>
+                  <ellipse cx="48" cy="58" rx="12" ry="22" fill="#FBF6EE" opacity=".5"/>
+                  <path d="M60 22C60 22 60 58 60 128" stroke="#8B6340" stroke-width="1.8" opacity=".55"/>
+                </svg>
+              </div>
+              <div class="absolute bottom-5 left-5 bg-crema/90 backdrop-blur rounded-2xl px-4 py-3">
+                <div class="text-[10px] font-bold uppercase tracking-[.18em] text-almendra">Peso pepita</div>
+                <div class="font-display text-tierra text-lg font-bold">1,0–1,2 g</div>
+              </div>
+              <div class="absolute top-5 right-5 bg-hoja text-crema rounded-2xl px-4 py-3">
+                <div class="text-[10px] font-bold uppercase tracking-[.18em]">Floración</div>
+                <div class="font-display text-lg font-bold">Tardía</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <Marquee />
+
+    <!-- Ficha técnica -->
+    <section class="section bg-crema" aria-labelledby="ficha-heading">
+      <div class="container">
+        <div class="grid lg:grid-cols-[.9fr_1.1fr] gap-14">
+          <div data-reveal>
+            <span class="kicker">Ficha técnica</span>
+            <h2 id="ficha-heading" class="font-display text-3xl md:text-4xl font-bold text-tierra leading-tight">
+              Todo sobre la <span class="text-grad">variedad Soleta</span>
+            </h2>
+            <p class="text-corteza/80 mt-5 leading-relaxed">
+              La Soleta es autofértil y de floración tardía — dos cualidades que la hacen especialmente
+              adecuada para el Bajo Aragón, donde las heladas tardías pueden arruinar floraciones tempranas.
+            </p>
+            <p class="text-corteza/80 mt-3 leading-relaxed">
+              Obtenida por cruzamiento entre Blanquerna y Belle d\'Aurons en el CITA de Zaragoza, es hoy
+              una de las variedades más plantadas en cultivo superintensivo y seto en España.
+            </p>
+            <a href="/blog/almendra-soleta-vs-lauranne" class="inline-flex mt-6 text-almendra font-semibold hover:underline">
+              Soleta vs Lauranne — ¿cuál compro? →
+            </a>
+          </div>
+
+          <div class="space-y-3" data-reveal data-d="2">
+            {[
+              ['Origen',          'CITA Zaragoza (España)'],
+              ['Parentales',      'Blanquerna × Belle d\'Aurons'],
+              ['Floración',       'Tardía (finales de febrero – principios de marzo)'],
+              ['Autofertilidad',  'Sí (autofértil, no necesita polinizador)'],
+              ['Porte del árbol', 'Semierecto, vigor medio'],
+              ['Pepita',          'Elíptica, 1,0–1,2 g'],
+              ['Tegumento',       'Marrón, grosor medio — fácil de repelar'],
+              ['Sabor',           'Dulce, aromático, alto en aceites'],
+              ['Rendimiento',     'Alto, regular, poco alternante'],
+              ['Uso culinario',   'A granel, turrón, mazapán, repostería'],
+              ['Conservación',    'Más de 12 meses con cáscara'],
+              ['Nuestra cosecha', 'Fayón (Zaragoza) — cosecha a mano + secado al aire'],
+            ].map(([k, v], i) => (
+              <div class={`flex items-start gap-4 rounded-2xl px-5 py-3.5 ${i % 2 === 0 ? 'bg-arena-light' : 'bg-arena'}`}>
+                <div class="w-32 flex-shrink-0 text-[11px] font-bold uppercase tracking-[.15em] text-almendra pt-0.5">{k}</div>
+                <div class="text-sm text-tierra font-medium">{v}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Valor nutricional -->
+    <section class="section-sm bg-almendra-pale/50">
+      <div class="container">
+        <div class="max-w-3xl mx-auto">
+          <div class="text-center mb-10" data-reveal>
+            <span class="badge">Valor nutricional</span>
+            <h2 class="font-display text-3xl md:text-4xl font-bold text-tierra leading-tight">
+              Lo que aporta un <span class="text-grad">puñado de Soleta</span>
+            </h2>
+            <p class="text-corteza/75 text-sm mt-3">Valores medios por 100 g de almendra cruda con piel</p>
+          </div>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-3" data-reveal data-d="2">
+            {[
+              { n:'579',  u:'kcal',  l:'Energía' },
+              { n:'21 g', u:'',      l:'Proteína vegetal' },
+              { n:'50 g', u:'',      l:'Grasas (90% insat.)' },
+              { n:'12 g', u:'',      l:'Fibra' },
+              { n:'270 mg', u:'',    l:'Calcio' },
+              { n:'25 mg',  u:'',    l:'Vitamina E' },
+              { n:'270 mg', u:'',    l:'Magnesio' },
+              { n:'733 mg', u:'',    l:'Potasio' },
+            ].map(x => (
+              <div class="bg-crema rounded-2xl p-5 text-center border border-arena">
+                <div class="font-display text-2xl font-bold text-tierra leading-none">{x.n}</div>
+                <div class="text-[11px] font-bold uppercase tracking-wide text-almendra mt-1.5">{x.l}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <FAQ titulo="Sobre la Soleta" items={faqItems} variante="cream" />
+    <Contacto />
+    <Footer />
+  </main>
+</Base>

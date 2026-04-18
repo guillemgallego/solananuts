@@ -1,0 +1,45 @@
+{
+  "name": "Solana Nuts · Almendras y Nueces del Bajo Aragón",
+  "short_name": "Solana Nuts",
+  "description": "Almendras Soleta, Lauranne y Nuez Chandler cultivadas en Fayón, Bajo Aragón. Del árbol a tu mesa sin intermediarios.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F7F0E6",
+  "theme_color": "#4A2A0A",
+  "lang": "es-ES",
+  "dir": "ltr",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "categories": ["food", "shopping"],
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "apple touch icon"
+    }
+  ],
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "Almendra Soleta",
+      "short_name": "Soleta",
+      "description": "Ver la variedad Almendra Soleta",
+      "url": "/variedades/almendra-soleta",
+      "icons": [{ "src": "/favicon.svg", "sizes": "any" }]
+    },
+    {
+      "name": "Nuez Chandler",
+      "short_name": "Chandler",
+      "description": "Ver la variedad Nuez Chandler",
+      "url": "/variedades/nuez-chandler",
+      "icons": [{ "src": "/favicon.svg", "sizes": "any" }]
+    }
+  ]
+}

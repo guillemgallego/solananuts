@@ -1,0 +1,297 @@
+---
+import Base    from '../layouts/Base.astro';
+import Nav     from '../components/Nav.astro';
+import Footer  from '../components/Footer.astro';
+import Contacto from '../components/Contacto.astro';
+
+const title = 'Comprar almendras online de productor | Soleta y Lauranne del Bajo Aragón · Solana Nuts';
+const description = 'Compra almendras online directamente del productor en Fayón, Bajo Aragón. Almendra Soleta y Lauranne con cosecha manual, secado natural y envío a España y Europa. Sin intermediarios — precio de finca.';
+const keywords = 'comprar almendras online, comprar almendras productor, almendras del bajo aragon online, almendras soleta comprar, almendras naturales envio españa, comprar almendras ecologicas spain, almendras sin intermediarios';
+
+const faqItems = [
+  {
+    q: '¿Cuánto cuesta el envío de almendras a España?',
+    a: 'Envío gratis a partir de 45 € en España peninsular. Tarifa plana de 4,90 € por debajo de ese importe. Baleares: 9,90 €. Toda la UE: calculado en el checkout según destino.'
+  },
+  {
+    q: '¿Las almendras son ecológicas?',
+    a: 'Nuestro cultivo es 100% natural: sin fumigación post-cosecha, sin pesticidas sistémicos, sin aditivos. La certificación ecológica oficial está en trámite desde 2024. Lo que te enviamos ya cumple los requisitos del cultivo ecológico — el sello llegará.'
+  },
+  {
+    q: '¿Cuándo está disponible la cosecha 2026?',
+    a: 'La cosecha de almendra es en septiembre–octubre. Enviamos a partir de noviembre, tras el secado natural al aire. Reserva ahora y te avisamos cuando esté lista.'
+  },
+  {
+    q: '¿Cuál es la diferencia entre Soleta y Lauranne?',
+    a: 'Soleta (aragonesa) tiene un sabor más intenso y aromático — perfecta para comer a granel, turrón o mazapán. Lauranne (francesa) es 100% dulce y su piel aguanta el horno — ideal para panadería y repostería.'
+  },
+  {
+    q: '¿Puedo pedir una muestra gratuita?',
+    a: 'Sí, para tiendas, restaurantes y distribuidores ofrecemos caja de muestras gratuita de hasta 300 g por variedad. Rellena el formulario de contacto seleccionando "Muestra gratuita".'
+  },
+];
+
+const productListSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Comprar almendras online · Solana Nuts",
+  "description": description,
+  "url": "https://solananuts.com/comprar-almendras-online",
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://solananuts.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Comprar almendras online", "item": "https://solananuts.com/comprar-almendras-online" }
+    ]
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqItems.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a }
+  }))
+};
+
+const variedades = [
+  {
+    nombre: 'Almendra Soleta',
+    origen: 'CITA Zaragoza · Bajo Aragón',
+    descripcion: 'La almendra aragonesa por excelencia. Pepita elíptica, sabor dulce e intenso, perfecta a granel y para turrón. La más vendida de nuestra finca.',
+    precio: 'Desde 5,90 €/kg',
+    badge: 'Más vendida',
+    color: 'bg-almendra',
+    href: '/variedades/almendra-soleta',
+    disponible: true,
+  },
+  {
+    nombre: 'Almendra Lauranne',
+    origen: 'INRA Francia · Bajo Aragón',
+    descripcion: 'Pepita alargada, dulzura pura, piel que aguanta el horno. La favorita de pasteleros y panaderos para croissants, brioches y almendra laminada.',
+    precio: 'Próximamente',
+    badge: 'Cosecha 2026',
+    color: 'bg-sol',
+    href: '/variedades/almendra-lauranne',
+    disponible: false,
+  },
+];
+---
+<Base
+  title={title}
+  description={description}
+  keywords={keywords}
+  canonical="https://solananuts.com/comprar-almendras-online"
+  schema={[productListSchema, faqSchema]}
+  breadcrumbs={[
+    { name: 'Inicio', url: '/' },
+    { name: 'Comprar almendras online', url: '/comprar-almendras-online' }
+  ]}
+>
+  <Nav />
+  <main id="contenido">
+
+    <!-- HERO -->
+    <section class="bg-tierra text-crema py-16 lg:py-28 grano relative overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-br from-tierra via-corteza/90 to-tierra" aria-hidden="true"></div>
+      <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-almendra/10 rounded-full blur-3xl" aria-hidden="true"></div>
+      <div class="container relative max-w-5xl">
+        <nav class="text-xs text-crema/60 mb-4" aria-label="Breadcrumb">
+          <a href="/" class="hover:text-almendra-light">Inicio</a><span class="mx-2">›</span>
+          <span class="text-almendra-light">Comprar almendras online</span>
+        </nav>
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <span class="badge badge-white mb-4">Del árbol a tu mesa · sin intermediarios</span>
+            <h1 class="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-crema leading-[1.05] mb-6">
+              Comprar almendras<br/>
+              <span class="italic text-almendra-light">directamente del productor</span>
+            </h1>
+            <p class="text-crema/80 text-lg leading-relaxed mb-8">
+              Almendra Soleta y Lauranne cultivadas en <strong class="text-crema">Fayón, Bajo Aragón</strong>.
+              Cosecha manual, secado natural y envío desde la finca. Sin intermediarios, sin tratamientos,
+              con el sabor que sólo tiene la almendra española de proximidad.
+            </p>
+            <div class="flex flex-wrap gap-4">
+              <a href="#variedades" class="btn btn-almendra">Ver variedades disponibles</a>
+              <a href="/contacto" class="btn btn-ghost">Pedir muestra gratuita</a>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            {[
+              { valor: '100%', label: 'Origen España' },
+              { valor: '0', label: 'Intermediarios' },
+              { valor: '2', label: 'Variedades premium' },
+              { valor: '4.9★', label: 'Valoración media' },
+            ].map(s => (
+              <div class="bg-white/8 rounded-2xl p-5 text-center backdrop-blur-sm border border-white/10">
+                <div class="font-display text-3xl font-bold text-almendra-light mb-1">{s.valor}</div>
+                <div class="text-xs text-crema/65 uppercase tracking-wider">{s.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- POR QUÉ COMPRAR DE PRODUCTOR -->
+    <section class="section bg-crema" aria-labelledby="h-ventajas">
+      <div class="container max-w-5xl">
+        <div class="text-center mb-12">
+          <span class="kicker">La diferencia que se nota</span>
+          <h2 id="h-ventajas" class="font-display text-3xl md:text-4xl font-bold text-tierra mt-2">
+            Por qué comprar almendras al productor
+          </h2>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+          {[
+            {
+              icono: '🌳',
+              titulo: 'Finca única, Fayón, Bajo Aragón',
+              texto: 'Cultivamos en secano, con suelos calizos y 2.700 horas de sol al año. No hay pools de productores ni mezcla de cosechas. Sabes exactamente de dónde viene lo que comes.'
+            },
+            {
+              icono: '✋',
+              titulo: 'Cosecha manual, sin golpeadoras',
+              texto: 'Recogemos con mantas y vareo a mano. Menos daño mecánico, menos rotura de pepita, más sabor preservado. Una almendra sin golpes es una almendra sin oxidación prematura.'
+            },
+            {
+              icono: '🌬️',
+              titulo: 'Secado natural al aire, sin calor industrial',
+              texto: 'Secamos al sol y con el cierzo aragonés durante 2–3 semanas. Sin cámaras de calor forzado que queman los aceites naturales. El sabor que llegas a notar es exactamente ese.'
+            },
+            {
+              icono: '📦',
+              titulo: 'Sin fumigación post-cosecha',
+              texto: 'La cáscara dura española no necesita fumigación. La almendra californiana, sí. La nuestra pasa del árbol al secadero y del secadero al envase. Cero químicos de conservación.'
+            },
+            {
+              icono: '🚚',
+              titulo: 'Envío directo desde la finca',
+              texto: 'Sin almacenes intermedios, sin pallets en cámaras frigoríficas colectivas durante meses. Pedido → envasado en finca → a tu puerta en 2–4 días laborables.'
+            },
+            {
+              icono: '♻️',
+              titulo: 'Envase reutilizable, sin plástico',
+              texto: 'Bolsa de algodón natural 100% reutilizable o caja de cartón reciclado. La almendra con cáscara no necesita envase de barrera — la cáscara ya es el envase perfecto.'
+            },
+          ].map((v, i) => (
+            <div class="bg-arena-light rounded-3xl p-6 border border-arena" data-reveal data-d={String(Math.min(i+1,6))}>
+              <div class="text-3xl mb-4" aria-hidden="true">{v.icono}</div>
+              <h3 class="font-display text-lg font-bold text-tierra mb-3">{v.titulo}</h3>
+              <p class="text-sm text-corteza/80 leading-relaxed">{v.texto}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- VARIEDADES -->
+    <section id="variedades" class="section bg-arena-light" aria-labelledby="h-variedades">
+      <div class="container max-w-5xl">
+        <div class="text-center mb-12">
+          <span class="kicker">Variedades disponibles</span>
+          <h2 id="h-variedades" class="font-display text-3xl md:text-4xl font-bold text-tierra mt-2">
+            Almendras que puedes comprar hoy
+          </h2>
+          <p class="text-corteza/70 mt-3 max-w-xl mx-auto">
+            Dos variedades, dos perfiles de sabor. Ambas cultivadas en la misma finca, con las mismas
+            manos y el mismo cuidado.
+          </p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-8">
+          {variedades.map((v, i) => (
+            <div class={`bg-crema rounded-3xl overflow-hidden border-2 ${v.disponible ? 'border-almendra shadow-warm-lg' : 'border-arena'} flex flex-col`} data-reveal data-d={String(i+1)}>
+              <div class={`aspect-[16/9] ${v.color} grano relative flex items-center justify-center`}>
+                <span class="bg-crema text-tierra text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full">{v.badge}</span>
+              </div>
+              <div class="p-8 flex-1 flex flex-col">
+                <div class="text-xs text-almendra font-bold uppercase tracking-wider mb-2">{v.origen}</div>
+                <h3 class="font-display text-2xl font-bold text-tierra mb-3">{v.nombre}</h3>
+                <p class="text-corteza/80 text-sm leading-relaxed flex-1 mb-6">{v.descripcion}</p>
+                <div class="flex items-center justify-between">
+                  <span class="font-display text-xl font-bold text-tierra">{v.precio}</span>
+                  <a href={v.href} class={v.disponible ? 'btn btn-primary' : 'btn btn-outline opacity-70'}>
+                    {v.disponible ? 'Comprar →' : 'Reservar cosecha →'}
+                  </a>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPARATIVA ESPAÑOLA VS CALIFORNIANA -->
+    <section class="section bg-crema" aria-labelledby="h-comparativa">
+      <div class="container max-w-4xl">
+        <div class="text-center mb-10">
+          <span class="kicker">Qué estás comprando realmente</span>
+          <h2 id="h-comparativa" class="font-display text-3xl md:text-4xl font-bold text-tierra mt-2">
+            Almendra española vs. californiana
+          </h2>
+        </div>
+        <div class="overflow-x-auto rounded-2xl border border-arena shadow-card">
+          <table class="w-full text-sm border-collapse">
+            <thead>
+              <tr class="bg-tierra text-crema">
+                <th class="text-left px-5 py-4 font-semibold">Característica</th>
+                <th class="px-5 py-4 font-semibold text-almendra-light">Solana Nuts (Española)</th>
+                <th class="px-5 py-4 font-semibold text-crema/60">California (Nonpareil)</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                ['Cáscara', 'Dura · barrera natural', 'Blanda · porosa'],
+                ['Fumigación post-cosecha', 'No necesaria', 'Estándar USDA'],
+                ['Contenido en aceite', '52–57%', '48–52%'],
+                ['Trazabilidad', 'Finca única · Fayón', 'Pool de productores'],
+                ['Huella CO₂ (España)', '~0,3 kg CO₂e/kg', '~1,8 kg CO₂e/kg'],
+                ['Agua por hectárea', 'Secano · lluvia', '12.000 m³/ha/año'],
+                ['Envase', 'Bolsa de algodón reutilizable', 'Bolsa de plástico'],
+              ].map(([caract, esp, cal], i) => (
+                <tr class={i % 2 === 0 ? 'bg-arena-light' : 'bg-arena'}>
+                  <td class="px-5 py-3.5 font-semibold text-tierra">{caract}</td>
+                  <td class="px-5 py-3.5 text-center text-hoja font-medium">{esp}</td>
+                  <td class="px-5 py-3.5 text-center text-corteza/60">{cal}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p class="text-center mt-6 text-sm text-corteza/60">
+          <a href="/blog/almendra-espanola-vs-californiana" class="text-almendra hover:underline">
+            Leer la comparativa completa en el blog →
+          </a>
+        </p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section bg-arena-light" aria-labelledby="h-faq">
+      <div class="container max-w-3xl">
+        <h2 id="h-faq" class="font-display text-3xl font-bold text-tierra mb-8 text-center">
+          Preguntas frecuentes al comprar almendras online
+        </h2>
+        <div class="space-y-3">
+          {faqItems.map(f => (
+            <details class="group bg-crema rounded-2xl overflow-hidden border border-arena">
+              <summary class="flex items-center justify-between px-6 py-5 cursor-pointer text-sm font-semibold text-tierra list-none hover:bg-arena-light transition-colors">
+                <span class="pr-3">{f.q}</span>
+                <span class="text-almendra text-xl font-bold transition-transform group-open:rotate-45 flex-shrink-0" aria-hidden="true">+</span>
+              </summary>
+              <div class="px-6 pb-6 text-sm text-corteza/85 leading-relaxed border-t border-arena pt-4">
+                {f.a}
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <Contacto />
+    <Footer />
+  </main>
+</Base>

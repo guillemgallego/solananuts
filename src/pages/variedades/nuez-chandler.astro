@@ -1,0 +1,195 @@
+---
+import Base    from '../../layouts/Base.astro';
+import Nav     from '../../components/Nav.astro';
+import Marquee from '../../components/Marquee.astro';
+import FAQ     from '../../components/FAQ.astro';
+import Contacto from '../../components/Contacto.astro';
+import Footer  from '../../components/Footer.astro';
+
+const title = 'Nuez Chandler · Gallo extra claro y sabor suave | Solana Nuts';
+const description = 'Nuez Chandler cultivada en Fayón (Bajo Aragón). La variedad de nuez #1 del mundo: cáscara fina, gallo extra claro, sabor suave sin amargor y rendimiento 45–50%. Comprar online directo del productor.';
+const keywords = 'nuez chandler, comprar nueces chandler, variedad chandler características, nueces con cáscara, nueces gallo claro, nueces naturales españa, nueces del productor, comprar nueces online';
+
+const productJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Nuez Chandler con cáscara",
+  "description": "Nuez Chandler cultivada en Fayón, Bajo Aragón. Cáscara fina, gallo extra claro, sabor suave sin amargor. Rendimiento 45–50% y secado natural al aire.",
+  "image": ["https://solananuts.com/og-default.jpg"],
+  "brand": { "@type": "Brand", "name": "Solana Nuts" },
+  "category": "Frutos secos > Nueces > Nuez Chandler",
+  "countryOfOrigin": "ES",
+  "sku": "SLN-CHANDLER",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR", "availability": "https://schema.org/PreOrder", "url": "https://solananuts.com/variedades/nuez-chandler" },
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "58", "bestRating": "5" }
+};
+
+const faqItems = [
+  { q: '¿Qué es la Nuez Chandler?',
+    a: 'Chandler es una variedad de nogal desarrollada en la Universidad de California-Davis a finales de los 70. Hoy es la variedad más plantada del mundo por su calidad de fruto, su cáscara fina y su color de gallo extra claro — el estándar que más se paga en retail premium europeo.' },
+  { q: '¿Por qué se dice que es la mejor nuez del mundo?',
+    a: 'Por la combinación de tres factores: (1) gallo de color extra claro (el color que el consumidor asocia con "nuez fresca de calidad"), (2) sabor suave y mantecoso, sin amargor, y (3) rendimiento alto — cada 100 g de nuez con cáscara, 45–50 g son gallo comestible.' },
+  { q: '¿Cuándo cosecháis la Chandler en Fayón?',
+    a: 'La cosecha de Nuez Chandler en el Bajo Aragón empieza a principios de octubre y termina a finales de noviembre. Tras el secado natural, los envíos comienzan a partir de diciembre.' },
+  { q: '¿Qué beneficios tiene comer nueces Chandler?',
+    a: 'La nuez es el fruto seco con mayor contenido en ácidos grasos Omega-3 vegetales (ALA), con efecto cardioprotector demostrado. Un puñado al día (30 g) aporta proteína vegetal, fibra, magnesio, melatonina natural y antioxidantes polifenólicos.' },
+  { q: '¿Se conservan bien con cáscara?',
+    a: 'Sí. La cáscara protege el gallo de la oxidación. En lugar seco y fresco, con cáscara aguantan más de 12 meses sin perder sabor. Una vez abiertas, consume el gallo en 1–2 meses o consérvalo en el congelador.' },
+];
+---
+<Base
+  title={title}
+  description={description}
+  keywords={keywords}
+  schema={productJsonLd}
+  breadcrumbs={[
+    { name: 'Inicio', url: '/' },
+    { name: 'Variedades', url: '/variedades' },
+    { name: 'Nuez Chandler', url: '/variedades/nuez-chandler' }
+  ]}
+>
+  <Nav />
+  <main id="contenido">
+    <section class="bg-tierra text-crema pt-14 pb-10 grano relative overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-br from-tierra via-corteza/95 to-tierra" aria-hidden="true"></div>
+      <div class="container relative">
+        <nav class="text-xs text-crema/60 mb-5" aria-label="Breadcrumb">
+          <a href="/" class="hover:text-almendra-light">Inicio</a>
+          <span class="mx-2">›</span>
+          <a href="/variedades" class="hover:text-almendra-light">Variedades</a>
+          <span class="mx-2">›</span>
+          <span class="text-almendra-light">Nuez Chandler</span>
+        </nav>
+      </div>
+    </section>
+
+    <section class="bg-tierra text-crema pb-20 lg:pb-28 grano relative overflow-hidden -mt-2">
+      <div class="absolute inset-0 bg-gradient-to-br from-tierra via-corteza/95 to-tierra" aria-hidden="true"></div>
+      <div class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-almendra/15 rounded-full blur-3xl" aria-hidden="true"></div>
+      <div class="container relative">
+        <div class="grid lg:grid-cols-[1.1fr_1fr] gap-12 items-center">
+          <div>
+            <span class="badge badge-white">La nuez #1 del mundo</span>
+            <h1 class="font-display text-4xl md:text-5xl lg:text-[3.6rem] font-bold text-crema leading-[1.05] mt-3">
+              Nuez <span class="text-grad-sol italic">Chandler</span>
+            </h1>
+            <p class="text-almendra-light font-display text-xl italic mt-3">Gallo extra claro · sabor suave · sin amargor</p>
+            <p class="text-crema/80 text-lg leading-relaxed mt-5 max-w-xl">
+              La variedad de nuez más plantada del mundo, cultivada en secano aragonés.
+              Cáscara fina, gallo claro y rendimiento del 50%. Tan dulce que los niños se la comen
+              como si fueran caramelos.
+            </p>
+
+            <div class="flex flex-wrap gap-3 mt-7">
+              <a href="/contacto" class="btn btn-almendra">Reservar cosecha 2026</a>
+              <a href="/blog/nuez-chandler-beneficios" class="btn btn-outline !border-white/30 !text-crema hover:!bg-white/10 hover:!text-crema">Beneficios de la nuez</a>
+            </div>
+          </div>
+
+          <div class="relative">
+            <div class="aspect-[4/5] rounded-[32px] bg-gradient-to-br from-nuez-dark via-corteza to-nuez shadow-warm-lg grano overflow-hidden relative">
+              <div class="absolute inset-0 flex items-center justify-center" aria-hidden="true">
+                <svg width="220" height="220" viewBox="0 0 140 140" fill="none">
+                  <circle cx="70" cy="70" r="56" fill="#F1DFC2"/>
+                  <path d="M70 18C50 30 36 48 36 70c0 20 12 36 34 48 22-12 34-28 34-48 0-22-14-40-34-52z" fill="#A67C52"/>
+                  <path d="M70 18v100M44 40c10 8 15 20 15 30s-5 22-12 30M96 40c-10 8-15 20-15 30s5 22 12 30" stroke="#5C3A1E" stroke-width="1.8" fill="none" opacity=".8"/>
+                </svg>
+              </div>
+              <div class="absolute bottom-5 left-5 bg-crema/90 backdrop-blur rounded-2xl px-4 py-3">
+                <div class="text-[10px] font-bold uppercase tracking-[.18em] text-almendra">Rendimiento</div>
+                <div class="font-display text-tierra text-lg font-bold">45–50 %</div>
+              </div>
+              <div class="absolute top-5 right-5 bg-hoja text-crema rounded-2xl px-4 py-3">
+                <div class="text-[10px] font-bold uppercase tracking-[.18em]">Gallo</div>
+                <div class="font-display text-lg font-bold">Extra claro</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <Marquee />
+
+    <section class="section bg-crema">
+      <div class="container">
+        <div class="grid lg:grid-cols-[.9fr_1.1fr] gap-14">
+          <div data-reveal>
+            <span class="kicker">Ficha técnica</span>
+            <h2 class="font-display text-3xl md:text-4xl font-bold text-tierra leading-tight">
+              Por qué la <span class="text-grad">Chandler</span> manda en el mundo
+            </h2>
+            <p class="text-corteza/80 mt-5 leading-relaxed">
+              Desarrollada en UC-Davis en 1979, Chandler revolucionó el mercado mundial de la nuez.
+              Hoy representa más del 50% de las plantaciones comerciales en España, California, Chile
+              y Francia.
+            </p>
+            <p class="text-corteza/80 mt-3 leading-relaxed">
+              Su éxito se debe a tres cosas: color de gallo extra claro, cáscara fina que se rompe limpia
+              y rendimiento superior a cualquier otra variedad comercial.
+            </p>
+            <a href="/blog/nuez-chandler-beneficios" class="inline-flex mt-6 text-almendra font-semibold hover:underline">Beneficios de la nuez Chandler →</a>
+          </div>
+
+          <div class="space-y-3" data-reveal data-d="2">
+            {[
+              ['Origen',             'UC-Davis, California (1979)'],
+              ['Floración',          'Tardía'],
+              ['Porte del árbol',    'Erecto, vigor fuerte'],
+              ['Fruto',              '14–16 g con cáscara'],
+              ['Cáscara',            'Fina, de color claro, sellado perfecto'],
+              ['Gallo',              'Extra claro (grado #1)'],
+              ['Sabor',              'Suave, mantecoso, sin amargor'],
+              ['Rendimiento',        '45–50 % gallo sobre peso'],
+              ['Omega-3 (ALA)',      'Muy alto'],
+              ['Uso estrella',       'Mesa, repostería, chocolates, ensaladas'],
+              ['Cosecha',            'Octubre–noviembre en Fayón'],
+              ['Conservación',       '+12 meses con cáscara'],
+            ].map(([k, v], i) => (
+              <div class={`flex items-start gap-4 rounded-2xl px-5 py-3.5 ${i % 2 === 0 ? 'bg-arena-light' : 'bg-arena'}`}>
+                <div class="w-36 flex-shrink-0 text-[11px] font-bold uppercase tracking-[.15em] text-almendra pt-0.5">{k}</div>
+                <div class="text-sm text-tierra font-medium">{v}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Nutricional -->
+    <section class="section-sm bg-almendra-pale/50">
+      <div class="container">
+        <div class="max-w-3xl mx-auto">
+          <div class="text-center mb-10" data-reveal>
+            <span class="badge">Valor nutricional</span>
+            <h2 class="font-display text-3xl md:text-4xl font-bold text-tierra leading-tight">
+              Un <span class="text-grad">puñado al día</span> cambia el año
+            </h2>
+            <p class="text-corteza/75 text-sm mt-3">Valores medios por 100 g de gallo de nuez Chandler</p>
+          </div>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-3" data-reveal data-d="2">
+            {[
+              { n:'654',  l:'kcal' },
+              { n:'15 g', l:'Proteína' },
+              { n:'65 g', l:'Grasas (85% insat.)' },
+              { n:'9 g',  l:'Omega-3 ALA' },
+              { n:'6,7 g', l:'Fibra' },
+              { n:'158 mg', l:'Magnesio' },
+              { n:'441 mg', l:'Potasio' },
+              { n:'3,1 mg', l:'Zinc' },
+            ].map(x => (
+              <div class="bg-crema rounded-2xl p-5 text-center border border-arena">
+                <div class="font-display text-2xl font-bold text-tierra leading-none">{x.n}</div>
+                <div class="text-[11px] font-bold uppercase tracking-wide text-almendra mt-1.5">{x.l}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <FAQ titulo="Sobre la Chandler" items={faqItems} variante="cream" />
+    <Contacto />
+    <Footer />
+  </main>
+</Base>

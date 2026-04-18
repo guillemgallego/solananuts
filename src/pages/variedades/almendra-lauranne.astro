@@ -1,0 +1,156 @@
+---
+import Base    from '../../layouts/Base.astro';
+import Nav     from '../../components/Nav.astro';
+import Marquee from '../../components/Marquee.astro';
+import FAQ     from '../../components/FAQ.astro';
+import Contacto from '../../components/Contacto.astro';
+import Footer  from '../../components/Footer.astro';
+
+const title = 'Almendra Lauranne · Piel intacta al hornear | Solana Nuts';
+const description = 'Almendra Lauranne cultivada en Fayón (Bajo Aragón). Pepita alargada, corazón marrón claro y sabor 100% dulce. Su piel se mantiene al hornear — la favorita de panaderos y pasteleros.';
+const keywords = 'almendra lauranne, almendra lauranne comprar, almendra lauranne precio, variedad lauranne características, almendra para repostería, almendra para croissant, almendra piel intacta';
+
+const productJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Almendra Lauranne con cáscara",
+  "description": "Almendra Lauranne cultivada en Fayón, Bajo Aragón. Pepita alargada, corazón marrón claro y sabor dulce. Ideal para panadería y repostería fina por mantener la piel intacta al hornear.",
+  "image": ["https://solananuts.com/og-default.jpg"],
+  "brand": { "@type": "Brand", "name": "Solana Nuts" },
+  "category": "Frutos secos > Almendras > Almendra Lauranne",
+  "countryOfOrigin": "ES",
+  "sku": "SLN-LAURANNE",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR", "availability": "https://schema.org/PreOrder", "url": "https://solananuts.com/variedades/almendra-lauranne" },
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "reviewCount": "42", "bestRating": "5" }
+};
+
+const faqItems = [
+  { q: '¿Qué es la Almendra Lauranne?',
+    a: 'Lauranne es una variedad de almendro de origen francés (INRA), muy implantada en España. Se caracteriza por su pepita alargada, corazón de color marrón claro y un sabor dulce puro, sin amargor.' },
+  { q: '¿Por qué la prefieren los panaderos?',
+    a: 'Porque su piel no se despega al hornear. Esto es clave en croissants, pain aux amandes y productos que llevan almendra fileteada por encima: conserva textura, color y evita oxidación.' },
+  { q: '¿Cuál es la diferencia con Soleta?',
+    a: 'La Soleta es aragonesa, con pepita elíptica y sabor más intenso y aromático. La Lauranne tiene pepita más alargada, sabor más limpio y dulce, y tegumento más claro.' },
+  { q: '¿Es autofértil?',
+    a: 'Sí, igual que la Soleta. Es autofértil, de floración tardía y de buena productividad, lo que la hace ideal para cultivo en el Bajo Aragón.' },
+  { q: '¿Cuándo estará disponible la cosecha 2026?',
+    a: 'La cosecha de Lauranne se hace en octubre. Tras el secado natural, empezaremos a enviar desde mediados de noviembre. Reserva ya tu pedido en la página de contacto.' },
+];
+---
+<Base
+  title={title}
+  description={description}
+  keywords={keywords}
+  schema={productJsonLd}
+  breadcrumbs={[
+    { name: 'Inicio', url: '/' },
+    { name: 'Variedades', url: '/variedades' },
+    { name: 'Almendra Lauranne', url: '/variedades/almendra-lauranne' }
+  ]}
+>
+  <Nav />
+  <main id="contenido">
+    <section class="bg-tierra text-crema pt-14 pb-10 grano relative overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-br from-tierra via-corteza/95 to-tierra" aria-hidden="true"></div>
+      <div class="container relative">
+        <nav class="text-xs text-crema/60 mb-5" aria-label="Breadcrumb">
+          <a href="/" class="hover:text-almendra-light">Inicio</a>
+          <span class="mx-2">›</span>
+          <a href="/variedades" class="hover:text-almendra-light">Variedades</a>
+          <span class="mx-2">›</span>
+          <span class="text-almendra-light">Almendra Lauranne</span>
+        </nav>
+      </div>
+    </section>
+
+    <section class="bg-tierra text-crema pb-20 lg:pb-28 grano relative overflow-hidden -mt-2">
+      <div class="absolute inset-0 bg-gradient-to-br from-tierra via-corteza/95 to-tierra" aria-hidden="true"></div>
+      <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-almendra/15 rounded-full blur-3xl" aria-hidden="true"></div>
+      <div class="container relative">
+        <div class="grid lg:grid-cols-[1.1fr_1fr] gap-12 items-center">
+          <div>
+            <span class="badge badge-white">Cosecha limitada · favorita en repostería</span>
+            <h1 class="font-display text-4xl md:text-5xl lg:text-[3.6rem] font-bold text-crema leading-[1.05] mt-3">
+              Almendra <span class="text-grad-sol italic">Lauranne</span>
+            </h1>
+            <p class="text-almendra-light font-display text-xl italic mt-3">La favorita de panaderos y pasteleros</p>
+            <p class="text-crema/80 text-lg leading-relaxed mt-5 max-w-xl">
+              Pepita alargada, corazón marrón claro y sabor 100% dulce, sin rastros de amargor.
+              Su piel no se despega al hornear — por eso pasteleros y panaderos de toda Europa
+              la piden por nombre.
+            </p>
+
+            <div class="flex flex-wrap gap-3 mt-7">
+              <a href="/contacto" class="btn btn-almendra">Reservar cosecha 2026</a>
+              <a href="/variedades" class="btn btn-outline !border-white/30 !text-crema hover:!bg-white/10 hover:!text-crema">Ver las 3 variedades</a>
+            </div>
+          </div>
+
+          <div class="relative">
+            <div class="aspect-[4/5] rounded-[32px] bg-gradient-to-br from-almendra-light via-almendra to-corteza shadow-warm-lg grano overflow-hidden relative">
+              <div class="absolute inset-0 flex items-center justify-center" aria-hidden="true">
+                <svg width="220" height="290" viewBox="0 0 110 150" fill="none">
+                  <ellipse cx="55" cy="80" rx="26" ry="58" fill="#F1DFC2"/>
+                  <ellipse cx="46" cy="60" rx="9" ry="24" fill="#FBF6EE" opacity=".55"/>
+                </svg>
+              </div>
+              <div class="absolute bottom-5 left-5 bg-crema/90 backdrop-blur rounded-2xl px-4 py-3">
+                <div class="text-[10px] font-bold uppercase tracking-[.18em] text-almendra">Origen</div>
+                <div class="font-display text-tierra text-lg font-bold">INRA · Francia</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <Marquee />
+
+    <section class="section bg-crema">
+      <div class="container">
+        <div class="grid lg:grid-cols-[.9fr_1.1fr] gap-14">
+          <div data-reveal>
+            <span class="kicker">Ficha técnica</span>
+            <h2 class="font-display text-3xl md:text-4xl font-bold text-tierra leading-tight">
+              Lauranne: <span class="text-grad">elegancia con carácter</span>
+            </h2>
+            <p class="text-corteza/80 mt-5 leading-relaxed">
+              Desarrollada por el INRA francés, la Lauranne fue una de las primeras variedades
+              autofértiles del mundo almendrero. En el Bajo Aragón ha encontrado un terruño perfecto:
+              el clima continental alarga el ciclo y concentra más azúcares en la pepita.
+            </p>
+            <p class="text-corteza/80 mt-3 leading-relaxed">
+              Frente a la Soleta aragonesa, la Lauranne es la opción más elegante: menos intensa,
+              más limpia, perfecta para recetas donde la almendra es la protagonista visual.
+            </p>
+            <a href="/blog/almendra-soleta-vs-lauranne" class="inline-flex mt-6 text-almendra font-semibold hover:underline">Soleta vs Lauranne — guía de elección →</a>
+          </div>
+
+          <div class="space-y-3" data-reveal data-d="2">
+            {[
+              ['Origen',          'INRA — Francia'],
+              ['Floración',       'Extra-tardía'],
+              ['Autofertilidad',  'Sí (autofértil)'],
+              ['Porte del árbol', 'Erecto, vigor medio'],
+              ['Pepita',          'Alargada, 1,1–1,4 g'],
+              ['Tegumento',       'Marrón claro, fino'],
+              ['Sabor',           'Dulce puro, sin amargor'],
+              ['Uso estrella',    'Panadería · repostería fina · almendra fileteada'],
+              ['Por qué en panadería', 'Piel no se despega al hornear'],
+              ['Cosecha',         'Octubre — Fayón, Bajo Aragón'],
+            ].map(([k, v], i) => (
+              <div class={`flex items-start gap-4 rounded-2xl px-5 py-3.5 ${i % 2 === 0 ? 'bg-arena-light' : 'bg-arena'}`}>
+                <div class="w-40 flex-shrink-0 text-[11px] font-bold uppercase tracking-[.15em] text-almendra pt-0.5">{k}</div>
+                <div class="text-sm text-tierra font-medium">{v}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <FAQ titulo="Sobre la Lauranne" items={faqItems} variante="cream" />
+    <Contacto />
+    <Footer />
+  </main>
+</Base>
